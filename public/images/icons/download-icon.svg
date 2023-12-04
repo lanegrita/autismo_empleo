@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="38" viewBox="0 0 38 38">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_384" data-name="Rectángulo 384" width="18" height="24" fill="none" stroke="#1d1d1b" stroke-width="1.25"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_1210" data-name="Grupo 1210" transform="translate(-1.405 -6)">
+    <path id="Trazado_1200" data-name="Trazado 1200" d="M19,0A19,19,0,1,1,0,19,19,19,0,0,1,19,0Z" transform="translate(1.405 6)" fill="none"/>
+    <g id="Grupo_12882" data-name="Grupo 12882" transform="translate(11.404 13)">
+      <g id="Grupo_1502" data-name="Grupo 1502">
+        <g id="Grupo_1503" data-name="Grupo 1503">
+          <g id="Grupo_1502-2" data-name="Grupo 1502" clip-path="url(#clip-path)">
+            <path id="Trazado_1354" data-name="Trazado 1354" d="M1,1V23.639H17.6V7.037L11.565,1Z" transform="translate(-0.301 -0.32)" fill="none" stroke="#1d1d1b" stroke-width="1.25"/>
+            <path id="Trazado_1355" data-name="Trazado 1355" d="M15,1V7.037h6.037" transform="translate(-3.736 -0.32)" fill="none" stroke="#1d1d1b" stroke-width="1.25"/>
+          </g>
+        </g>
+        <line id="Línea_489" data-name="Línea 489" y2="8" transform="translate(9 10)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+        <path id="Trazado_1356" data-name="Trazado 1356" d="M8.2,19.521l2.867,3.384,2.864-3.378" transform="translate(-2.067 -4.864)" fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-width="1.25"/>
+      </g>
+    </g>
+  </g>
+</svg>
