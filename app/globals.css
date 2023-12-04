@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-primary: #123412;
-}
-
 body {
-  color: var(--color-primary);
+  background-color: var(--color-negro-ae);
   font-family: var(--font-roboto);
 }
 

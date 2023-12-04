@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "../settings/colors.css";
+import "../settings/typography.css";
 import "./globals.css";
 import { roboto } from "./font";
 

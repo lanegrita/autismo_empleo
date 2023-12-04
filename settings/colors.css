@@ -1,3 +1,14 @@
 :root {
-  --font-dark: #010101;
+  --color-azul-dark-1: #2b99ca;
+  --color-azul-dark-2: #217eab;
+  --color-azul-ae: #1a9eda;
+  --color-azul-light-1: #a3d8f0;
+  --color-azul-light-2: #c2e5f5;
+  --color-azul-light-3: #e9f5fb;
+  --color-negro-ae: #010101;
+  --color-gris-1: #dddedf;
+  --color-gris-2: #cbcbcb;
+  --color-gris-3: #888d8e;
+  --color-gris-4: #666c6e;
+  --color-blanco: #ffffff;
 }
