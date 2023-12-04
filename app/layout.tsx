@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../settings/colors.css";
 import "../settings/typography.css";
+import "../settings/spaces.css";
+import "../settings/paddings.css";
 import "./globals.css";
 import { roboto } from "./font";
 
