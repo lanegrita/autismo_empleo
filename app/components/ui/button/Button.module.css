@@ -280,4 +280,54 @@
 .simple_azul .icon_image {
   stroke: var(--color-blanco);
 }
+
+/* Disable Azul Buttons Starts */
+
+.disabled.primary_azul,
+.disabled.secondary_azul {
+  color: var(--color-azul-ae) !important;
+  background-color: var(--color-azul-dark-2) !important;
+}
+
+.disabled.primary_azul.with_icon .icon_image path,
+.disabled.primary_azul.only_icon .icon_image path,
+.disabled.secondary_azul.with_icon .icon_image path,
+.disabled.outline_azul.with_icon .icon_image path,
+.disabled.outline_azul.only_icon .icon_image path,
+.disabled.secondary_azul.only_icon .icon_image path,
+.disabled.primary_azul.with_icon .icon_image line,
+.disabled.primary_azul.with_icon .icon_image circle,
+.disabled.primary_azul.with_icon .icon_image rect,
+.disabled.primary_azul.with_icon .icon_image {
+  stroke: var(--color-azul-dark-2) !important;
+}
+.disabled.primary_azul.with_icon .icon_wrapper,
+.disabled.secondary_azul.with_icon .icon_wrapper {
+  background-color: var(--color-azul-ae) !important;
+}
+.disabled.primary_azul.only_icon .icon_wrapper,
+.disabled.secondary_azul.only_icon .icon_wrapper {
+  background-color: var(--color-azul-dark-2) !important;
+}
+
+.disabled.outline_azul {
+  color: var(--color-azul-dark-2) !important;
+  border: 1px solid var(--color-azul-dark-2) !important;
+}
+
+.disabled.simple_azul {
+  background-color: none;
+  border: none;
+  color: var(--color-azul-dark-2) !important;
+}
+.disabled.simple_azul .icon_image path,
+.disabled.simple_azul .icon_image line,
+.disabled.simple_azul .icon_image circle,
+.disabled.simple_azul .icon_image rect,
+.disabled.simple_azul .icon_image {
+  stroke: var(--color-azul-dark-2) !important;
+}
+/* Disabled Button Styles Ends */
+
+/* Disable Azul Buttons Ends */
 /* Azol Styles Ends */
