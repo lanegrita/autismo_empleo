@@ -1,0 +1,18 @@
+.container {
+  border: 1px solid #cbcbcb;
+  border-radius: 200px;
+  padding: calc(var(--spacer-12) - 1px) var(--spacer-14) var(--spacer-12)
+    var(--spacer-14);
+  display: flex;
+  align-items: center;
+  gap: var(--spacer-6);
+}
+
+.container.checked {
+  background: var(--color-azul-light-3);
+  border-color: var(--color-azul-dark-2);
+}
+
+.title {
+  font-size: var(--text-para);
+}

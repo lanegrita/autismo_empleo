@@ -1,0 +1,8 @@
+.container {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  padding-bottom: var(--spacer-4);
+  font-size: var(--text-para);
+  color: var(--color-text-1);
+}

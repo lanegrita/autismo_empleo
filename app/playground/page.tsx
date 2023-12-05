@@ -1,43 +1,68 @@
 import React from "react";
 import Input from "../components/form/input/Input";
-// import { ReactSVG } from "react-svg";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import RadioButton from "../components/form/radio-button/RadioButton";
+import Dropdown from "../components/form/dropdown/Dropdown";
+import Textarea from "../components/form/text-area/Textarea";
 
 const Playground = () => {
   return (
-    <div className=" h-screen flex flex-col gap-4  p-10 max-w-5xl mx-auto">
+    <div className=" flex flex-col gap-4  p-10 max-w-5xl mx-auto">
       <Input type="text" placeholder="Nombre" variant="simple" />
-      <Input type="text" placeholder="Apellidos" variant="simple" />
       <Input type="email" placeholder="Email" variant="simple" />
-      <Input type="password" placeholder="Contraseña" variant="simple" />
-      <Input type="text" placeholder="Fecha de nacimiento" variant="simple" />
-      <Input type="text" placeholder="Nacionalidad" variant="simple" />
-      <Input type="tel" placeholder="+1 456 234 7890" variant="simple" />
-      <div className="flex gap-10">
-        <Input type="text" placeholder="DNI" variant="simple" />
-        <Input type="text" placeholder="Aquí el número…" variant="simple" />
-      </div>
-      <Input type="text" placeholder="Género" variant="simple" />
-      <Input
-        type="text"
-        placeholder="¿Tienes diagnóstico TEA confirmado?"
-        variant="simple"
-      />
-      <div className="flex gap-10">
-        <div className="flex-[3]">
-          <Input
-            type="text"
-            placeholder="¿Tienes certificado de discapacidad?"
-            variant="simple"
-          />
+      <Input type="password" placeholder="****************" variant="simple" />
+
+      {/* Radio Buttons */}
+      <RadioGroup defaultValue="comfortable">
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="default" id="r1" />
+          <Label htmlFor="r1">Default</Label>
         </div>
-        <div className="flex-[1]">
-          <Input type="text" placeholder="26%" variant="simple" />
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="comfortable" id="r2" />
+          <Label htmlFor="r2">Comfortable</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="compact" id="r3" />
+          <Label htmlFor="r3">Compact</Label>
+        </div>
+      </RadioGroup>
+
+      {/* Checkboxes */}
+      <div className="items-top flex space-x-2 max-w-sm">
+        <Checkbox id="terms1" />
+        <div className="grid gap-1.5 leading-none">
+          <label
+            htmlFor="terms1"
+            className="text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Acepto las Condiciones legales, del servicio y la Información básica
+            de privacidad.
+          </label>
         </div>
       </div>
-      <div className="mt-10 bg-black p-10">
+
+      {/* Simple Radio Button */}
+      <input type="checkbox" />
+
+      {/* Radio Button */}
+      <RadioGroup defaultValue="radio1">
+        <RadioButton checked id="radio1" name="options" title="Llamada" />
+        <RadioButton id="radio2" name="options" title="SMS" />
+        <RadioButton id="radio3" name="options" title="Mail" />
+      </RadioGroup>
+
+      {/* DropDown */}
+      <Dropdown />
+
+      {/* Text Area */}
+      <Textarea />
+
+      <div className="mt-10 bg-gray-100 p-10">
         <Input type="email" placeholder="Contraseña" variant="newsletter" />
       </div>
-      {/* <ReactSVG src="/images/" /> */}
     </div>
   );
 };

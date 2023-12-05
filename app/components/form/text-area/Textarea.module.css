@@ -1,0 +1,13 @@
+.container {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+  width: 100%;
+  font-size: var(--text-para);
+  height: 233px;
+}
+
+.characters {
+  font-size: var(--text-subtitle-s);
+  color: var(--color-gris-4);
+}
