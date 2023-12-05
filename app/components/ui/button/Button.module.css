@@ -1,18 +1,30 @@
 .container {
-  padding: var(--p-6) var(--p-11);
-  border-radius: 50px !important;
+  padding: var(--spacer-7) var(--spacer-12);
+  padding-top: calc(var(--spacer-7) - 1px);
+  border-radius: 50px;
   outline: none;
   border: none;
   max-width: fit-content;
+  min-width: fit-content;
+  height: fit-content;
   font-size: var(--text-para);
   color: var(--color-negro-ae);
   display: flex;
-  gap: var(--spacer-3-5);
+  gap: var(--spacer-4);
   align-items: center;
   overflow: hidden;
   position: relative;
+  white-space: nowrap;
 }
 
+/* Button xl Styles starts */
+.container.large {
+  padding-top: calc(var(--spacer-10) - 1px);
+  padding-bottom: var(--spacer-10);
+}
+/* Button xl Styles ends */
+
+/* Normal Buttons Styles Starts */
 .primary {
   color: var(--color-blanco);
   background-color: var(--color-azul-ae);
@@ -28,162 +40,244 @@
 .simple {
   background-color: none;
   border: none;
+  padding-left: var(--spacer-7);
+  padding-right: var(--spacer-7);
 }
-.onlyIcon {
+.only_icon {
   padding: 0;
 }
+/* Normal Buttons Styles Ends */
+
+/* Disabled Button Styles Starts */
+.disabled.container {
+  cursor: not-allowed;
+}
+.disabled.primary,
+.disabled.secondary {
+  color: var(--color-gris-3) !important;
+  background-color: var(--color-azul-light-3) !important;
+}
+.disabled.with_icon .icon_image path,
+.disabled.only_icon .icon_image path,
+.disabled.with_icon .icon_image line,
+.disabled.with_icon .icon_image circle,
+.disabled.with_icon .icon_image rect,
+.disabled.with_icon .icon_image {
+  stroke: var(--color-gris-3) !important;
+}
+.disabled.primary.only_icon .icon_wrapper,
+.disabled.secondary.only_icon .icon_wrapper {
+  background-color: var(--color-azul-light-3) !important;
+}
+
+.disabled.outline {
+  border: 1px solid var(--color-gris-3);
+}
+
+.disabled.simple {
+  background-color: none;
+  border: none;
+  color: var(--color-gris-3);
+}
+
+/* Disabled Button Styles Ends */
 
 /* Only Icon Styles with primary starts */
-.primary.onlyIcon .iconWrapper {
+.primary.only_icon .icon_wrapper {
   color: var(--color-blanco);
   background-color: var(--color-azul-ae);
-  padding: var(--p-6);
 }
 /* Only Icon Styles with primary Ends */
 
 /* Only Icon Styles with Secondary Starts */
-.secondary.onlyIcon .iconWrapper {
+.secondary.only_icon .icon_wrapper {
   color: var(--color-blanco);
   background-color: var(--color-azul-light-3);
-  padding: var(--p-6);
 }
 /* Only Icon Styles with Secondary Ends */
 
 /* Only Icon Styles with outline Starts */
-.outline.onlyIcon .iconWrapper {
-  padding: var(--p-6);
+.outline.only_icon .icon_wrapper {
 }
 /* Only Icon Styles with outline Ends */
 
+.container.large.only_icon {
+  padding: 0;
+}
+
 /* Icon Image */
-.iconWrapper {
+.icon_wrapper {
   background-color: var(--color-blanco);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--p-3);
+  /* padding: var(--spacer-4); */
   border-radius: 100%;
   transition: all 0.3s;
 }
-.iconImage svg {
-  width: 18px !important;
-  height: 18px !important;
-  max-width: 18px !important;
-  max-height: 18px !important;
+/* Default size of the svg */
+.icon_image svg {
+  width: 38px;
+  height: 38px;
+  max-width: 38px;
+  max-height: 38px;
+  align-self: center;
+}
+/* Style when there is only icon */
+.container.only_icon svg {
+  width: 48px;
+  height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  align-self: center;
+}
+/* Icon Image xl size starts */
+.large .icon_image svg {
+  width: 48px;
+  height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  align-self: center;
+}
+/* Icon size when there is onlyIcon in large size */
+.container.large.only_icon .icon_image svg {
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
   align-self: center;
 }
 
+/* Icon Image xl size ends */
+
 /* Primary Icon Styles Starts */
-.primary .iconImage path,
-.primary .iconImage line,
-.primary .iconImage circle,
-.primary .iconImage rect,
-.primary .iconImage {
+.primary .icon_image path,
+.primary .icon_image line,
+.primary .icon_image circle,
+.primary .icon_image rect,
+.primary .icon_image {
   stroke: var(--color-azul-ae);
 }
-.onlyIcon.primary .iconImage path,
-.onlyIcon.primary .iconImage line,
-.onlyIcon.primary .iconImage circle,
-.onlyIcon.primary .iconImage rect,
-.onlyIcon.primary .iconImage {
+.only_icon.primary .icon_image path,
+.only_icon.primary .icon_image line,
+.only_icon.primary .icon_image circle,
+.only_icon.primary .icon_image rect,
+.only_icon.primary .icon_image {
   stroke: var(--color-blanco);
 }
 /* Primary Icon Styles Ends */
 
 /* Secondary Icon Styles Starts */
-.secondary .iconImage path,
-.secondary .iconImage line,
-.secondary .iconImage circle,
-.secondary .iconImage rect,
-.secondary .iconImage {
+.secondary .icon_image path,
+.secondary .icon_image line,
+.secondary .icon_image circle,
+.secondary .icon_image rect,
+.secondary .icon_image {
   stroke: var(--color-azul-ae);
 }
-.onlyIcon.secondary .iconImage path,
-.onlyIcon.secondary .iconImage line,
-.onlyIcon.secondary .iconImage circle,
-.onlyIcon.secondary .iconImage rect,
-.onlyIcon.secondary .iconImage {
+.only_icon.secondary .icon_image path,
+.only_icon.secondary .icon_image line,
+.only_icon.secondary .icon_image circle,
+.only_icon.secondary .icon_image rect,
+.only_icon.secondary .icon_image {
   stroke: var(--color-negro-ae);
 }
 /* Secondary Icon Styles Ends */
 
 /* Icon Directions  */
-.left.withIcon {
+.left.with_icon {
   flex-direction: row-reverse;
-  padding: var(--p-1-2);
-  padding-right: var(--p-11);
+  padding: calc(var(--spacer-3) - 1px);
+  padding-right: var(--spacer-12);
 }
-.right.withIcon {
+.right.with_icon {
   flex-direction: row;
-  padding: var(--p-1-2);
-  padding-left: var(--p-11);
+  padding: calc(var(--spacer-3) - 1px);
+  padding-left: var(--spacer-12);
 }
 
+/* Simple button with icon */
+.simple.with_icon {
+  padding: calc(var(--spacer-3) - 1px);
+}
+
+/* Button with icon xl styles  starts */
+
+.container.large.left.with_icon {
+  padding: var(--spacer-3);
+  padding-right: var(--spacer-12);
+}
+.container.large.right.with_icon {
+  padding: var(--spacer-3);
+  padding-left: var(--spacer-12);
+}
+/* Button with icon xl styles ends */
+
 /* Azol Styles Starts */
-.primaryAzul {
+.primary_azul {
   background-color: var(--color-blanco);
   color: var(--color-negro-ae);
 }
-.primaryAzul .iconWrapper {
+.primary_azul .icon_wrapper {
   background-color: var(--color-azul-dark-2);
 }
-.primaryAzul.onlyIcon .iconWrapper {
+.primary_azul.only_icon .icon_wrapper {
   background-color: var(--color-blanco);
 }
-.primaryAzul .iconImage path,
-.primaryAzul .iconImage line,
-.primaryAzul .iconImage circle,
-.primaryAzul .iconImage rect,
-.primaryAzul .iconImage {
+.primary_azul .icon_image path,
+.primary_azul .icon_image line,
+.primary_azul .icon_image circle,
+.primary_azul .icon_image rect,
+.primary_azul .icon_image {
   stroke: var(--color-blanco);
 }
-.primaryAzul.onlyIcon .iconImage path,
-.primaryAzul.onlyIcon .iconImage line,
-.primaryAzul.onlyIcon .iconImage circle,
-.primaryAzul.onlyIcon .iconImage rect,
-.primaryAzul.onlyIcon .iconImage {
+.primary_azul.only_icon .icon_image path,
+.primary_azul.only_icon .icon_image line,
+.primary_azul.only_icon .icon_image circle,
+.primary_azul.only_icon .icon_image rect,
+.primary_azul.only_icon .icon_image {
   stroke: var(--color-azul-ae);
 }
-.secondaryAzul {
+.secondary_azul {
   background-color: var(--color-azul-dark-2);
   color: var(--color-blanco);
 }
-.secondaryAzul.onlyIcon .iconWrapper {
+.secondary_azul.only_icon .icon_wrapper {
   background-color: var(--color-azul-dark-2);
 }
-.secondaryAzul.onlyIcon .iconImage path,
-.secondaryAzul.onlyIcon .iconImage line,
-.secondaryAzul.onlyIcon .iconImage circle,
-.secondaryAzul.onlyIcon .iconImage rect,
-.secondaryAzul.onlyIcon .iconImage {
+.secondary_azul.only_icon .icon_image path,
+.secondary_azul.only_icon .icon_image line,
+.secondary_azul.only_icon .icon_image circle,
+.secondary_azul.only_icon .icon_image rect,
+.secondary_azul.only_icon .icon_image {
   stroke: var(--color-blanco);
 }
-.outlineAzul {
+.outline_azul {
   border: 1px solid var(--color-blanco);
   color: var(--color-blanco);
 }
-.outlineAzul .iconWrapper {
+.outline_azul .icon_wrapper {
   background-color: transparent;
 }
 
-.outlineAzul .iconImage path,
-.outlineAzul .iconImage line,
-.outlineAzul .iconImage circle,
-.outlineAzul .iconImage rect,
-.outlineAzul .iconImage {
+.outline_azul .icon_image path,
+.outline_azul .icon_image line,
+.outline_azul .icon_image circle,
+.outline_azul .icon_image rect,
+.outline_azul .icon_image {
   stroke: var(--color-blanco);
 }
-.simpleAzul {
+.simple_azul {
   color: var(--color-blanco);
 }
-.simpleAzul .iconWrapper {
+.simple_azul .icon_wrapper {
   background-color: transparent;
 }
-.simpleAzul .iconImage path,
-.simpleAzul .iconImage line,
-.simpleAzul .iconImage circle,
-.simpleAzul .iconImage rect,
-.simpleAzul .iconImage {
+.simple_azul .icon_image path,
+.simple_azul .icon_image line,
+.simple_azul .icon_image circle,
+.simple_azul .icon_image rect,
+.simple_azul .icon_image {
   stroke: var(--color-blanco);
 }
 /* Azol Styles Ends */

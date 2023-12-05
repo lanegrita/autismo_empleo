@@ -19,6 +19,9 @@ interface ButtonProps {
   icon?: string;
   direction?: "left" | "right";
   iconSize?: number;
+  type?: "button" | "reset" | "submit";
+  size?: "m" | "xl";
+  disabled?: boolean;
 }
 
 const Button = ({
@@ -28,9 +31,13 @@ const Button = ({
   icon = "",
   direction = "left",
   iconSize = 24,
+  type,
+  size,
+  disabled,
 }: ButtonProps) => {
   return (
     <button
+      type={type}
       className={[
         styles.container,
         variant === "primary" && styles.primary,
@@ -38,22 +45,24 @@ const Button = ({
         variant === "outline" && styles.outline,
         variant === "simple" && styles.simple,
         // Azol Styles Start
-        variant === "primary-azul" && styles.primaryAzul,
-        variant === "secondary-azul" && styles.secondaryAzul,
-        variant === "outline-azul" && styles.outlineAzul,
-        variant === "simple-azul" && styles.simpleAzul,
+        variant === "primary-azul" && styles.primary_azul,
+        variant === "secondary-azul" && styles.secondary_azul,
+        variant === "outline-azul" && styles.outline_azul,
+        variant === "simple-azul" && styles.simple_azul,
         // Azol Styles Ends
         direction === "left" && styles.left,
         direction === "right" && styles.right,
-        icon && title && styles.withIcon,
-        icon && !title && styles.onlyIcon,
+        icon && title && styles.with_icon,
+        icon && !title && styles.only_icon,
+        size === "xl" && styles.large,
+        disabled && styles.disabled,
       ].join(" ")}
     >
       {title && title}
       {/* Icon Image */}
       {icon && (
-        <div className={styles.iconWrapper}>
-          <ReactSVG className={styles.iconImage} src={icon} />
+        <div className={styles.icon_wrapper}>
+          <ReactSVG className={styles.icon_image} src={icon} />
         </div>
       )}
     </button>
