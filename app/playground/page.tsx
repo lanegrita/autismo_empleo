@@ -1,67 +1,334 @@
-import React from "react";
-import Input from "../components/form/input/Input";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import RadioButton from "../components/form/radio-button/RadioButton";
-import Dropdown from "../components/form/dropdown/Dropdown";
-import Textarea from "../components/form/text-area/Textarea";
+import Button from "../components/ui/button/Button";
 
+const rightArrow = "arrow-right.svg";
+const newsIcon = "/images/icons/news.svg";
+const pencilIcon = "/images/icons/pencil.svg";
+const downloadIcon = "/images/icons/download.svg";
 const Playground = () => {
   return (
-    <div className=" flex flex-col gap-4  p-10 max-w-5xl mx-auto">
-      <Input type="text" placeholder="Nombre" variant="simple" />
-      <Input type="email" placeholder="Email" variant="simple" />
-      <Input type="password" placeholder="****************" variant="simple" />
+    <div className="container pt-10">
+      {/* First Section */}
+      <h1 className="text-5xl">Default buttons</h1>
+      <div className="px-5 py-10 grid grid-cols-4 gap-36 mt-8 ">
+        <Button
+          title="Test Button"
+          variant="primary"
+          // size="xl"
+          // icon={pencilIcon}
+        />
+        <Button title="Continue" variant="secondary" />
+        <Button title="Continue" variant="outline" />
+        <Button title="Continue" variant="simple" />
+        {/* Left Direction Buttons */}
+        <Button
+          size="xl"
+          title="Xl button"
+          variant="primary"
+          icon={downloadIcon}
+          direction="left"
+        />
+        <Button
+          title="Inscríbete"
+          variant="secondary"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          title="Continue"
+          variant="outline"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          title="Continue"
+          variant="simple"
+          icon={downloadIcon}
+          direction="left"
+        />
+        {/* Right Direction Buttons */}
+        <Button
+          title="Inscríbete"
+          variant="primary"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          title="Inscríbete"
+          variant="secondary"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          title="Continue"
+          variant="outline"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          title="Continue"
+          variant="simple"
+          icon={downloadIcon}
+          direction="right"
+        />
 
-      {/* Radio Buttons */}
-      <RadioGroup defaultValue="comfortable">
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="default" id="r1" />
-          <Label htmlFor="r1">Default</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="comfortable" id="r2" />
-          <Label htmlFor="r2">Comfortable</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="compact" id="r3" />
-          <Label htmlFor="r3">Compact</Label>
-        </div>
-      </RadioGroup>
+        {/* Without Text Buttons */}
+        <Button
+          size="xl"
+          variant="primary"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button variant="secondary" icon={pencilIcon} direction="right" />
+        <Button variant="outline" icon={pencilIcon} direction="right" />
+        <Button
+          iconSize={20}
+          variant="simple"
+          icon={pencilIcon}
+          direction="right"
+        />
+      </div>
+      {/* Second Section */}
+      <h1 className="text-5xl my-6">Default disabled buttons</h1>
+      <div className="px-5 py-10 grid grid-cols-4 gap-36 mt-8 mb-12 ">
+        <Button disabled title="Continue" variant="primary" size="xl" />
+        <Button disabled title="Continue" variant="secondary" />
+        <Button disabled title="Continue" variant="outline" />
+        <Button disabled title="Continue" variant="simple" />
+        {/* Left Direction Buttons */}
+        <Button
+          disabled
+          size="xl"
+          title="Xl button"
+          variant="primary"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          disabled
+          title="Inscríbete"
+          variant="secondary"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          disabled
+          title="Continue"
+          variant="outline"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          disabled
+          title="Continue"
+          variant="simple"
+          icon={downloadIcon}
+          direction="left"
+        />
+        {/* Right Direction Buttons */}
+        <Button
+          disabled
+          title="Inscríbete"
+          variant="primary"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          disabled
+          title="Inscríbete"
+          variant="secondary"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          disabled
+          title="Continue"
+          variant="outline"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          disabled
+          title="Continue"
+          variant="simple"
+          icon={downloadIcon}
+          direction="right"
+        />
 
-      {/* Checkboxes */}
-      <div className="items-top flex space-x-2 max-w-sm">
-        <Checkbox id="terms1" />
-        <div className="grid gap-1.5 leading-none">
-          <label
-            htmlFor="terms1"
-            className="text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Acepto las Condiciones legales, del servicio y la Información básica
-            de privacidad.
-          </label>
-        </div>
+        {/* Without Text Buttons */}
+        <Button disabled variant="primary" icon={pencilIcon} />
+        <Button disabled variant="secondary" icon={downloadIcon} />
+        <Button
+          disabled
+          variant="outline"
+          icon={downloadIcon}
+          direction="right"
+        />
+        <Button disabled variant="simple" icon={downloadIcon} />
+      </div>
+      {/* Third Section */}
+      <h1 className="text-5xl my-6">Azul buttons</h1>
+
+      <div className="px-5 py-10 grid grid-cols-4 gap-36 mt-8 bg-[#1a9eda] ">
+        <Button title="Continue" variant="primary-azul" />
+        <Button title="Continue" variant="secondary-azul" />
+        <Button title="Continue" variant="outline-azul" />
+        <Button title="Continue" variant="simple-azul" />
+        {/* Left Direction Buttons */}
+        <Button
+          title="Inscríbete"
+          variant="primary-azul"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          title="Inscríbete"
+          variant="secondary-azul"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          title="Continue"
+          variant="outline-azul"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          title="Continue"
+          variant="simple-azul"
+          icon={downloadIcon}
+          direction="left"
+        />
+        {/* Right Direction Buttons */}
+        <Button
+          title="Inscríbete"
+          variant="primary-azul"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          title="Inscríbete"
+          variant="secondary-azul"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          title="Continue"
+          variant="outline-azul"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          title="Continue"
+          variant="simple-azul"
+          icon={downloadIcon}
+          direction="right"
+        />
+
+        {/* Without Text Buttons */}
+        <Button variant="primary-azul" icon={pencilIcon} direction="right" />
+        <Button variant="secondary-azul" icon={pencilIcon} direction="right" />
+        <Button variant="outline-azul" icon={pencilIcon} direction="right" />
+        <Button
+          iconSize={20}
+          variant="simple-azul"
+          icon={newsIcon}
+          direction="right"
+        />
       </div>
 
-      {/* Simple Radio Button */}
-      <input type="checkbox" />
+      {/* Disabled Azul Buttons */}
+      <h1 className="text-5xl my-6">Disabled Azul buttons</h1>
 
-      {/* Radio Button */}
-      <RadioGroup defaultValue="radio1">
-        <RadioButton checked id="radio1" name="options" title="Llamada" />
-        <RadioButton id="radio2" name="options" title="SMS" />
-        <RadioButton id="radio3" name="options" title="Mail" />
-      </RadioGroup>
+      <div className="px-5 py-10 grid grid-cols-4 gap-36 mt-8 bg-[#1a9eda] ">
+        <Button disabled title="Continue" variant="primary-azul" />
+        <Button disabled title="Continue" variant="secondary-azul" />
+        <Button disabled title="Continue" variant="outline-azul" />
+        <Button disabled title="Continue" variant="simple-azul" />
+        {/* Left Direction Buttons */}
+        <Button
+          disabled
+          title="Inscríbete"
+          variant="primary-azul"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          disabled
+          title="Inscríbete"
+          variant="secondary-azul"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          disabled
+          title="Continue"
+          variant="outline-azul"
+          icon={pencilIcon}
+          direction="left"
+        />
+        <Button
+          disabled
+          title="Continue"
+          variant="simple-azul"
+          icon={downloadIcon}
+          direction="left"
+        />
+        {/* Right Direction Buttons */}
+        <Button
+          disabled
+          title="Inscríbete"
+          variant="primary-azul"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          disabled
+          title="Inscríbete"
+          variant="secondary-azul"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          disabled
+          title="Continue"
+          variant="outline-azul"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          disabled
+          title="Continue"
+          variant="simple-azul"
+          icon={downloadIcon}
+          direction="right"
+        />
 
-      {/* DropDown */}
-      <Dropdown />
-
-      {/* Text Area */}
-      <Textarea />
-
-      <div className="mt-10 bg-gray-100 p-10">
-        <Input type="email" placeholder="Contraseña" variant="newsletter" />
+        {/* Without Text Buttons */}
+        <Button
+          disabled
+          variant="primary-azul"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          disabled
+          variant="secondary-azul"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          disabled
+          variant="outline-azul"
+          icon={pencilIcon}
+          direction="right"
+        />
+        <Button
+          disabled
+          iconSize={20}
+          variant="simple-azul"
+          icon={newsIcon}
+          direction="right"
+        />
       </div>
     </div>
   );

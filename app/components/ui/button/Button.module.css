@@ -1,0 +1,509 @@
+.container {
+  padding: var(--spacer-7) var(--spacer-12);
+  padding-top: calc(var(--spacer-7) - 1px);
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  max-width: fit-content;
+  min-width: fit-content;
+  height: fit-content;
+  font-size: var(--text-para);
+  text-align: center;
+  font-weight: 500;
+  color: var(--color-negro-ae);
+  display: flex;
+  gap: var(--spacer-4);
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Button xl Styles starts */
+.container.large {
+  padding-top: calc(var(--spacer-10) - 1px);
+  padding-bottom: var(--spacer-10);
+}
+/* Button xl Styles ends */
+
+/* Normal Buttons Styles Starts */
+.primary {
+  color: var(--color-blanco);
+  background-color: var(--color-azul-ae);
+}
+
+.secondary {
+  color: var(--color-negro-ae);
+  background-color: var(--color-azul-light-3);
+}
+.outline {
+  border: 1px solid var(--color-azul-ae);
+}
+.simple {
+  background-color: none;
+  border: none;
+  padding-left: var(--spacer-7);
+  padding-right: var(--spacer-7);
+}
+.only_icon {
+  padding: 0;
+}
+/* Normal Buttons Styles Ends */
+
+/* Disabled Button Styles Starts */
+.disabled.container {
+  cursor: not-allowed;
+}
+.disabled.primary,
+.disabled.secondary {
+  color: var(--color-gris-3) !important;
+  background-color: var(--color-azul-light-3) !important;
+}
+.disabled.with_icon .icon_image path,
+.disabled.only_icon .icon_image path,
+.disabled.with_icon .icon_image line,
+.disabled.with_icon .icon_image circle,
+.disabled.with_icon .icon_image rect,
+.disabled.with_icon .icon_image {
+  fill: var(--color-gris-3) !important;
+}
+.disabled.primary.only_icon .icon_wrapper,
+.disabled.secondary.only_icon .icon_wrapper {
+  background-color: var(--color-azul-light-3) !important;
+}
+
+.disabled.outline {
+  border: 1px solid var(--color-gris-3);
+}
+
+.disabled.simple {
+  background-color: none;
+  border: none;
+  color: var(--color-gris-3);
+}
+
+/* Disabled Button Styles Ends */
+
+/* Only Icon Styles with primary starts */
+.primary.only_icon .icon_wrapper {
+  color: var(--color-blanco);
+  background-color: var(--color-azul-ae);
+}
+/* Only Icon Styles with primary Ends */
+
+/* Only Icon Styles with Secondary Starts */
+.secondary.only_icon .icon_wrapper {
+  color: var(--color-blanco);
+  background-color: var(--color-azul-light-3);
+}
+/* Only Icon Styles with Secondary Ends */
+
+/* Only Icon Styles with outline Starts */
+.outline.only_icon .icon_wrapper {
+}
+/* Only Icon Styles with outline Ends */
+
+.container.large.only_icon {
+  padding: 0;
+}
+
+/* Icon Image */
+.icon_wrapper {
+  background-color: var(--color-blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: var(--spacer-4); */
+  border-radius: 100%;
+  transition: all 0.3s;
+  z-index: 1;
+}
+.with_icon .icon_wrapper {
+  width: 38px;
+  height: 38px;
+}
+.with_icon.large .icon_wrapper {
+  width: 48px;
+  height: 48px;
+}
+/* Default size of the svg */
+.icon_image svg {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  align-self: center;
+}
+/* Style when there is only icon */
+.container.only_icon svg {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  align-self: center;
+}
+/* Icon Image xl size starts */
+.large .icon_image svg {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  align-self: center;
+}
+/* Icon size when there is onlyIcon in large size */
+.container.large.only_icon .icon_image svg {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  align-self: center;
+}
+
+/* Icon Image xl size ends */
+
+/* Primary Icon Styles Starts */
+.primary .icon_image path,
+.primary .icon_image line,
+.primary .icon_image circle,
+.primary .icon_image rect,
+.primary .icon_image {
+  fill: var(--color-azul-ae);
+}
+.only_icon.primary .icon_image path,
+.only_icon.primary .icon_image line,
+.only_icon.primary .icon_image circle,
+.only_icon.primary .icon_image rect,
+.only_icon.primary .icon_image {
+  fill: var(--color-blanco);
+}
+/* Primary Icon Styles Ends */
+
+/* Secondary Icon Styles Starts */
+.secondary .icon_image path,
+.secondary .icon_image line,
+.secondary .icon_image circle,
+.secondary .icon_image rect,
+.secondary .icon_image {
+  fill: var(--color-azul-ae);
+}
+.only_icon.secondary .icon_image path,
+.only_icon.secondary .icon_image line,
+.only_icon.secondary .icon_image circle,
+.only_icon.secondary .icon_image rect,
+.only_icon.secondary .icon_image {
+  fill: var(--color-negro-ae);
+}
+/* Secondary Icon Styles Ends */
+
+/* Icon Directions  */
+.left.with_icon {
+  flex-direction: row-reverse;
+  padding: calc(var(--spacer-3) - 1px);
+  padding-right: var(--spacer-12);
+}
+.right.with_icon {
+  flex-direction: row;
+  padding: calc(var(--spacer-3) - 1px);
+  padding-left: var(--spacer-12);
+}
+
+/* Simple button with icon */
+.simple.with_icon {
+  padding: calc(var(--spacer-3) - 1px);
+}
+
+/* Button with icon xl styles  starts */
+
+.container.large.left.with_icon {
+  padding: var(--spacer-3);
+  padding-right: var(--spacer-12);
+}
+.container.large.right.with_icon {
+  padding: var(--spacer-3);
+  padding-left: var(--spacer-12);
+}
+/* Button with icon xl styles ends */
+
+/* Azol Styles Starts */
+.primary_azul {
+  background-color: var(--color-blanco);
+  color: var(--color-negro-ae);
+}
+.primary_azul .icon_wrapper {
+  background-color: var(--color-azul-ae);
+}
+.primary_azul.only_icon .icon_wrapper {
+  background-color: var(--color-blanco);
+}
+.primary_azul .icon_image path,
+.primary_azul .icon_image line,
+.primary_azul .icon_image circle,
+.primary_azul .icon_image rect,
+.primary_azul .icon_image {
+  fill: var(--color-blanco);
+}
+.primary_azul.only_icon .icon_image path,
+.primary_azul.only_icon .icon_image line,
+.primary_azul.only_icon .icon_image circle,
+.primary_azul.only_icon .icon_image rect,
+.primary_azul.only_icon .icon_image {
+  fill: var(--color-azul-ae);
+}
+.secondary_azul {
+  background-color: var(--color-azul-dark-2);
+  color: var(--color-blanco);
+}
+.secondary_azul.only_icon .icon_wrapper {
+  background-color: var(--color-azul-dark-2);
+}
+.secondary_azul.only_icon .icon_image path,
+.secondary_azul.only_icon .icon_image line,
+.secondary_azul.only_icon .icon_image circle,
+.secondary_azul.only_icon .icon_image rect,
+.secondary_azul.only_icon .icon_image {
+  fill: var(--color-blanco);
+}
+.outline_azul {
+  border: 1px solid var(--color-blanco);
+  color: var(--color-blanco);
+}
+.outline_azul .icon_wrapper {
+  background-color: transparent;
+}
+
+.outline_azul .icon_image path,
+.outline_azul .icon_image line,
+.outline_azul .icon_image circle,
+.outline_azul .icon_image rect,
+.outline_azul .icon_image {
+  fill: var(--color-blanco);
+}
+.simple_azul {
+  color: var(--color-blanco);
+}
+.simple_azul .icon_wrapper {
+  background-color: transparent;
+}
+.simple_azul .icon_image path,
+.simple_azul .icon_image line,
+.simple_azul .icon_image circle,
+.simple_azul .icon_image rect,
+.simple_azul .icon_image {
+  fill: var(--color-blanco);
+}
+
+/* Disable Azul Buttons Starts */
+
+.disabled.primary_azul,
+.disabled.secondary_azul {
+  color: var(--color-azul-ae);
+  background-color: var(--color-azul-dark-2);
+}
+
+.disabled.primary_azul.with_icon .icon_image path,
+.disabled.secondary_azul.with_icon .icon_image path,
+.disabled.outline_azul.with_icon .icon_image path,
+.disabled.outline_azul.only_icon .icon_image path,
+.disabled.primary_azul.with_icon .icon_image line,
+.disabled.primary_azul.with_icon .icon_image circle,
+.disabled.primary_azul.with_icon .icon_image rect,
+.disabled.primary_azul.with_icon .icon_image {
+  fill: var(--color-azul-dark-2) !important;
+}
+.disabled.primary_azul.only_icon .icon_image path,
+.disabled.secondary_azul.only_icon .icon_image path {
+  fill: var(--color-azul-ae) !important;
+}
+.disabled.primary_azul.with_icon .icon_wrapper,
+.disabled.secondary_azul.with_icon .icon_wrapper {
+  background-color: var(--color-azul-ae) !important;
+}
+.disabled.primary_azul.only_icon .icon_wrapper,
+.disabled.secondary_azul.only_icon .icon_wrapper {
+  background-color: var(--color-azul-dark-2) !important;
+}
+
+.disabled.outline_azul {
+  color: var(--color-azul-dark-2) !important;
+  border: 1px solid var(--color-azul-dark-2) !important;
+}
+
+.disabled.simple_azul {
+  background-color: none;
+  border: none;
+  color: var(--color-azul-dark-2) !important;
+}
+.disabled.simple_azul .icon_image path,
+.disabled.simple_azul .icon_image line,
+.disabled.simple_azul .icon_image circle,
+.disabled.simple_azul .icon_image rect,
+.disabled.simple_azul .icon_image {
+  fill: var(--color-azul-dark-2) !important;
+}
+/* Disabled Button Styles Ends */
+
+/* Disable Azul Buttons Ends */
+/* Azol Styles Ends */
+
+/* ============================================ */
+
+/* Default Buttons Hover Effect Styles Starts  */
+.primary,
+.secondary,
+.outline {
+  transition: all 0.3s;
+}
+.primary:hover,
+.secondary:hover,
+.outline:hover {
+  transform: scale(1.1);
+}
+.primary:hover {
+  background-color: var(--color-hover-primary-btn);
+}
+.primary.with_icon:hover {
+  color: var(--color-negro-ae);
+}
+.secondary:hover {
+  background-color: var(--color-hover-secondary-btn);
+}
+.simple:hover {
+  color: var(--color-azul-ae);
+}
+.simple:hover .icon_image path {
+  fill: var(--color-azul-ae);
+}
+/* Left Direction button Hover Styles Starts */
+
+.primary.left.with_icon::before,
+.primary.right.with_icon::before,
+.secondary.right.with_icon::before,
+.secondary.left.with_icon::before,
+.primary_azul.left.with_icon::before,
+.primary_azul.right.with_icon::before,
+.secondary_azul.right.with_icon::before,
+.secondary_azul.left.with_icon::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  width: 38px;
+
+  /* right: 5px; */
+  border-radius: 100px;
+  background-color: var(--color-blanco);
+  z-index: 1;
+  transition: all 300ms ease-out;
+  /* transform: scaleX(0.3);
+  transform-origin: left; */
+}
+.large.left.with_icon::before {
+  width: 48px;
+}
+.left.with_icon:hover:before {
+  width: calc(100% - 10px);
+}
+/* Left Direction button Hover Styles Ends */
+
+/* Right Direction Button Hover Styles Starts */
+.primary.right.with_icon::before,
+.secondary.right.with_icon::before,
+.primary_azul.right.with_icon::before,
+.secondary_azul.right.with_icon::before {
+  right: 5px;
+  left: unset;
+}
+.large.right.with_icon::before {
+  width: 48px;
+}
+.right.with_icon:hover:before {
+  width: calc(100% - 10px);
+}
+/* Right Direction Button Hover Styles Ends */
+/* Default Buttons Hover Effect Styles Ends */
+
+/* ============================================= */
+
+/* Azul Buttons Hover Styles Starts */
+
+.primary_azul,
+.secondary_azul,
+.outline_azul,
+.simple_azul {
+  transition: all 0.3s;
+}
+.simple_azul .icon_image path {
+  transition: all 0.2s;
+}
+.primary_azul:hover,
+.secondary_azul:hover,
+.outline_azul:hover {
+  transform: scale(1.1);
+}
+.primary_azul.with_icon:hover {
+  color: var(--color-blanco);
+}
+.secondary_azul.with_icon:hover {
+  color: var(--color-negro-ae);
+}
+.primary_azul.left.with_icon::before,
+.primary_azul.right.with_icon::before {
+  background-color: var(--color-azul-ae);
+}
+.simple_azul:hover,
+.simple_azul:hover .icon_image path {
+  color: var(--color-negro-ae);
+  fill: var(--color-negro-ae);
+}
+
+/* Azul Buttons Hover Styles Ends */
+
+/* Disabling hover on the Default buttons Starts */
+.disabled.primary:hover,
+.disabled.secondary:hover,
+.disabled.outline:hover {
+  transform: scale(1);
+}
+.disabled.simple:hover {
+  color: var(--color-gris-3);
+}
+.primary.left.with_icon:hover,
+.primary.right.with_icon:hover {
+  transform: scale(1);
+  background-color: var(--color-azul-ae);
+}
+.secondary.left.with_icon:hover,
+.secondary.right.with_icon:hover {
+  transform: scale(1);
+  background-color: var(--color-azul-light-3);
+}
+.disabled.primary.left.with_icon::before,
+.disabled.primary.right.with_icon::before,
+.disabled.secondary.right.with_icon::before,
+.disabled.secondary.left.with_icon::before,
+.disabled.primary_azul.left.with_icon::before,
+.disabled.primary_azul.right.with_icon::before,
+.disabled.secondary_azul.right.with_icon::before,
+.disabled.secondary_azul.left.with_icon::before {
+  display: none;
+}
+/* Disabling hover on the Default buttons Ends */
+
+/* Disabling Hover on Azul Buttons Starts */
+.disabled.primary_azul:hover,
+.disabled.secondary_azul:hover,
+.disabled.outline_azul:hover {
+  transform: scale(1);
+}
+.left.with_icon.primary_azul:hover,
+.right.with_icon.primary_azul:hover,
+.left.with_icon.secondary_azul:hover,
+.right.with_icon.secondary_azul:hover {
+  transform: scale(1);
+}
+.disabled.primary_azul.with_icon,
+.disabled.secondary_azul.with_icon {
+  color: var(--color-azul-ae);
+}
+/* Disabling Hover on Azul Buttons Ends */
