@@ -8,6 +8,8 @@
   min-width: fit-content;
   height: fit-content;
   font-size: var(--text-para);
+  text-align: center;
+  font-weight: 500;
   color: var(--color-negro-ae);
   display: flex;
   gap: var(--spacer-4);
@@ -220,7 +222,7 @@
   color: var(--color-negro-ae);
 }
 .primary_azul .icon_wrapper {
-  background-color: var(--color-azul-dark-2);
+  background-color: var(--color-azul-ae);
 }
 .primary_azul.only_icon .icon_wrapper {
   background-color: var(--color-blanco);
@@ -368,7 +370,11 @@
 .primary.left.with_icon::before,
 .primary.right.with_icon::before,
 .secondary.right.with_icon::before,
-.secondary.left.with_icon::before {
+.secondary.left.with_icon::before,
+.primary_azul.left.with_icon::before,
+.primary_azul.right.with_icon::before,
+.secondary_azul.right.with_icon::before,
+.secondary_azul.left.with_icon::before {
   content: "";
   position: absolute;
   top: 5px;
@@ -377,7 +383,7 @@
   width: 38px;
   /* right: 5px; */
   border-radius: 100px;
-  background-color: white;
+  background-color: var(--color-blanco);
   z-index: 1;
   transition: all 400ms ease-in-out;
   /* transform: scaleX(0.3);
@@ -393,7 +399,9 @@
 
 /* Right Direction Button Hover Styles Starts */
 .primary.right.with_icon::before,
-.secondary.right.with_icon::before {
+.secondary.right.with_icon::before,
+.primary_azul.right.with_icon::before,
+.secondary_azul.right.with_icon::before {
   right: 5px;
   left: unset;
 }
@@ -403,19 +411,53 @@
 .right.with_icon:hover:before {
   width: calc(100% - 10px);
 }
-
 /* Right Direction Button Hover Styles Ends */
-
 /* Default Buttons Hover Effect Styles Ends */
 
-/* Disabling hover on the buttons */
+/* ============================================= */
+
+/* Azul Buttons Hover Styles Starts */
+
+.primary_azul,
+.secondary_azul,
+.outline_azul,
+.simple_azul {
+  transition: all 0.3s;
+}
+.simple_azul .icon_image path {
+  transition: all 0.2s;
+}
+.primary_azul:hover,
+.secondary_azul:hover,
+.outline_azul:hover {
+  transform: scale(1.1);
+}
+.primary_azul.with_icon:hover {
+  color: var(--color-blanco);
+}
+.secondary_azul.with_icon:hover {
+  color: var(--color-negro-ae);
+}
+.primary_azul.left.with_icon::before,
+.primary_azul.right.with_icon::before {
+  background-color: var(--color-azul-ae);
+}
+.simple_azul:hover,
+.simple_azul:hover .icon_image path {
+  color: var(--color-negro-ae);
+  fill: var(--color-negro-ae);
+}
+
+/* Azul Buttons Hover Styles Ends */
+
+/* Disabling hover on the Default buttons Starts */
 .disabled.primary:hover,
 .disabled.secondary:hover,
 .disabled.outline:hover {
   transform: scale(1);
 }
 .disabled.simple:hover {
-  color: var(--color-gris-2);
+  color: var(--color-gris-3);
 }
 .primary.left.with_icon:hover,
 .primary.right.with_icon:hover {
@@ -430,6 +472,29 @@
 .disabled.primary.left.with_icon::before,
 .disabled.primary.right.with_icon::before,
 .disabled.secondary.right.with_icon::before,
-.disabled.secondary.left.with_icon::before {
+.disabled.secondary.left.with_icon::before,
+.disabled.primary_azul.left.with_icon::before,
+.disabled.primary_azul.right.with_icon::before,
+.disabled.secondary_azul.right.with_icon::before,
+.disabled.secondary_azul.left.with_icon::before {
   display: none;
 }
+/* Disabling hover on the Default buttons Ends */
+
+/* Disabling Hover on Azul Buttons Starts */
+.disabled.primary_azul:hover,
+.disabled.secondary_azul:hover,
+.disabled.outline_azul:hover {
+  transform: scale(1);
+}
+.left.with_icon.primary_azul:hover,
+.right.with_icon.primary_azul:hover,
+.left.with_icon.secondary_azul:hover,
+.right.with_icon.secondary_azul:hover {
+  transform: scale(1);
+}
+.disabled.primary_azul.with_icon,
+.disabled.secondary_azul.with_icon {
+  color: var(--color-azul-ae);
+}
+/* Disabling Hover on Azul Buttons Ends */

@@ -165,12 +165,13 @@ const Playground = () => {
       <h1 className="text-5xl my-6">Azul buttons</h1>
 
       <div className="px-5 py-10 grid grid-cols-4 gap-36 mt-8 bg-[#1a9eda] ">
-        <Button title="Continue" variant="primary-azul" />
+        <Button title="Continue" variant="primary-azul" size="xl" />
         <Button title="Continue" variant="secondary-azul" />
         <Button title="Continue" variant="outline-azul" />
         <Button title="Continue" variant="simple-azul" />
         {/* Left Direction Buttons */}
         <Button
+          size="xl"
           title="Inscríbete"
           variant="primary-azul"
           icon={pencilIcon}
@@ -227,7 +228,7 @@ const Playground = () => {
         <Button
           iconSize={20}
           variant="simple-azul"
-          icon={newsIcon}
+          icon={pencilIcon}
           direction="right"
         />
       </div>
