@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9.48;
+}
+.circle {
+  aspect-ratio: 1/1;
+}
+.rectangle {
+  aspect-ratio: 16/9.4;
+}
+.oval {
+  aspect-ratio: 4/3;
+}
+
+.image {
+  border-radius: 0;
+}
+
+.circle .image,
+.oval .image {
+  border-radius: 9999px;
+}
+
+.rectangle .image {
+  border-radius: 30px;
+}
