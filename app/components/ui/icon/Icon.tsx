@@ -15,7 +15,12 @@ const Icon = ({ url, tooltip, selected, tooltipPosition }: IconProps) => {
   return (
     <div className={cn(styles.container, selected && styles.selected)}>
       {tooltip ? (
-        <Tooltip position={tooltipPosition} id={tooltip} content={tooltip}>
+        <Tooltip
+          offset={20}
+          position={tooltipPosition}
+          id={tooltip}
+          content={tooltip}
+        >
           <ReactSVG className={styles.icon} src={url} />
         </Tooltip>
       ) : (
