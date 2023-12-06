@@ -1,0 +1,28 @@
+.container {
+  background-color: var(--color-azul-light-3);
+  width: fit-content;
+  padding-right: var(--spacer-4);
+  padding-left: var(--spacer-2);
+  border-radius: 17px;
+  display: flex;
+}
+
+.icon {
+  max-width: 28px;
+  max-height: 28px;
+}
+.icon svg {
+  max-width: 28px;
+  max-height: 28px;
+}
+.icon svg path {
+  fill: var(--color-azul-dark-2);
+}
+
+.title {
+  color: var(--color-azul-dark-2);
+  font-size: var(--text-para);
+  margin-top: calc(var(--spacer-2) - 1px);
+  margin-bottom: var(--spacer-2);
+  line-height: 24px;
+}

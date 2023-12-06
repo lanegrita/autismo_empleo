@@ -7,20 +7,31 @@ interface TooltipProps {
   content: string;
   children: ReactNode;
   position?: "top" | "right" | "bottom" | "left";
+  offset: number;
+  className?: string;
 }
 
-const Tooltip = ({ id, content, children, position }: TooltipProps) => {
+const Tooltip = ({
+  id,
+  content,
+  children,
+  position,
+  offset,
+  className
+}: TooltipProps) => {
   return (
-    <>
-      <a data-tooltip-id={id}>{children}</a>
+    <span>
+      <div className={className} data-tooltip-id={id}>
+        {children}
+      </div>
       <ReactTooltip
         content={content}
-        offset={20}
+        offset={offset}
         id={id}
         className={styles.container}
         place={position}
       />
-    </>
+    </span>
   );
 };
 
