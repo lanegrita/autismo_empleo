@@ -58,7 +58,7 @@ const Button = ({
         disabled && styles.disabled,
       ].join(" ")}
     >
-      {title && title}
+      {title && <span style={{ zIndex: 2 }}>{title}</span>}
       {/* Icon Image */}
       {icon && (
         <div className={styles.icon_wrapper}>

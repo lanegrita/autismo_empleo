@@ -12,10 +12,10 @@ const Playground = () => {
       <h1 className="text-5xl">Default buttons</h1>
       <div className="px-5 py-10 grid grid-cols-4 gap-36 mt-8 ">
         <Button
-          // title="Test Button"
+          title="Test Button"
           variant="primary"
-          size="xl"
-          icon={pencilIcon}
+          // size="xl"
+          // icon={pencilIcon}
         />
         <Button title="Continue" variant="secondary" />
         <Button title="Continue" variant="outline" />
@@ -25,7 +25,7 @@ const Playground = () => {
           size="xl"
           title="Xl button"
           variant="primary"
-          icon={pencilIcon}
+          icon={downloadIcon}
           direction="left"
         />
         <Button

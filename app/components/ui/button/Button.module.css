@@ -63,7 +63,7 @@
 .disabled.with_icon .icon_image circle,
 .disabled.with_icon .icon_image rect,
 .disabled.with_icon .icon_image {
-  stroke: var(--color-gris-3) !important;
+  fill: var(--color-gris-3) !important;
 }
 .disabled.primary.only_icon .icon_wrapper,
 .disabled.secondary.only_icon .icon_wrapper {
@@ -114,6 +114,7 @@
   /* padding: var(--spacer-4); */
   border-radius: 100%;
   transition: all 0.3s;
+  z-index: 1;
 }
 /* Default size of the svg */
 .icon_image svg {
@@ -156,14 +157,14 @@
 .primary .icon_image circle,
 .primary .icon_image rect,
 .primary .icon_image {
-  stroke: var(--color-azul-ae);
+  fill: var(--color-azul-ae);
 }
 .only_icon.primary .icon_image path,
 .only_icon.primary .icon_image line,
 .only_icon.primary .icon_image circle,
 .only_icon.primary .icon_image rect,
 .only_icon.primary .icon_image {
-  stroke: var(--color-blanco);
+  fill: var(--color-blanco);
 }
 /* Primary Icon Styles Ends */
 
@@ -173,14 +174,14 @@
 .secondary .icon_image circle,
 .secondary .icon_image rect,
 .secondary .icon_image {
-  stroke: var(--color-azul-ae);
+  fill: var(--color-azul-ae);
 }
 .only_icon.secondary .icon_image path,
 .only_icon.secondary .icon_image line,
 .only_icon.secondary .icon_image circle,
 .only_icon.secondary .icon_image rect,
 .only_icon.secondary .icon_image {
-  stroke: var(--color-negro-ae);
+  fill: var(--color-negro-ae);
 }
 /* Secondary Icon Styles Ends */
 
@@ -229,14 +230,14 @@
 .primary_azul .icon_image circle,
 .primary_azul .icon_image rect,
 .primary_azul .icon_image {
-  stroke: var(--color-blanco);
+  fill: var(--color-blanco);
 }
 .primary_azul.only_icon .icon_image path,
 .primary_azul.only_icon .icon_image line,
 .primary_azul.only_icon .icon_image circle,
 .primary_azul.only_icon .icon_image rect,
 .primary_azul.only_icon .icon_image {
-  stroke: var(--color-azul-ae);
+  fill: var(--color-azul-ae);
 }
 .secondary_azul {
   background-color: var(--color-azul-dark-2);
@@ -250,7 +251,7 @@
 .secondary_azul.only_icon .icon_image circle,
 .secondary_azul.only_icon .icon_image rect,
 .secondary_azul.only_icon .icon_image {
-  stroke: var(--color-blanco);
+  fill: var(--color-blanco);
 }
 .outline_azul {
   border: 1px solid var(--color-blanco);
@@ -265,7 +266,7 @@
 .outline_azul .icon_image circle,
 .outline_azul .icon_image rect,
 .outline_azul .icon_image {
-  stroke: var(--color-blanco);
+  fill: var(--color-blanco);
 }
 .simple_azul {
   color: var(--color-blanco);
@@ -278,28 +279,30 @@
 .simple_azul .icon_image circle,
 .simple_azul .icon_image rect,
 .simple_azul .icon_image {
-  stroke: var(--color-blanco);
+  fill: var(--color-blanco);
 }
 
 /* Disable Azul Buttons Starts */
 
 .disabled.primary_azul,
 .disabled.secondary_azul {
-  color: var(--color-azul-ae) !important;
-  background-color: var(--color-azul-dark-2) !important;
+  color: var(--color-azul-ae);
+  background-color: var(--color-azul-dark-2);
 }
 
 .disabled.primary_azul.with_icon .icon_image path,
-.disabled.primary_azul.only_icon .icon_image path,
 .disabled.secondary_azul.with_icon .icon_image path,
 .disabled.outline_azul.with_icon .icon_image path,
 .disabled.outline_azul.only_icon .icon_image path,
-.disabled.secondary_azul.only_icon .icon_image path,
 .disabled.primary_azul.with_icon .icon_image line,
 .disabled.primary_azul.with_icon .icon_image circle,
 .disabled.primary_azul.with_icon .icon_image rect,
 .disabled.primary_azul.with_icon .icon_image {
-  stroke: var(--color-azul-dark-2) !important;
+  fill: var(--color-azul-dark-2) !important;
+}
+.disabled.primary_azul.only_icon .icon_image path,
+.disabled.secondary_azul.only_icon .icon_image path {
+  fill: var(--color-azul-ae) !important;
 }
 .disabled.primary_azul.with_icon .icon_wrapper,
 .disabled.secondary_azul.with_icon .icon_wrapper {
@@ -325,9 +328,108 @@
 .disabled.simple_azul .icon_image circle,
 .disabled.simple_azul .icon_image rect,
 .disabled.simple_azul .icon_image {
-  stroke: var(--color-azul-dark-2) !important;
+  fill: var(--color-azul-dark-2) !important;
 }
 /* Disabled Button Styles Ends */
 
 /* Disable Azul Buttons Ends */
 /* Azol Styles Ends */
+
+/* ============================================ */
+
+/* Default Buttons Hover Effect Styles Starts  */
+.primary,
+.secondary,
+.outline {
+  transition: all 0.3s;
+}
+.primary:hover,
+.secondary:hover,
+.outline:hover {
+  transform: scale(1.1);
+}
+.primary:hover {
+  background-color: var(--color-hover-primary-btn);
+}
+.primary.with_icon:hover {
+  color: var(--color-negro-ae);
+}
+.secondary:hover {
+  background-color: var(--color-hover-secondary-btn);
+}
+.simple:hover {
+  color: var(--color-azul-ae);
+}
+.simple:hover .icon_image path {
+  fill: var(--color-azul-ae);
+}
+/* Left Direction button Hover Styles Starts */
+
+.primary.left.with_icon::before,
+.primary.right.with_icon::before,
+.secondary.right.with_icon::before,
+.secondary.left.with_icon::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  width: 38px;
+  /* right: 5px; */
+  border-radius: 100px;
+  background-color: white;
+  z-index: 1;
+  transition: all 400ms ease-in-out;
+  /* transform: scaleX(0.3);
+  transform-origin: left; */
+}
+.large.left.with_icon::before {
+  width: 48px;
+}
+.left.with_icon:hover:before {
+  width: calc(100% - 10px);
+}
+/* Left Direction button Hover Styles Ends */
+
+/* Right Direction Button Hover Styles Starts */
+.primary.right.with_icon::before,
+.secondary.right.with_icon::before {
+  right: 5px;
+  left: unset;
+}
+.large.right.with_icon::before {
+  width: 48px;
+}
+.right.with_icon:hover:before {
+  width: calc(100% - 10px);
+}
+
+/* Right Direction Button Hover Styles Ends */
+
+/* Default Buttons Hover Effect Styles Ends */
+
+/* Disabling hover on the buttons */
+.disabled.primary:hover,
+.disabled.secondary:hover,
+.disabled.outline:hover {
+  transform: scale(1);
+}
+.disabled.simple:hover {
+  color: var(--color-gris-2);
+}
+.primary.left.with_icon:hover,
+.primary.right.with_icon:hover {
+  transform: scale(1);
+  background-color: var(--color-azul-ae);
+}
+.secondary.left.with_icon:hover,
+.secondary.right.with_icon:hover {
+  transform: scale(1);
+  background-color: var(--color-azul-light-3);
+}
+.disabled.primary.left.with_icon::before,
+.disabled.primary.right.with_icon::before,
+.disabled.secondary.right.with_icon::before,
+.disabled.secondary.left.with_icon::before {
+  display: none;
+}
