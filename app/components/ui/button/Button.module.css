@@ -117,10 +117,12 @@
   border-radius: 100%;
   transition: all 0.3s;
   z-index: 1;
+}
+.with_icon .icon_wrapper {
   width: 38px;
   height: 38px;
 }
-.large .icon_wrapper {
+.with_icon.large .icon_wrapper {
   width: 48px;
   height: 48px;
 }

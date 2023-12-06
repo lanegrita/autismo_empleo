@@ -73,7 +73,12 @@ const Playground = () => {
         />
 
         {/* Without Text Buttons */}
-        <Button variant="primary" icon={pencilIcon} direction="right" />
+        <Button
+          size="xl"
+          variant="primary"
+          icon={pencilIcon}
+          direction="right"
+        />
         <Button variant="secondary" icon={pencilIcon} direction="right" />
         <Button variant="outline" icon={pencilIcon} direction="right" />
         <Button
