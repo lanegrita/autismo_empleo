@@ -61,3 +61,12 @@
 body {
   font-family: var(--font-plus-jakarta-sans);
 }
+
+html {
+  font-size: 0.833vw; /* 16px */
+}
+@media screen and (max-width: 1440px) {
+  html {
+    font-size: 1.111vw; /* 16px */
+  }
+}

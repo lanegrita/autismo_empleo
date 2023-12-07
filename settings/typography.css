@@ -1,7 +1,8 @@
+/* for Large Devices */
 :root {
-  --text-supertitle-xl: 160px;
-  --text-supertitle-l: 120px;
-  --text-supertitle: 90px;
+  --text-supertitle-xl: 10rem; /*160px*/
+  --text-supertitle-l: 7.5rem; /*120px*/
+  --text-supertitle: 5.625rem; /*90px*/
   --text-title-xxl: 68px;
   --text-title-xl: 50px;
   --text-title-l: 38px;
@@ -11,4 +12,35 @@
   --text-para: 16px;
   --text-subtitle: 14px;
   --text-subtitle-s: 12px;
+}
+/* For Medium Devices Like Laptops */
+@media screen and (max-width: 992px) {
+  :root {
+    --text-supertitle-xl: 10rem; /*160px*/
+    --text-supertitle-l: 7.5rem; /*120px*/
+    --text-supertitle: 5.625rem; /*90px*/
+    --text-title-xxl: 48px;
+    --text-title-xl: 36px;
+    --text-title-l: 30px;
+    --text-title: 26px;
+    --text-title-s: 23px;
+  }
+}
+
+/* For Tablet/Mobile Devices */
+@media screen and (max-width: 768px) {
+  :root {
+    --text-supertitle-xl: 10rem; /*160px*/
+    --text-supertitle-l: 7.5rem; /*120px*/
+    --text-supertitle: 5.625rem; /*90px*/
+    --text-title-xxl: 38px;
+    --text-title-xl: 34px;
+    --text-title-l: 28px;
+    --text-title: 25px;
+    --text-title-s: 23px;
+    --text-para-l: 20px;
+    --text-para: 16px;
+    --text-subtitle: 14px;
+    --text-subtitle-s: 12px;
+  }
 }
