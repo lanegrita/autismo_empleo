@@ -15,14 +15,16 @@
 }
 
 .image {
-  border-radius: 0;
+  border-radius: var(--border-radius-simple);
 }
 
-.circle .image,
 .oval .image {
-  border-radius: 9999px;
+  border-radius: var(--border-radius-oval);
+}
+.circle .image {
+  border-radius: var(--border-radius-circle);
 }
 
 .rectangle .image {
-  border-radius: 30px;
+  border-radius: var(--border-radius-rectangle);
 }
