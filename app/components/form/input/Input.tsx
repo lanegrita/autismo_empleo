@@ -13,6 +13,7 @@ const Input = (props: InputProps) => {
   if (props.variant === "simple") {
     return (
       <input
+        {...props}
         className={styles.simple_input}
         type={props.type}
         placeholder={props.placeholder}
@@ -23,6 +24,7 @@ const Input = (props: InputProps) => {
   return (
     <div className={styles.container}>
       <input
+        {...props}
         className={styles.input}
         type="text"
         name="email"

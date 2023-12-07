@@ -7,6 +7,7 @@ import Input from "@/app/components/form/input/Input";
 import RadioButton from "@/app/components/form/radio-button/RadioButton";
 import Dropdown from "@/app/components/form/dropdown/Dropdown";
 import Textarea from "@/app/components/form/text-area/Textarea";
+import Form from "./Form";
 
 const Playground = () => {
   return (
@@ -64,6 +65,9 @@ const Playground = () => {
       <div className="mt-10 bg-gray-100 p-10">
         <Input type="email" placeholder="Contraseña" variant="newsletter" />
       </div>
+
+      {/* Forms */}
+      <Form />
     </div>
   );
 };
