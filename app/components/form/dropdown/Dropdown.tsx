@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { SubtitleS } from "../../ui/typography/Typography";
 import styles from "./Dropdown.module.css";
 import Select from "react-select";
 import { cn } from "@/lib/utils";
@@ -106,8 +105,8 @@ const DropDown = ({ variant, error, placeHolder, options }: DropDownProps) => {
       setShowPlaceHolder(false);
     }
   };
-  console.log("Selected Value: ", selectedValue);
-  console.log("PlaceHolder Value", showPlaceHolder);
+  // console.log("Selected Value: ", selectedValue);
+  // console.log("PlaceHolder Value", showPlaceHolder);
   return (
     <div className={styles.container}>
       <h6
