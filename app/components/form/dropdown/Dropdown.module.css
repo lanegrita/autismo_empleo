@@ -1,8 +1,16 @@
 .container {
-  border: none;
-  outline: none;
-  border-bottom: 1px solid black;
-  padding-bottom: var(--spacer-4);
-  font-size: var(--text-para);
-  color: var(--color-text-1);
+  background-color: transparent;
+}
+.topText {
+  color: var(--color-gris-3);
+  font-size: var(--text-subtitle-s);
+  margin-bottom: var(--spacer-1);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.isClicked.topText {
+  opacity: 1;
+}
+.topText.azul {
+  color: var(--color-negro-ae);
 }
