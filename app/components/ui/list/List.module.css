@@ -1,0 +1,37 @@
+/* Bullet Icon Starts */
+.bullet {
+  width: 8px;
+  min-width: 8px;
+  height: 8px;
+  min-height: 8px;
+  border-radius: var(--border-radius-circle);
+  background-color: var(--color-azul-ae);
+}
+.bullet_sub {
+  background-color: var(--color-azul-light-1);
+}
+/* Bullet Icon Ends */
+
+/* Simple List Starts */
+.simple_list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer-8);
+}
+.simple_list_heading {
+  display: flex;
+  align-items: center;
+  gap: var(--spacer-4);
+}
+.simple_list_items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer-8);
+}
+.simple_list_item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacer-4);
+  margin-left: var(--spacer-8);
+}
+/* Simple List Ends */
