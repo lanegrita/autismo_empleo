@@ -25,7 +25,7 @@ const AppLink = ({ title, hoverType }: AppLinkProps) => {
     >
       <div className={styles.content}>
         <span className={styles.title}>{title}</span>
-        <ReactSVG src="/images/icons/pencil.svg" className={styles.icon} />
+        <ReactSVG src="/images/icons/arrow-up.svg" className={styles.icon} />
       </div>
       {hoverType === "hover-3" && <div className={styles.line}></div>}
     </Link>
