@@ -1,0 +1,9 @@
+/* Form Progress Bar Starts */
+.form_progress_bar {
+}
+.form_progress_bar_content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacer-5);
+}
+/* Form Progress Bar Ends */
