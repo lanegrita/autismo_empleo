@@ -5,257 +5,55 @@ import { ReactNode } from "react";
 interface TypograpyProps {
   children: ReactNode;
   underline?: boolean;
+  className?: string;
   fontWeight?: "regular" | "medium";
   color?: "blue" | "white";
   tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  variant:
+    | "super-title-xl"
+    | "super-title-l"
+    | "super-title"
+    | "title-xxl"
+    | "title-xl"
+    | "title-l"
+    | "title"
+    | "title-s"
+    | "para-l"
+    | "para"
+    | "para"
+    | "subtitle"
+    | "subtitle-s";
 }
 
-const SuperTitleXL = ({
+const Text = ({
   tag: Tag,
   children,
   underline,
   color,
   fontWeight = "regular",
+  variant,
+  className
 }: TypograpyProps) => {
   return (
     <Tag
       className={cn(
-        styles.super_title_xl,
+        variant === "super-title-xl" && styles.super_title_xl,
+        variant === "super-title-l" && styles.super_title_l,
+        variant === "super-title" && styles.super_title,
+        variant === "title-xxl" && styles.title_xxl,
+        variant === "title-xl" && styles.title_xl,
+        variant === "title-l" && styles.title_l,
+        variant === "title" && styles.title,
+        variant === "title-s" && styles.title_s,
+        variant === "para-l" && styles.para_l,
+        variant === "para" && styles.para,
+        variant === "subtitle" && styles.subtitle,
+        variant === "subtitle-s" && styles.subtitle_s,
         color === "blue" && styles.azul,
         color === "white" && styles.white,
         underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const SuperTitleL = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.super_title_l,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const SuperTitle = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.super_title,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const TitleXXL = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.title_xxl,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const TitleXL = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.title_xl,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const TitleL = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.title_l,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const Title = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.title,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const TitleS = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.title_s,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const ParaL = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.para_l,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const Para = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.para,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const Subtitle = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.subtitle,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
-      )}
-    >
-      {children}
-    </Tag>
-  );
-};
-const SubtitleS = ({
-  tag: Tag,
-  children,
-  underline,
-  color,
-  fontWeight = "regular",
-}: TypograpyProps) => {
-  return (
-    <Tag
-      className={cn(
-        styles.subtitle_s,
-        color === "blue" && styles.azul,
-        color === "white" && styles.white,
-        underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium"
+        fontWeight === "regular" ? "font-normal" : "font-medium",
+        className
       )}
     >
       {children}
@@ -263,17 +61,4 @@ const SubtitleS = ({
   );
 };
 
-export {
-  SuperTitleXL,
-  SuperTitleL,
-  SuperTitle,
-  TitleXXL,
-  TitleXL,
-  TitleL,
-  Title,
-  TitleS,
-  ParaL,
-  Para,
-  Subtitle,
-  SubtitleS,
-};
+export default Text;
