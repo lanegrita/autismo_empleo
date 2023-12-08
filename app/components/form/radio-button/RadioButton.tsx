@@ -11,28 +11,39 @@ interface RadioButtonProps {
   title: string;
   checked?: boolean;
   icon?: string;
-  variant?: "default" | "azul";
+  variant?: "default" | "azul" | "default-xl" | "azul-xl";
 }
 
-const RadioButton = (props: RadioButtonProps) => {
+const RadioButtonXL = ({
+  id,
+  checked,
+  title,
+  icon,
+  variant = "default-xl",
+}: RadioButtonProps) => {
   return (
     <label
-      htmlFor={props.id}
-      className={cn(styles.container, props.checked && styles.checked)}
+      htmlFor={id}
+      className={cn(
+        styles.container,
+        checked && styles.checked,
+        variant === "azul-xl" && styles.azul_xl
+      )}
     >
       <div className={styles.left_container}>
         <RadioGroupItem
-          defaultChecked={props.checked}
-          value={props.id}
-          id={props.id}
+          variant={variant}
+          defaultChecked={checked}
+          value={id}
+          id={id}
         />
 
         {/* <input type="radio"  /> */}
-        <div className={styles.title}>{props.title}</div>
+        <div className={styles.title}>{title}</div>
       </div>
-      {props.icon && (
+      {icon && (
         <div className={styles.icon}>
-          <Image src={props.icon} alt="input Icon" fill />
+          <Image src={icon} alt="input Icon" fill />
         </div>
       )}
     </label>
@@ -54,4 +65,4 @@ const SimpleRadioButton = ({
   );
 };
 
-export { RadioButton, SimpleRadioButton };
+export { RadioButtonXL, SimpleRadioButton };

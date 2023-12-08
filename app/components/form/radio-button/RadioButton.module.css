@@ -7,6 +7,10 @@
   justify-content: space-between;
   gap: var(--spacer-6);
 }
+/* Azul Xl */
+.azul_xl.container {
+  border-color: var(--color-azul-dark-2);
+}
 .left_container {
   display: flex;
   gap: var(--spacer-6);
@@ -19,6 +23,7 @@
 
 .title {
   font-size: var(--text-para);
+  color: var(--color-negro-ae);
 }
 .icon {
   position: relative;

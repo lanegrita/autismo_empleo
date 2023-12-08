@@ -4,17 +4,31 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import Input from "@/app/components/form/input/Input";
-import Dropdown from "@/app/components/form/dropdown/Dropdown";
+import Dropdown, {
+  DropdownOptions,
+} from "@/app/components/form/dropdown/Dropdown";
 import Textarea from "@/app/components/form/text-area/Textarea";
 import Form from "./Form";
 import CheckBox from "@/app/components/form/check-box/CheckBox";
-import { Title } from "@/app/components/ui/typography/Typography";
 import {
-  RadioButton,
+  ParaL,
+  Title,
+  TitleS,
+} from "@/app/components/ui/typography/Typography";
+import {
+  RadioButtonXL,
   SimpleRadioButton,
 } from "@/app/components/form/radio-button/RadioButton";
 
 const loveIcon = "/images/icons/love.svg";
+
+const options: DropdownOptions[] = [
+  { value: "flir", label: "FLIR" },
+  { value: "flirOnePro", label: "FLIR One Pro" },
+  { value: "flirExSeries", label: "FLIR EX-series" },
+  { value: "flirExxSeries", label: "FLIR EXX-series" },
+];
+
 const Playground = () => {
   return (
     <div className=" flex flex-col gap-4  p-10 max-w-5xl mx-auto bg-[#F4F0F0]">
@@ -37,12 +51,43 @@ const Playground = () => {
       {/* Simple Radio Button */}
       <input type="checkbox" />
 
-      {/* Radio Button */}
-      <RadioGroup defaultValue="radio1">
-        <RadioButton icon={loveIcon} checked id="radio1" title="Llamada" />
-        <RadioButton id="radio2" title="SMS" />
-        <RadioButton id="radio3" title="Mail" />
+      {/* Text Area */}
+      <Textarea />
+
+      <div className="mt-10 bg-gray-100 p-10">
+        <Input type="email" placeholder="Contraseña" variant="newsletter" />
+      </div>
+
+      {/* Forms */}
+      <Form />
+
+      {/* Radio Button XL Starts  */}
+      <Title tag="h4">Radio Button XL</Title>
+      <RadioGroup className=" grid grid-cols-2 gap-5" defaultValue="radio1">
+        <div className="bg-[#1a9eda] p-5  flex flex-col gap-4">
+          <ParaL color="white" tag="p">
+            Unchecked
+          </ParaL>
+          <RadioButtonXL variant="azul-xl" id="radio1" title="Mail" />
+          <ParaL color="white" tag="p">
+            Checked
+          </ParaL>
+          <RadioButtonXL
+            variant="azul-xl"
+            icon={loveIcon}
+            checked
+            id="radio2"
+            title="Llamada"
+          />
+        </div>
+        <div className="bg-white p-5  flex flex-col gap-4">
+          <ParaL tag="p">Unchecked</ParaL>
+          <RadioButtonXL id="radio4" title="SMS" />
+          <ParaL tag="p">Checked</ParaL>
+          <RadioButtonXL id="radio3" title="SMS" checked />
+        </div>
       </RadioGroup>
+      {/* Radio Button XL Ends */}
 
       {/* =================================== */}
       {/* CheckBox Starts */}
@@ -88,20 +133,35 @@ const Playground = () => {
           <SimpleRadioButton title="Default Radio Button" id="4" />
         </div>
       </RadioGroup>
-
-      {/* RadioButtons Ends */}
-      {/* DropDown */}
-      <Dropdown />
-
-      {/* Text Area */}
-      <Textarea />
-
-      <div className="mt-10 bg-gray-100 p-10">
-        <Input type="email" placeholder="Contraseña" variant="newsletter" />
+      {/*=========================================  */}
+      {/* Select / Dropdown Starts */}
+      <Title tag="h4">Drop Down / Select</Title>
+      <div className="grid grid-cols-2 gap-2 gap-y-28 bg-white mb-48">
+        <div className="bg-white p-5 ">
+          <Dropdown options={options} placeHolder="Provincia" />
+        </div>
+        <div className="bg-white p-5">
+          <Dropdown options={options} placeHolder="Provincia" />
+        </div>
+        <div className="bg-white p-5">
+          <Dropdown options={options} placeHolder="Provincia" error />
+        </div>
+        <div className="bg-[#1A9EDA] p-5 ">
+          <Dropdown options={options} placeHolder="Provincia" variant="azul" />
+        </div>
+        <div className="bg-[#1A9EDA] p-5 ">
+          <Dropdown options={options} placeHolder="Provincia" variant="azul" />
+        </div>
+        <div className="bg-[#1A9EDA] p-5 ">
+          <Dropdown
+            options={options}
+            placeHolder="Provincia"
+            error
+            variant="azul"
+          />
+        </div>
       </div>
-
-      {/* Forms */}
-      <Form />
+      {/* Select / Dropdown Ends*/}
     </div>
   );
 };

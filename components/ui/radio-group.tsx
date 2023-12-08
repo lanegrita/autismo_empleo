@@ -33,6 +33,9 @@ const RadioGroupItem = React.forwardRef<
         "aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
         props.variant === "azul" &&
           " border-[#666C6E] text-white data-[state=checked]:border-white ",
+        // Radio Button Xl Styles
+        props.variant === "default-xl" && "border-[#666C6E]",
+        props.variant === "azul-xl" && "border-[#217EAB]",
         className
       )}
       {...props}
