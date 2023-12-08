@@ -35,3 +35,42 @@
   color: var(--color-text-1);
   width: 100%;
 }
+.simple_input.azul {
+  border-bottom-color: var(--color-azul-dark-2);
+}
+.simple_input.azul,
+.simple_input.azul::placeholder {
+  color: var(--color-blanco);
+}
+.simple_input::placeholder {
+  color: var(--color-negro-ae);
+  opacity: 1;
+  transition: all 0.3s;
+}
+/* Disabling Top simple Input placeholder */
+.disable.simple_input::placeholder {
+  opacity: 0;
+}
+
+.topPlaceHolder {
+  opacity: 0;
+  transition: all 0.3s;
+  color: var(--color-gris-4);
+}
+
+.azul.topPlaceHolder {
+  color: var(--color-negro-ae);
+}
+/* Place Holder Active */
+.active.topPlaceHolder {
+  opacity: 1;
+}
+
+/* Error Styles  */
+.error.simple_input {
+  border-bottom-color: var(--color-error);
+}
+.errorMessage {
+  color: var(--color-error);
+  margin-top: var(--spacer-4);
+}
