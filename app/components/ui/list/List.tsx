@@ -77,4 +77,36 @@ const ImageListItem = ({ url, title, description }: ImageListItemProps) => {
   );
 };
 
-export { SimpleList, ImageListItem };
+export interface NumberListProps {
+  number: number;
+  title: string;
+  description: string;
+}
+
+const NumberList = ({ number, title, description }: NumberListProps) => {
+  return (
+    <div className={styles.number_list}>
+      <div className={styles.number_list_icon_wrapper}>
+        <Text tag="h6" variant="title-xxl" color="blue">
+          {number}
+        </Text>
+      </div>
+      <div className={styles.number_list_content}>
+        <Text
+          className={styles.number_list_title}
+          variant="title-s"
+          tag="h5"
+          color="blue"
+        >
+          {title}
+        </Text>
+
+        <Text className={styles.number_list_description} variant="para" tag="p">
+          {description}
+        </Text>
+      </div>
+    </div>
+  );
+};
+
+export { SimpleList, ImageListItem, NumberList };

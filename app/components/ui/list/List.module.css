@@ -57,3 +57,33 @@
   gap: var(--spacer-11);
 }
 /* Image List Item Ends */
+
+/* Image List Item Starts */
+.number_list {
+  display: flex;
+  gap: var(--spacer-14);
+  position: relative;
+}
+.number_list_icon_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 166px;
+  min-width: 166px;
+  height: 166px;
+  min-height: 166px;
+  border-radius: var(--border-radius-circle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-azul-light-4);
+}
+.number_list_content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer-11);
+  margin-left: 149px;
+  margin-top: 51px;
+  z-index: 1;
+}
+/* Image List Item Ends */

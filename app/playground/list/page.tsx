@@ -1,6 +1,8 @@
 import {
   ImageListItem,
   ImageListItemProps,
+  NumberList,
+  NumberListProps,
   SimpleList,
   SimpleListProps
 } from "@/app/components/ui/list/List";
@@ -76,9 +78,36 @@ const imageList2: ImageListItemProps[] = [
   }
 ];
 
+const numberList: NumberListProps[] = [
+  {
+    number: 1,
+    title: "Participación y apertura a la sociedad",
+    description:
+      "Autismo España es un proyecto colectivo del conjunto de personas con autismo y sus familias que se hace extensivo al resto de la sociedad."
+  },
+  {
+    number: 2,
+    title: "Participación y apertura a la sociedad",
+    description:
+      "Autismo España es un proyecto colectivo del conjunto de personas con autismo y sus familias que se hace extensivo al resto de la sociedad."
+  },
+  {
+    number: 3,
+    title: "Participación y apertura a la sociedad",
+    description:
+      "Autismo España es un proyecto colectivo del conjunto de personas con autismo y sus familias que se hace extensivo al resto de la sociedad."
+  },
+  {
+    number: 4,
+    title: "Participación y apertura a la sociedad",
+    description:
+      "Autismo España es un proyecto colectivo del conjunto de personas con autismo y sus familias que se hace extensivo al resto de la sociedad."
+  }
+];
+
 const page = () => {
   return (
-    <div className="container mt-10">
+    <div className="container mt-10 mb-96">
       <div className="flex flex-col gap-10">
         <h2 className="text-3xl ">Simple List</h2>
         <div className="flex justify-between">
@@ -112,6 +141,20 @@ const page = () => {
             <ImageListItem
               key={index}
               url={item.url}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-10 mt-10 ">
+        <h2 className="text-3xl ">Number List</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {numberList.map((item, index) => (
+            <NumberList
+              key={index}
+              number={item.number}
               title={item.title}
               description={item.description}
             />
