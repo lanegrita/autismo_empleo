@@ -7,7 +7,7 @@ interface TypograpyProps {
   underline?: boolean;
   className?: string;
   fontWeight?: "regular" | "medium";
-  color?: "blue" | "white";
+  color?: "blue" | "white" | "default";
   tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
   variant:
     | "super-title-xl"

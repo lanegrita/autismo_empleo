@@ -1,0 +1,36 @@
+.accordion_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--spacer-11) - 1px) var(--spacer-20);
+}
+
+.accordion_icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.accordion_icon_rotate {
+  transform: rotate(45deg);
+}
+.accordion_icon_rotate line,
+.accordion_icon_rotate path,
+.accordion_icon_rotate circle {
+  fill: var(--color-azul-ae);
+  stroke: var(--color-azul-ae);
+}
+
+.accordion_description {
+  overflow: hidden;
+  padding: 54px 40px;
+  padding-top: 20px;
+}
+
+/* .accordion_open {
+  max-height: 100%;
+  padding: 40px;
+} */
