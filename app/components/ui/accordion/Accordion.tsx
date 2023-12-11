@@ -14,6 +14,78 @@ interface SimpleAccordionProps {
   items: SimpleAccordionItemProps[];
 }
 
+export interface ListAccordionItemProps {
+  iconUrl: string;
+  title: string;
+  items: {
+    id: string;
+    title: string;
+  }[];
+}
+
+interface ListAccordionProps {
+  items: ListAccordionItemProps[];
+}
+
+const ListAccordionItem = ({
+  iconUrl,
+  title,
+  items
+}: ListAccordionItemProps) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <motion.header
+        initial={false}
+        className={styles.list_accordion_header}
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        <div className={styles.list_accordion_header_left}>
+          <ReactSVG className={cn(styles.list_accordion_icon)} src={iconUrl} />
+          <Text tag="h4" variant="title-s">
+            {title}
+          </Text>
+        </div>
+        <ReactSVG
+          className={cn(
+            styles.accordion_icon,
+            open && styles.accordion_icon_rotate
+          )}
+          src="/images/icons/arrow-up.svg"
+        />
+      </motion.header>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.section
+            key="content"
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: { opacity: 1, height: "auto" },
+              collapsed: { opacity: 0, height: 0 }
+            }}
+            transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+          >
+            {items.map((item, index) => (
+              <div key={index} className={styles.list_accordion_sub_item}>
+                <ReactSVG
+                  className={cn(styles.list_accordion_sub_item_icon)}
+                  src={iconUrl}
+                />
+                <Text tag="p" variant="para-l" color="blue">
+                  {item.title}
+                </Text>
+              </div>
+            ))}
+          </motion.section>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
 const SimpleAccordionItem = ({
   heading,
   description
@@ -59,7 +131,7 @@ const SimpleAccordionItem = ({
                 open && styles.accordion_open
               )}
             >
-              {description}
+              <p dangerouslySetInnerHTML={{ __html: description }} />
             </Text>
           </motion.section>
         )}
@@ -82,4 +154,19 @@ const SimpleAccordion = ({ items }: SimpleAccordionProps) => {
   );
 };
 
-export { SimpleAccordion };
+const ListAccordion = ({ items }: ListAccordionProps) => {
+  return (
+    <div>
+      {items.map((item, index) => (
+        <ListAccordionItem
+          key={index}
+          iconUrl={item.iconUrl}
+          title={item.title}
+          items={item.items}
+        />
+      ))}
+    </div>
+  );
+};
+
+export { SimpleAccordion, ListAccordion };
