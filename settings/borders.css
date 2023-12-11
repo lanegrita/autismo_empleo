@@ -1,7 +1,7 @@
 /* Simple */
 :root {
   --border-radius-simple: 0px;
-  --border-radius-rectangle: 5% 5% 5% 5% / 7% 7% 7% 7%;
-  --border-radius-oval: 9999px;
-  --border-radius-circle: 9999px;
+  --border-radius-rectangle: 30px;
+  --border-radius-oval: 100vw;
+  --border-radius-circle: 100vw;
 }

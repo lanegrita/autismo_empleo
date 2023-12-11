@@ -1,21 +1,16 @@
 import React from "react";
-
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup } from "@/components/ui/radio-group";
 import Input from "@/app/components/form/input/Input";
 import Dropdown, {
   DropdownOptions,
 } from "@/app/components/form/dropdown/Dropdown";
 import Textarea from "@/app/components/form/text-area/Textarea";
-import Form from "./Form";
 import CheckBox from "@/app/components/form/check-box/CheckBox";
 import {
   RadioButtonXL,
   SimpleRadioButton,
 } from "@/app/components/form/radio-button/RadioButton";
 import Text from "@/app/components/ui/typography/Typography";
-
 const loveIcon = "/images/icons/love.svg";
 
 const options: DropdownOptions[] = [
