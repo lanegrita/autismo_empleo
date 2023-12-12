@@ -18,7 +18,7 @@ const ImageComponent: React.FC<ImageProps> = ({
   height,
   borderStyle = "simple",
   maxWidth,
-  maxHeight,
+  maxHeight
 }) => {
   const aspectRatio = (height / width) * 100; // Calculate aspect ratio in percentage
 
@@ -49,7 +49,7 @@ const ImageComponent: React.FC<ImageProps> = ({
 
   const style = {
     maxWidth,
-    maxHeight: maxHeight || calculatedMaxHeight,
+    maxHeight: maxHeight || calculatedMaxHeight
   };
 
   return (
