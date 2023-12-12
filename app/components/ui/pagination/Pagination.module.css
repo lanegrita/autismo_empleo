@@ -1,0 +1,84 @@
+/* Pagination.module.css */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.middleButtonWrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+/* Pagination.module.css */
+.paginationButton {
+  color: var(--color-negro-ae);
+  border: none;
+  /* width: 58px;
+  height: 58px; */
+  cursor: pointer;
+  margin: 2px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  border-radius: var(--border-radius-circle);
+  transition: all 0.3s;
+}
+
+/* .paginationButton:hover {
+  background-color: #ebebeb;
+} */
+.paginationButton.active {
+  /* Your active button styles here */
+  /* For example: */
+  background-color: var(--color-azul-light-2);
+  color: var(--color-negro-ae);
+  font-weight: bold;
+  border-radius: var(--border-radius-circle);
+  width: 58px;
+  height: 58px;
+}
+
+/* .pagination button {
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; 
+  } */
+
+/* .pagination button.active {
+    background-color: white;
+    color: black;
+  } */
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination > button:first-child {
+  margin-left: 0;
+  color: black;
+  transform: rotate(180deg);
+}
+.pagination > button:first-child:hover {
+}
+.pagination > button:last-child {
+  margin-left: 0;
+  color: black;
+}
+.pagination > button:last-child:hover {
+}
+.arrowIcon {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
