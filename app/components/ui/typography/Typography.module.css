@@ -109,4 +109,21 @@
 }
 /* White Color Ends */
 
+/* Gray Color Starts */
+.super_title_xl.gray,
+.super_title_l.gray,
+.super_title.gray,
+.title_xxl.gray,
+.title_xl.gray,
+.title_l.gray,
+.title.gray,
+.title_s.gray,
+.para_l.gray,
+.para.gray,
+.subtitle.gray,
+.subtitle_s.gray {
+  color: var(--color-text-light);
+}
+/* Gray Color Ends */
+
 /* Color Styles Setting Ends */

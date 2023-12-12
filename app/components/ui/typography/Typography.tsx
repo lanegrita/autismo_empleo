@@ -7,7 +7,7 @@ interface TypograpyProps {
   underline?: boolean;
   className?: string;
   fontWeight?: "regular" | "medium";
-  color?: "blue" | "white" | "default";
+  color?: "blue" | "white" | "gray" | "default";
   tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
   variant:
     | "super-title-xl"
@@ -51,6 +51,7 @@ const Text = ({
         variant === "subtitle-s" && styles.subtitle_s,
         color === "blue" && styles.azul,
         color === "white" && styles.white,
+        color === "gray" && styles.gray,
         underline && "underline",
         fontWeight === "regular" ? "font-normal" : "font-medium",
         className

@@ -1,6 +1,8 @@
 import {
   ListAccordion,
   ListAccordionItemProps,
+  NavigationAccordion,
+  NavigationAccordionItemProps,
   SimpleAccordion,
   SimpleAccordionItemProps
 } from "@/app/components/ui/accordion/Accordion";
@@ -95,9 +97,50 @@ const listAccordion: ListAccordionItemProps[] = [
   }
 ];
 
+const navigationAccordion: NavigationAccordionItemProps[] = [
+  {
+    iconUrl: "/images/icons/pencil.svg",
+    title: "Mi cuenta",
+    items: [
+      {
+        id: "1",
+        title: "Mis ofertas de empleo"
+      },
+      {
+        id: "2",
+        title: "Mis ofertas de empleo"
+      }
+    ]
+  },
+  {
+    iconUrl: "/images/icons/news.svg",
+    title: "Búsqueda",
+    items: [
+      {
+        id: "1",
+        title: "Mis ofertas de empleo"
+      },
+      {
+        id: "2",
+        title: "Mis ofertas de empleo"
+      }
+    ]
+  },
+  {
+    iconUrl: "/images/icons/love.svg",
+    title: "Programas de apoyo en educación ordinaria",
+    items: [
+      {
+        id: "1",
+        title: "Mis ofertas de empleo"
+      }
+    ]
+  }
+];
+
 const page = () => {
   return (
-    <div className="container mt-10">
+    <div className="container mt-10 mb-96">
       <Text tag="h2" variant="title-xl">
         Simple Accordion
       </Text>
@@ -106,6 +149,12 @@ const page = () => {
         List Accordion
       </Text>
       <ListAccordion items={listAccordion} />
+      <Text tag="h2" variant="title-xl" className="mt-10">
+        Navigation Accordion
+      </Text>
+      <div className="max-w-3xl mt-10">
+        <NavigationAccordion items={navigationAccordion} />
+      </div>
     </div>
   );
 };

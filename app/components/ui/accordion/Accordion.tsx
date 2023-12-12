@@ -169,4 +169,93 @@ const ListAccordion = ({ items }: ListAccordionProps) => {
   );
 };
 
-export { SimpleAccordion, ListAccordion };
+export interface NavigationAccordionItemProps {
+  iconUrl: string;
+  title: string;
+  items: {
+    id: string;
+    title: string;
+  }[];
+}
+
+interface NavigationAccordionProps {
+  items: NavigationAccordionItemProps[];
+}
+
+const NavigationAccordionItem = ({
+  iconUrl,
+  title,
+  items
+}: ListAccordionItemProps) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <motion.header
+        initial={false}
+        className={styles.navigation_accordion_header}
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        <div className={styles.navigation_accordion_header_left}>
+          <ReactSVG
+            className={cn(styles.navigation_accordion_icon)}
+            src={iconUrl}
+          />
+          <Text tag="h4" variant="title-s" color={open ? "gray" : "default"}>
+            {title}
+          </Text>
+        </div>
+        <ReactSVG
+          className={cn(
+            styles.navigation_accordion_icon_arrow,
+            open && styles.navigation_accordion_icon_arrow_rotate
+          )}
+          src="/images/icons/arrow-up.svg"
+        />
+      </motion.header>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.section
+            key="content"
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: { opacity: 1, height: "auto" },
+              collapsed: { opacity: 0, height: 0 }
+            }}
+            transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+          >
+            {items.map((item, index) => (
+              <div key={index} className={styles.navigation_accordion_sub_item}>
+                <Text tag="p" variant="para" color="blue">
+                  0{index + 1}
+                </Text>
+                <Text tag="p" variant="para" color="default">
+                  {item.title}
+                </Text>
+              </div>
+            ))}
+          </motion.section>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+const NavigationAccordion = ({ items }: NavigationAccordionProps) => {
+  return (
+    <div>
+      {items.map((item, index) => (
+        <NavigationAccordionItem
+          key={index}
+          iconUrl={item.iconUrl}
+          title={item.title}
+          items={item.items}
+        />
+      ))}
+    </div>
+  );
+};
+
+export { SimpleAccordion, ListAccordion, NavigationAccordion };
