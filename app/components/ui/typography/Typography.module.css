@@ -81,5 +81,7 @@
   color: var(--color-negro-light);
 }
 /* Gray Color Ends */
-
+.error {
+  color: var(--color-error);
+}
 /* Color Styles Setting Ends */
