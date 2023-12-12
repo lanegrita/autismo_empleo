@@ -1,24 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import Text from "@/app/components/ui/typography/Typography";
 import {
   AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import Text from "@/app/components/ui/typography/Typography";
-import Image from "next/image";
-import ImageComponent from "@/app/components/ui/ImageComponent/ImageComponent";
-import Button from "../button/Button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { useState } from "react";
 import { ReactSVG } from "react-svg";
-import { error } from "console";
 import Input from "../../form/input/Input";
+import Button from "../button/Button";
 
 interface ModalProps {
   title?: string;
@@ -200,11 +192,17 @@ const ModalComponent = ({
               {/* Form */}
               {form && (
                 <div className="flex flex-col gap-21 mt-30 mb-10">
-                  <Input placeholder="email" type="email" variant="simple" />
+                  <Input
+                    placeholder="email"
+                    type="email"
+                    variant="simple"
+                    color={variant}
+                  />
                   <Input
                     placeholder="Password"
                     type="password"
                     variant="simple"
+                    color={variant}
                   />
                 </div>
               )}
@@ -246,17 +244,3 @@ const ModalComponent = ({
 };
 
 export default ModalComponent;
-
-{
-  /* <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-          <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
-        </AlertDialogFooter> */
-}

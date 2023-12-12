@@ -68,24 +68,70 @@ const modal = () => {
         />
       </div>
       <div className="flex flex-col gap-20">
-        <Text tag="h3" variant="title" color="blue">
+        <Text tag="h3" variant="title">
           Azul Modal
         </Text>
         <ModalComponent
-          title="Pendiente de verificación"
-          description="Para poder publicar la oferta, y que esta sea visible para los candidatos, necesitamos que nuestro equipo la verifique. En un máximo de 48 horas recibirás noticias nuestras. Muchas gracias y disculpa las molestias."
-          variant="azul"
-          image="/images/test.webp"
           button1Title="Button 1"
           button2Title="Cancel"
+          button2Varient="simple"
           button2Icon="/images/icons/arrow-right.svg"
+          title="Pendiente de verificación"
+          description="Para poder publicar la oferta, y que esta sea visible para los candidatos, necesitamos que nuestro equipo la verifique. En un máximo de 48 horas recibirás noticias nuestras. Muchas gracias y disculpa las molestias."
+          image="/images/test.webp"
+          variant="azul"
         />
         <ModalComponent
+          button1Title="Button 1"
+          button2Title="Cancel"
+          button2Varient="simple"
+          button2Icon="/images/icons/arrow-right.svg"
+          title="Pendiente de verificación"
+          description="Para poder publicar la oferta, y que esta sea visible para los candidatos, necesitamos que nuestro equipo la verifique. En un máximo de 48 horas recibirás noticias nuestras. Muchas gracias y disculpa las molestias."
+          topIcon="/images/icons/love.svg"
+          topIconText="Aviso"
+          variant="azul"
+        />
+        {/* Error */}
+        <ModalComponent
+          button1Title="Button 1"
+          button2Title="Cancel"
+          button2Varient="simple"
+          button2Icon="/images/icons/arrow-right.svg"
+          title="Pendiente de verificación"
+          description="Para poder publicar la oferta, y que esta sea visible para los candidatos, necesitamos que nuestro equipo la verifique. En un máximo de 48 horas recibirás noticias nuestras. Muchas gracias y disculpa las molestias."
+          topIcon="/images/icons/love.svg"
+          topIconText="Aviso"
+          error
+          errorMessage="Estás a punto de eliminar tu cuenta para siempre"
+          variant="azul"
+        />
+        {/* Form */}
+        <ModalComponent
+          button1Title="Button 1"
+          button2Title="Cancel"
+          button2Varient="simple"
+          button2Icon="/images/icons/arrow-right.svg"
+          title="Pendiente de verificación"
+          description="Para poder publicar la oferta, y que esta sea visible para los candidatos, necesitamos que nuestro equipo la verifique. En un máximo de 48 horas recibirás noticias nuestras. Muchas gracias y disculpa las molestias."
+          topIcon="/images/icons/love.svg"
+          topIconText="Aviso"
+          form
+          error
+          errorMessage="Estás a punto de eliminar tu cuenta para siempre"
+          variant="azul"
+        />
+        <ModalComponent
+          button1Title="Button 1"
+          title="Pendiente de verificación"
+          description="Para poder publicar la oferta, y que esta sea visible para los candidatos, necesitamos que nuestro equipo la verifique. En un máximo de 48 horas recibirás noticias nuestras .</br> </br> Muchas gracias y disculpa las molestias."
+          variant="azul"
+        />
+        <ModalComponent
+          button1Title="Button 1"
           title="Pendiente de verificación"
           description="Para poder publicar la oferta, y que esta sea visible para los candidatos, necesitamos que nuestro equipo la verifique. En un máximo de 48 horas recibirás noticias nuestras. Muchas gracias y disculpa las molestias."
           variant="azul"
-          button1Title="Button 1"
-          button2Title="Cancel"
         />
       </div>
       {/* <ImageComponent
