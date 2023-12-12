@@ -37,6 +37,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
+      onClick={onClick}
       type={type}
       className={[
         styles.container,

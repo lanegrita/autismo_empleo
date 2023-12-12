@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-
 interface ImageProps {
   src: string;
   alt: string;
@@ -10,7 +9,6 @@ interface ImageProps {
   maxWidth?: string; // New maxWidth prop
   maxHeight?: string; // New maxHeight prop
 }
-
 const ImageComponent: React.FC<ImageProps> = ({
   src,
   alt,
@@ -21,9 +19,7 @@ const ImageComponent: React.FC<ImageProps> = ({
   maxHeight
 }) => {
   const aspectRatio = (height / width) * 100; // Calculate aspect ratio in percentage
-
   let borderRadiusClass = "";
-
   // Assign appropriate border radius class based on the provided prop
   switch (borderStyle) {
     case "simple":
@@ -41,17 +37,14 @@ const ImageComponent: React.FC<ImageProps> = ({
     default:
       borderRadiusClass = "rounded-none";
   }
-
   // Calculate the height based on the maxWidth and aspect ratio
   const calculatedMaxHeight = maxWidth
     ? `calc(${maxWidth} * ${height / width})`
     : "100%";
-
   const style = {
     maxWidth,
     maxHeight: maxHeight || calculatedMaxHeight
   };
-
   return (
     <div
       className={`relative w-full flex-1 overflow-hidden ${borderRadiusClass}`}
@@ -68,5 +61,4 @@ const ImageComponent: React.FC<ImageProps> = ({
     </div>
   );
 };
-
 export default ImageComponent;
