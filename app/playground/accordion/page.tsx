@@ -7,7 +7,6 @@ import {
   SimpleAccordionItemProps
 } from "@/app/components/ui/accordion/Accordion";
 import Text from "@/app/components/ui/typography/Typography";
-import React from "react";
 
 const simpleAccordion: SimpleAccordionItemProps[] = [
   {

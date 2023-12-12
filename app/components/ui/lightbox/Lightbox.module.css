@@ -1,0 +1,13 @@
+.lightbox :global(.yarl__container) {
+  background-color: rgba(1, 1, 1, 0.7);
+}
+
+.close_icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-gris);
+  border-radius: var(--border-radius-circle);
+}
