@@ -54,18 +54,7 @@
 /* Color Styles Setting Starts */
 
 /* Black Color Starts  */
-.super_title_xl,
-.super_title_l,
-.super_title,
-.title_xxl,
-.title_xl,
-.title_l,
-.title,
-.title_s,
-.para_l,
-.para,
-.subtitle,
-.subtitle_s {
+.default {
   color: var(--color-negro-ae);
 }
 
@@ -74,18 +63,7 @@
 /* ===================== */
 
 /* Azul Colors Starts */
-.super_title_xl.azul,
-.super_title_l.azul,
-.super_title.azul,
-.title_xxl.azul,
-.title_xl.azul,
-.title_l.azul,
-.title.azul,
-.title_s.azul,
-.para_l.azul,
-.para.azul,
-.subtitle.azul,
-.subtitle_s.azul {
+.azul {
   color: var(--color-azul-ae);
 }
 /* Azul Colors Ends */
@@ -93,36 +71,14 @@
 /* ==================== */
 
 /* White Color Starts */
-.super_title_xl.white,
-.super_title_l.white,
-.super_title.white,
-.title_xxl.white,
-.title_xl.white,
-.title_l.white,
-.title.white,
-.title_s.white,
-.para_l.white,
-.para.white,
-.subtitle.white,
-.subtitle_s.white {
+.white {
   color: var(--color-blanco);
 }
 /* White Color Ends */
 
 /* Gray Color Starts */
-.super_title_xl.gray,
-.super_title_l.gray,
-.super_title.gray,
-.title_xxl.gray,
-.title_xl.gray,
-.title_l.gray,
-.title.gray,
-.title_s.gray,
-.para_l.gray,
-.para.gray,
-.subtitle.gray,
-.subtitle_s.gray {
-  color: var(--color-text-light);
+.gray {
+  color: var(--color-negro-light);
 }
 /* Gray Color Ends */
 

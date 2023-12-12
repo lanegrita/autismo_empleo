@@ -70,3 +70,8 @@ html {
     font-size: 1.111vw; /* 16px */
   }
 }
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 1.613vw; /* 16px */
+  }
+}

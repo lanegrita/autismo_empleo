@@ -32,7 +32,7 @@
   font-size: var(--text-para);
   border-bottom: 1px solid var(--color-gris-2);
   padding-bottom: 8px;
-  color: var(--color-text-1);
+  color: var(--color-negro);
   width: 100%;
 }
 .simple_input.azul {

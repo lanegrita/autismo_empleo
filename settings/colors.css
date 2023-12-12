@@ -7,6 +7,8 @@
   --color-azul-light-3: #e9f5fb;
   --color-azul-light-4: #edf9ff;
   --color-negro-ae: #010101;
+  --color-negro: #1d1d1b;
+  --color-negro-light: #a1a2a2;
   --color-gris: #f7f7f7;
   --color-gris-1: #dddedf;
   --color-gris-2: #cbcbcb;
@@ -14,9 +16,6 @@
   --color-gris-4: #666c6e;
   --color-gris-5: #ededed;
   --color-blanco: #ffffff;
-  --color-text-1: #1d1d1b;
-  --color-text-light: #a1a2a2;
-  --color-bg-1: #edf9ff;
   --color-error: #ed3e34;
   --color-hover-primary-btn: #29a7e2;
   --color-hover-secondary-btn: #d1f3ff;

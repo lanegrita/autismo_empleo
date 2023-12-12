@@ -16,9 +16,9 @@
 /* For Medium Devices Like Laptops */
 @media screen and (max-width: 992px) {
   :root {
-    --text-supertitle-xl: 10rem; /*160px*/
-    --text-supertitle-l: 7.5rem; /*120px*/
-    --text-supertitle: 5.625rem; /*90px*/
+    --text-supertitle-xl: 7.125rem; /*114px*/
+    --text-supertitle-l: 5.625rem; /*90px*/
+    --text-supertitle: 4.125rem; /*66px*/
     --text-title-xxl: 48px;
     --text-title-xl: 36px;
     --text-title-l: 30px;
@@ -30,9 +30,9 @@
 /* For Tablet/Mobile Devices */
 @media screen and (max-width: 768px) {
   :root {
-    --text-supertitle-xl: 10rem; /*160px*/
-    --text-supertitle-l: 7.5rem; /*120px*/
-    --text-supertitle: 5.625rem; /*90px*/
+    --text-supertitle-xl: 85px;
+    --text-supertitle-l: 66px;
+    --text-supertitle: 50px;
     --text-title-xxl: 38px;
     --text-title-xl: 34px;
     --text-title-l: 28px;

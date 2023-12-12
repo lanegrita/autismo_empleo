@@ -32,7 +32,7 @@ const Text = ({
   color,
   fontWeight = "regular",
   variant,
-  className
+  className,
 }: TypograpyProps) => {
   return (
     <Tag
@@ -49,6 +49,7 @@ const Text = ({
         variant === "para" && styles.para,
         variant === "subtitle" && styles.subtitle,
         variant === "subtitle-s" && styles.subtitle_s,
+        color === "default" && styles.default,
         color === "blue" && styles.azul,
         color === "white" && styles.white,
         color === "gray" && styles.gray,
