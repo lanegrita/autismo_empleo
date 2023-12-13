@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import styles from "./List.module.css";
 import Text from "../typography/Typography";
 import Image from "next/image";
+import Icon from "../icon/Icon";
 
 export interface SimpleListProps {
   heading: string;
@@ -109,4 +110,63 @@ const NumberList = ({ number, title, description }: NumberListProps) => {
   );
 };
 
-export { SimpleList, ImageListItem, NumberList };
+interface ListItemProps {
+  variant: "simple" | "with-description" | "with-items";
+  iconUrl: string;
+  title: string;
+  descrition?: string;
+  items?: string[];
+}
+
+const ListItem: React.FC<ListItemProps> = ({
+  iconUrl,
+  title,
+  descrition,
+  variant,
+  items
+}) => {
+  return (
+    <div className="flex flex-col gap-8">
+      <div
+        className={cn(
+          styles.list_item,
+          variant === "with-description" && styles.list_with_description,
+          variant === "with-items" && styles.list_with_items
+        )}
+      >
+        <Icon
+          url={iconUrl}
+          variant={(variant === "simple" && "without-mask") || "default"}
+          size={variant === "simple" ? "default" : "lg"}
+        />
+        <Text
+          tag="h5"
+          variant="title-s"
+          color={variant === "simple" ? "default" : "blue"}
+        >
+          {title}
+        </Text>
+      </div>
+      {variant === "with-description" && (
+        <Text tag="p" variant="para" className="ml-[104px] ">
+          {descrition}
+        </Text>
+      )}
+
+      {variant === "with-items" && (
+        <ul className="flex flex-col gap-4 ml-[104px] ">
+          {items?.map((item, index) => (
+            <li key={index} className="flex items-center gap-4">
+              <BulletIcon />
+              <Text variant="para" tag="p">
+                {item}
+              </Text>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export { SimpleList, ImageListItem, NumberList, ListItem };
