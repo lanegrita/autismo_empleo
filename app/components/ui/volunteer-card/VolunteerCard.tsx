@@ -1,23 +1,30 @@
 import Image from "next/image";
 import React from "react";
 import Text from "../typography/Typography";
+import Icon from "../icon/Icon";
 
 interface VolunteerProps {
   title: string;
   description?: string;
   image: string;
+  icon?: string;
 }
 
-const VolunteerCard = ({ title, description, image }: VolunteerProps) => {
+const VolunteerCard = ({
+  title,
+  description,
+  image,
+  icon = "",
+}: VolunteerProps) => {
   return (
     <div className="flex gap-10 md:gap-20 px-10 py-20 lg:p-20 items-center">
       {/* Image Container */}
-      <div className="relative min-h-[100px] min-w-[100px] lg:w-[120px]  lg:h-[120px] ">
+      <div className="relative min-h-[100px] min-w-[100px] lg:w-[120px]  lg:h-[120px] flex-shrink-0 ">
         <Image
           src={image}
           alt="volunteer image"
           fill
-          className="overflow-hidden rounded-full"
+          className="overflow-hidden rounded-full "
         />
       </div>
       {/* Right Container */}
@@ -36,6 +43,11 @@ const VolunteerCard = ({ title, description, image }: VolunteerProps) => {
           {description}
         </Text>
       </div>
+      {icon && (
+        <div className="  ml-auto">
+          <Icon url={icon} />
+        </div>
+      )}
     </div>
   );
 };
