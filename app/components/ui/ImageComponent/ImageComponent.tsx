@@ -16,7 +16,6 @@ const ImageComponent: React.FC<ImageProps> = ({
   height,
   borderStyle = "simple",
   maxWidth,
-  maxHeight
 }) => {
   const aspectRatio = (height / width) * 100; // Calculate aspect ratio in percentage
   let borderRadiusClass = "";
@@ -43,13 +42,9 @@ const ImageComponent: React.FC<ImageProps> = ({
     : "100%";
   const style = {
     maxWidth,
-    maxHeight: maxHeight || calculatedMaxHeight
   };
   return (
-    <div
-      className={`relative w-full flex-1 overflow-hidden ${borderRadiusClass}`}
-      style={style}
-    >
+    <div style={style}>
       <div
         className="relative w-full"
         style={{ paddingTop: `${aspectRatio}%` }}
