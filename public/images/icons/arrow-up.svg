@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16.788" height="9.455" viewBox="0 0 16.788 9.455">
-  <g id="Grupo_13472" data-name="Grupo 13472" transform="translate(15.727 8.394) rotate(180)">
-    <line id="Línea_118" data-name="Línea 118" x2="7.333" y2="7.333" fill="none" stroke="#010101" stroke-linecap="square" stroke-width="1.5"/>
-    <line id="Línea_119" data-name="Línea 119" x2="7.333" y2="7.333" transform="translate(14.667 0) rotate(90)" fill="none" stroke="#010101" stroke-linecap="square" stroke-width="1.5"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36"><defs><clipPath id="b"><rect width="36" height="36"/></clipPath></defs><g id="a" clip-path="url(#b)"><g transform="translate(0.285 -0.045)"><path d="M15.912.65H0V-.65H15.912Z" transform="translate(17.998 25.956) rotate(-90)" fill="#1a9eda"/><path d="M0,6.2l-.923-.915L5.23-.919,6.153,0Z" transform="translate(18.003 15.279) rotate(-90)" fill="#1a9eda"/><path d="M5.23,6.2-.919,0,0-.919,6.153,5.287Z" transform="translate(12.715 15.279) rotate(-90)" fill="#1a9eda"/></g></g></svg>
