@@ -17,9 +17,9 @@ const VolunteerCard = ({
   icon = "",
 }: VolunteerProps) => {
   return (
-    <div className="flex gap-10 md:gap-20 px-10 py-20 lg:p-20 items-center">
+    <div className="flex  sm:gap-10 lg:gap-20 py-15 px-10 md:py-20 lg:p-20 items-center">
       {/* Image Container */}
-      <div className="relative min-h-[100px] min-w-[100px] lg:w-[120px]  lg:h-[120px] flex-shrink-0 ">
+      <div className="relative min-h-[76px] min-w-[76px] sm:w-[100px] sm:h-[100px]  lg:w-[120px]  lg:h-[120px] flex-shrink-0 ">
         <Image
           src={image}
           alt="volunteer image"
@@ -28,7 +28,7 @@ const VolunteerCard = ({
         />
       </div>
       {/* Right Container */}
-      <div className="flex flex-col gap-5 ">
+      <div className="flex flex-col gap-5 ml-5 sm:ml-0">
         <Text tag="h6" variant="title-s" fontWeight="medium">
           {title}
         </Text>
@@ -44,7 +44,7 @@ const VolunteerCard = ({
         </Text>
       </div>
       {icon && (
-        <div className="  ml-auto">
+        <div className=" cursor-pointer   ml-auto">
           <Icon url={icon} />
         </div>
       )}

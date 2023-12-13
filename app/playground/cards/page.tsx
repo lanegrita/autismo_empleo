@@ -22,13 +22,13 @@ const Cards = () => {
           title="Informar, orientar y mediar"
           description="Confederación de Autismo España"
           image="/images/test.webp"
-          icon="/images/icons/love.svg"
+          icon="/images/icons/delete.svg"
         />
         <VolunteerCard
           title="Informar, orientar y mediar"
           description="Confederación de Autismo España"
           image="/images/test.webp"
-          icon="/images/icons/love.svg"
+          icon="/images/icons/delete.svg"
         />
         <VolunteerCard
           title="Informar, orientar y mediar"
