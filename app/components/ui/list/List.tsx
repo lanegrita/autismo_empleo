@@ -3,6 +3,8 @@ import styles from "./List.module.css";
 import Text from "../typography/Typography";
 import Image from "next/image";
 import Icon from "../icon/Icon";
+import Button from "../button/Button";
+import { subscribe } from "diagnostics_channel";
 
 export interface SimpleListProps {
   heading: string;
@@ -123,7 +125,7 @@ const ListItem: React.FC<ListItemProps> = ({
   title,
   descrition,
   variant,
-  items
+  items,
 }) => {
   return (
     <div className="flex flex-col gap-8">
@@ -169,28 +171,35 @@ const ListItem: React.FC<ListItemProps> = ({
   );
 };
 
-export interface OfferListItemProps {
+export interface OfferListItem1Props {
   image: string;
   title: string;
   subTitle: string;
   description: string;
   items: string[];
+  backgroundColor?: "white" | "blue";
 }
 
-const OfferListItem: React.FC<OfferListItemProps> = ({
+const OfferListItem1: React.FC<OfferListItem1Props> = ({
   image,
   title,
   subTitle,
   description,
-  items
+  items,
+  backgroundColor,
 }) => {
   return (
-    <div className="flex flex-col sm:flex-row gap-25 border border-gris2 p-20">
-      <div className="relative w-[133px] h-[133px] min-w-[133px] min-h-[133px] rounded-full overflow-hidden">
+    <div
+      className={cn(
+        "flex  flex-col sm:flex-row gap-20 border border-gris2 px-10 py-20 sm:p-20 bg-blanco",
+        backgroundColor === "blue" && "bg-azulLight3"
+      )}
+    >
+      <div className="relative w-[76px] h-[76px] min-w-[76px] min-h-[76px] sm:w-[120px] sm:h-[120px] sm:min-w-[120px] sm:min-h-[120px] rounded-full overflow-hidden">
         <Image src={image} alt="image" fill />
       </div>
       {/* Content Content */}
-      <div className="flex flex-col gap-32 max-w-[897px]">
+      <div className="flex flex-col gap-16 md:gap-25 max-w-[897px]">
         {/* Top Container */}
         <div className="">
           <Text tag="h3" variant="title-s" fontWeight="medium">
@@ -205,9 +214,11 @@ const OfferListItem: React.FC<OfferListItemProps> = ({
           >
             {subTitle}
           </Text>
-          <Text tag="p" variant="para" color="gray">
-            {description}
-          </Text>
+          {description && (
+            <Text tag="p" variant="para" color="gray">
+              {description}
+            </Text>
+          )}
         </div>
         {/* Bottom Container */}
         <div className="flex gap-20 flex-wrap">
@@ -222,4 +233,112 @@ const OfferListItem: React.FC<OfferListItemProps> = ({
   );
 };
 
-export { SimpleList, ImageListItem, NumberList, ListItem, OfferListItem };
+// Offer List Item 2
+
+export interface OfferListItem2Props {
+  image: string;
+  title: string;
+  subTitle: string;
+  backgroundColor?: "white" | "blue";
+  publishDate: string;
+  registerdOnOffer?: number;
+  subscribeButton?: boolean;
+}
+
+const OfferListItem2: React.FC<OfferListItem2Props> = ({
+  image,
+  title,
+  subTitle,
+  backgroundColor,
+  publishDate,
+  registerdOnOffer,
+  subscribeButton,
+}) => {
+  return (
+    <div
+      className={cn(
+        "flex  flex-col sm:flex-row gap-20 border border-gris2 px-10 py-20 sm:p-20 bg-blanco",
+        backgroundColor === "blue" && "bg-azulLight3"
+      )}
+    >
+      <div className="relative w-[76px] h-[76px] min-w-[76px] min-h-[76px] sm:w-[120px] sm:h-[120px] sm:min-w-[120px] sm:min-h-[120px] rounded-full overflow-hidden">
+        <Image src={image} alt="image" fill />
+      </div>
+      {/* Content Content */}
+      <div className="flex w-full flex-col gap-16 md:gap-25 ">
+        {/* Top Container */}
+        <div className="flex flex-col xl:flex-row justify-between">
+          <div className="max-w-[897px]">
+            <Text tag="h3" variant="title-s" fontWeight="medium">
+              {title}
+            </Text>
+            <Text
+              tag="p"
+              variant="para"
+              color="blue"
+              underline
+              className="mt-5 mb-12"
+            >
+              {subTitle}
+            </Text>
+          </div>
+          {/* Register Offers */}
+          {registerdOnOffer && (
+            <Text tag="h6" variant="para-l" color="blue" underline>
+              {registerdOnOffer} inscritos en esta oferta
+            </Text>
+          )}
+        </div>
+        {/* Bottom Container */}
+        <div className="flex flex-col gap-16 lg:flex-row  justify-between">
+          <div className="grid flex-1 grid-cols-2 gap-y-16 md:grid-cols-5">
+            {/* Publish Date */}
+            {publishDate && (
+              <div>
+                <Text tag="p" variant="para">
+                  Publicada
+                </Text>
+                {/* Date */}
+                <Text tag="p" variant="para" color="blue">
+                  {publishDate}
+                </Text>
+              </div>
+            )}
+            <div className="flex flex-col gap-5 md:col-span-2">
+              <Text tag="p" variant="para">
+                Contrato de duración determinada
+              </Text>
+              <Text tag="p" variant="para">
+                Jornada Completa
+              </Text>
+            </div>
+            <Text
+              tag="p"
+              variant="para"
+              className="md:col-span-2 whitespace-nowrap"
+            >
+              25.000-35.000€/año
+            </Text>
+          </div>
+          {subscribeButton && (
+            <Button
+              variant="primary"
+              direction="left"
+              title="Subscribe"
+              icon="/images/icons/pencil.svg"
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export {
+  SimpleList,
+  ImageListItem,
+  NumberList,
+  ListItem,
+  OfferListItem1,
+  OfferListItem2,
+};

@@ -1,16 +1,11 @@
 import ApplicantHeader from "@/app/components/ui/applicant-header/ApplicantHeader";
-import BurgerIcon from "@/app/components/ui/burger-icon/BurgerIcon";
-import Header from "@/app/components/ui/header/Header";
 import VolunteerCard from "@/app/components/ui/volunteer-card/VolunteerCard";
 import React from "react";
-import { date } from "zod";
 
 const Cards = () => {
   return (
     <div>
-      <Header />
-
-      <div className="pt-[162px]">
+      <div>
         <ApplicantHeader
           image="/images/test.webp"
           name="Andrés Esparza Corrales"
