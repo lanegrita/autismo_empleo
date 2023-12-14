@@ -1,13 +1,11 @@
 import React from "react";
 import Text from "../typography/Typography";
-import { SimpleRadioButton } from "../../form/radio-button/RadioButton";
-import { RadioGroup } from "@/components/ui/radio-group";
 import CheckBox from "../../form/check-box/CheckBox";
 
 const FilterOfferSection = () => {
   return (
     <div>
-      <div className="px-41 py-25 w-full max-w-[600px] bg-gris5 flex flex-col gap-30">
+      <div className="px-41 py-25 w-full max-w-[500px] bg-gris5 flex flex-col gap-30 border border-gris2">
         {/* Section 1 Starts */}
         <div className="flex flex-col gap-12 w-full m-w-[314px]">
           <Text tag="h6" variant="para-l" color="blue" fontWeight="medium">
