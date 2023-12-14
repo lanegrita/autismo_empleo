@@ -246,6 +246,9 @@ module.exports = {
         48: "var(--spacer-48)",
         49: "var(--spacer-49)",
         50: "var(--spacer-50)"
+      },
+      borderWidth: {
+        3: "3px"
       }
     }
   },

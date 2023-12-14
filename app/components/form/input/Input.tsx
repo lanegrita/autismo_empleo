@@ -17,6 +17,7 @@ interface InputProps {
 const Input = (props: InputProps) => {
   const [showPlaceHolder, setShowPlaceHolder] = useState(false);
   const [selectedValue, setSelectedValue] = useState("");
+
   if (props.variant === "simple") {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const inputValue = event.target.value;
@@ -94,4 +95,29 @@ const Input = (props: InputProps) => {
   );
 };
 
+const NewsletterInput = () => {
+  return (
+    <div className={styles.container}>
+      <input
+        className={styles.input}
+        type="text"
+        name="email"
+        id="email"
+        placeholder="Email"
+      />
+
+      <div className={styles.iconWrapper}>
+        <ReactSVG
+          className={styles.icon}
+          src="/images/icons/right-arrow-white.svg"
+          width={20}
+          height={20}
+        />
+      </div>
+    </div>
+  );
+};
+
 export default Input;
+
+export { NewsletterInput };

@@ -7,6 +7,7 @@ import "../settings/borders.css";
 import "../settings/breakpoints.css";
 import { plus_jakarta_sans } from "./font";
 import "./globals.css";
+import Footer from "./components/ui/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Autismo Empleo",
@@ -20,7 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={plus_jakarta_sans.variable}>{children}</body>
+      <body className={plus_jakarta_sans.variable}>
+        {children}
+
+        <Footer />
+      </body>
     </html>
   );
 }
