@@ -18,7 +18,11 @@
   position: relative;
   white-space: nowrap;
 }
-
+.container span {
+  font-size: var(--text-para);
+  text-align: center;
+  font-weight: 500;
+}
 /* Button xl Styles starts */
 .container.large {
   padding-top: calc(var(--spacer-10) - 1px);
@@ -117,6 +121,12 @@
   border-radius: 100%;
   transition: all 0.3s;
   z-index: 1;
+}
+.icon_wrapper.image_wrapper {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
 }
 .with_icon .icon_wrapper {
   width: 38px;

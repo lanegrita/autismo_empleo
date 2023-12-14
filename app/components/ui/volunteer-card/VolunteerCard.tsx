@@ -17,7 +17,7 @@ const VolunteerCard = ({
   icon = "",
 }: VolunteerProps) => {
   return (
-    <div className="flex  sm:gap-10 lg:gap-20 py-15 px-10 md:py-20 lg:p-20 items-center">
+    <div className="flex bg-blanco  sm:gap-10 lg:gap-20 py-15 px-10 md:py-20 lg:p-20 items-center ">
       {/* Image Container */}
       <div className="relative min-h-[76px] min-w-[76px] sm:w-[100px] sm:h-[100px]  lg:w-[120px]  lg:h-[120px] flex-shrink-0 ">
         <Image
