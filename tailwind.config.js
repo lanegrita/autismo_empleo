@@ -247,6 +247,9 @@ module.exports = {
         49: "var(--spacer-49)",
         50: "var(--spacer-50)",
       },
+      borderWidth: {
+        3: "3px",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

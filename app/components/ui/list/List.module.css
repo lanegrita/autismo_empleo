@@ -87,3 +87,21 @@
   z-index: 1;
 }
 /* Image List Item Ends */
+
+/* List Item Simple Starts */
+.list_item {
+  display: flex;
+  align-items: center;
+}
+/* List Item Simple Ends */
+
+/* List With Description Starts */
+.list_with_description,
+.list_with_items {
+  gap: var(--spacer-14);
+}
+/* List With Description Ends */
+
+/* List with Items Starts */
+
+/* List with Items Ends */

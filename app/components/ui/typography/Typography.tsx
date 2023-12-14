@@ -6,7 +6,7 @@ interface TypograpyProps {
   children: ReactNode;
   underline?: boolean;
   className?: string;
-  fontWeight?: "regular" | "medium";
+  fontWeight?: "regular" | "medium" | "light";
   color?: "blue" | "white" | "gray" | "error" | "default";
   tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
   variant:
@@ -32,7 +32,7 @@ const Text = ({
   color,
   fontWeight = "regular",
   variant,
-  className,
+  className
 }: TypograpyProps) => {
   return (
     <Tag
@@ -55,7 +55,9 @@ const Text = ({
         color === "gray" && styles.gray,
         color === "error" && styles.error,
         underline && "underline",
-        fontWeight === "regular" ? "font-normal" : "font-medium",
+        fontWeight === "regular" && "font-normal",
+        fontWeight === "medium" && "font-medium",
+        fontWeight === "light" && "font-light",
         className
       )}
     >

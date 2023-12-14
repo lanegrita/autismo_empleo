@@ -11,6 +11,8 @@
   flex: 1;
   border: none;
   outline: none;
+  min-width: auto;
+  width: 100%;
 }
 
 .iconWrapper {

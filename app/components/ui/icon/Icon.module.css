@@ -15,3 +15,33 @@
 .container.selected .icon path {
   fill: var(--color-blanco);
 }
+
+/* Without Mask Icon Starts */
+
+.without_mask {
+  width: 68px;
+  height: 68px;
+  background: none;
+}
+
+/* Without Mask Icon Ends */
+
+/* Large Size Icon With Mask Starts */
+.large {
+  width: 76px;
+  height: 76px;
+}
+
+@media screen and (max-width: 1366px) {
+  .large {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .large {
+    width: 48px;
+    height: 48px;
+  }
+}
+/* Large Size Icon With Mask Ends */
