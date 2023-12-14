@@ -169,4 +169,57 @@ const ListItem: React.FC<ListItemProps> = ({
   );
 };
 
-export { SimpleList, ImageListItem, NumberList, ListItem };
+export interface OfferListItemProps {
+  image: string;
+  title: string;
+  subTitle: string;
+  description: string;
+  items: string[];
+}
+
+const OfferListItem: React.FC<OfferListItemProps> = ({
+  image,
+  title,
+  subTitle,
+  description,
+  items
+}) => {
+  return (
+    <div className="flex flex-col sm:flex-row gap-25 border border-gris2 p-20">
+      <div className="relative w-[133px] h-[133px] min-w-[133px] min-h-[133px] rounded-full overflow-hidden">
+        <Image src={image} alt="image" fill />
+      </div>
+      {/* Content Content */}
+      <div className="flex flex-col gap-32 max-w-[897px]">
+        {/* Top Container */}
+        <div className="">
+          <Text tag="h3" variant="title-s" fontWeight="medium">
+            {title}
+          </Text>
+          <Text
+            tag="p"
+            variant="para"
+            color="blue"
+            underline
+            className="mt-5 mb-12"
+          >
+            {subTitle}
+          </Text>
+          <Text tag="p" variant="para" color="gray">
+            {description}
+          </Text>
+        </div>
+        {/* Bottom Container */}
+        <div className="flex gap-20 flex-wrap">
+          {items.map((item, index) => (
+            <Text key={index} tag="p" variant="para">
+              {item}
+            </Text>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { SimpleList, ImageListItem, NumberList, ListItem, OfferListItem };
