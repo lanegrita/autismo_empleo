@@ -52,7 +52,7 @@ const ListAccordionItem = ({
             styles.accordion_icon,
             open && styles.accordion_icon_rotate
           )}
-          src="/images/icons/arrow-up.svg"
+          src="/images/icons/cross.svg"
         />
       </motion.header>
       <AnimatePresence initial={false}>
@@ -107,7 +107,7 @@ const SimpleAccordionItem = ({
             styles.accordion_icon,
             open && styles.accordion_icon_rotate
           )}
-          src="/images/icons/arrow-up.svg"
+          src="/images/icons/cross.svg"
         />
       </motion.header>
       <AnimatePresence initial={false}>
@@ -210,7 +210,7 @@ const NavigationAccordionItem = ({
             styles.navigation_accordion_icon_arrow,
             open && styles.navigation_accordion_icon_arrow_rotate
           )}
-          src="/images/icons/arrow-up.svg"
+          src="/images/icons/cross.svg"
         />
       </motion.header>
       <AnimatePresence initial={false}>
