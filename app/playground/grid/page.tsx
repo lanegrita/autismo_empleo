@@ -24,7 +24,7 @@ const Grid = () => {
         <div className="w-full h-16 bg-red-600"></div>
       </div>
       {/* 8 Cols */}
-      <div className="grid grid-cols-8 gap-5 mt-12 p-10">
+      <div className="grid grid-cols-8 gap-5 mt-12 p-10 ">
         <div className="w-full h-16 bg-red-600"></div>
         <div className="w-full h-16 bg-red-600"></div>
         <div className="w-full h-16 bg-red-600"></div>

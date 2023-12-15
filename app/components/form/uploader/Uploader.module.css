@@ -55,6 +55,23 @@
   align-items: center;
   cursor: pointer;
 }
+.selected_image_container {
+  width: 460px;
+  height: 460px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.selected_image_container:hover .image_actions {
+  opacity: 1;
+}
+
+.image_actions {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
 .image_uploader .icon_container {
   width: 80px;
   height: 80px;
