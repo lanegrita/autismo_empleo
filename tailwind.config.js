@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        extraSmall: "485px",
+      },
       colors: {
         azulDark1: "var(--color-azul-dark-1)",
         azulDark2: "var(--color-azul-dark-2)",

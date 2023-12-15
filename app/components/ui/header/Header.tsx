@@ -108,15 +108,15 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
       {/* Blue Container */}
       <div
         className={cn(
-          "bg-azulAe w-full  absolute top-0 z-[2] pt-[52px] -translate-y-full transition-transform ease-in-out duration-300",
+          "bg-azulAe w-full  absolute top-0 z-[2] pt-[52px] -translate-y-full  ",
           openNavbar && "translate-y-0"
         )}
       >
         <div className="w-full grid grid-cols-12 border-b border-b-azulDark2  bg-blanco">
           {/* Left Container */}
-          <div className=" col-span-6 lg:col-span-2 flex-1 bg-azulAe py-12 pl-10">
+          <div className=" flex col-span-6 lg:col-span-2 flex-1 bg-azulAe py-12 pl-10 pr-10 min-w-0 ">
             {/* Image Container */}
-            <div className="relative  w-[141px] h-[48px]  md:w-[181px] md:h-[56px] lg:w-[208px] lg:h-[62px]">
+            <div className="relative  w-[141px] h-[48px]  md:w-[181px] md:h-[56px] lg:w-[208px] lg:h-[62px] ">
               <Image
                 src={"/images/autismo-logo-white.svg"}
                 alt="autismo logo"
@@ -141,6 +141,13 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
               </div>
             ) : (
               <div className="flex justify-end gap-10 items-center">
+                {/* <Button
+                  onClick={() => setOpenNavbar(false)}
+                  title="Register"
+                  icon="/images/icons/pencil.svg"
+                  variant="primary-azul"
+                  direction="left"
+                /> */}
                 <Button
                   onClick={() => setOpenNavbar(false)}
                   title="Login"

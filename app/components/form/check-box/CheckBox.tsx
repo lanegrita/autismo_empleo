@@ -2,6 +2,7 @@ import React from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import styles from "./CheckBox.module.css";
 import { cn } from "@/lib/utils";
+import Text from "../../ui/typography/Typography";
 
 interface CheckBoxProps {
   label: string;
@@ -16,11 +17,14 @@ const CheckBox = ({ label, varient = "default" }: CheckBoxProps) => {
         <label
           htmlFor={label}
           className={cn(
-            "text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+            " font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
             varient === "azul" && "text-white"
           )}
         >
-          {label}
+          <Text tag="p" variant="para" className="whitespace-nowrap">
+            {" "}
+            {label}
+          </Text>
         </label>
       </div>
     </div>

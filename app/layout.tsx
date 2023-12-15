@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(plus_jakarta_sans.variable, "pt-[159px] md:pt-[162px]")}
+        className={cn(plus_jakarta_sans.variable, "pt-[159px] md:pt-[162px] ")}
       >
         <Header />
         {children}
