@@ -34,32 +34,32 @@ const DropDown = ({ variant, error, placeHolder, options }: DropDownProps) => {
       }`,
 
       "&:hover": {
-        borderColor: "none", // Remove border on hover
-      },
+        borderColor: "none" // Remove border on hover
+      }
 
       // Text Styles
     }),
 
     singleValue: (provided: any, state: any) => ({
       ...provided,
-      color: variant === "azul" ? "white" : "black", // Change the color of the selected text
+      color: variant === "azul" ? "white" : "black" // Change the color of the selected text
 
       // Other styles for the selected text if needed
     }),
     input: (provided: any, state: any) => ({
       ...provided,
-      color: variant === "azul" ? "white" : "black", // Change text color when typing
+      color: variant === "azul" ? "white" : "black" // Change text color when typing
     }),
     valueContainer: (provided: any) => ({
       ...provided,
       padding: "0px", // Adjusted padding values for the value container
       marginLeft: "0px",
       fontSize: "16px",
-      fontWeight: "500",
+      fontWeight: "500"
     }),
 
     indicatorSeparator: () => ({
-      display: "none", // Hide the indicator separator
+      display: "none" // Hide the indicator separator
     }),
     dropdownIndicator: (provided: any, state: any) => ({
       ...provided,
@@ -68,8 +68,8 @@ const DropDown = ({ variant, error, placeHolder, options }: DropDownProps) => {
         state.isFocused && isClicked ? "rotate(180deg)" : "rotate(0deg)", // Rotate based on isClicked state
       color: variant === "azul" ? "white" : "#1D1D1B",
       "&:hover": {
-        color: variant === "azul" ? "white" : "black",
-      },
+        color: variant === "azul" ? "white" : "black"
+      }
     }),
     option: (provided: any, state: any) => ({
       ...provided,
@@ -80,22 +80,22 @@ const DropDown = ({ variant, error, placeHolder, options }: DropDownProps) => {
       padding: "16px",
       "&:hover": {
         backgroundColor: "#E9F5FB", // Background color on direct hover
-        color: "black", // Text color on direct hover
-      },
+        color: "black" // Text color on direct hover
+      }
     }),
     menu: (provided: any) => ({
       ...provided,
       boxShadow: "-1px 1px 14px 1px rgba(0,0,0,0.30)", // Applying box shadow to the menu
       WebkitBoxShadow: "-1px 1px 14px 1px rgba(0,0,0,0.30)", // Vendor prefix for Webkit browsers
       MozBoxShadow: "-1px 1px 14px 1px rgba(0,0,0,0.30)", // Vendor prefix for Mozilla browsers
-      marginTop: "0",
+      marginTop: "0"
     }),
     placeholder: (provided: any, state: any) => ({
       ...provided,
       color: variant === "azul" ? "white" : "black",
       transition: "all 0.3s",
-      opacity: state.isFocused || showPlaceHolder ? "0" : "1",
-    }),
+      opacity: state.isFocused || showPlaceHolder ? "0" : "1"
+    })
   };
   const handleBlur = () => {
     // Check if a value has been selected before setting showPlaceHolder to true

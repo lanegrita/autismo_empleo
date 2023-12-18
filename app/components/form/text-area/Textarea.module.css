@@ -4,7 +4,11 @@
   border-bottom: 1px solid gray;
   width: 100%;
   font-size: var(--text-para);
-  height: 233px;
+  /* height: 233px; */
+}
+
+.single_line {
+  height: 50px;
 }
 
 .characters {
