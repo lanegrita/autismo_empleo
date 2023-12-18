@@ -1,0 +1,13 @@
+.content {
+  padding: var(--spacer-40) var(--spacer-20);
+}
+
+.content p {
+  font-size: var(--text-para-l);
+  margin: var(--spacer-10) 0;
+}
+
+.content a {
+  text-decoration: underline;
+  color: var(--color-azul-ae);
+}
