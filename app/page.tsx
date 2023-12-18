@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MarqueeSection, {
   MarqueeItemProps,
 } from "./components/ui/marquee-section/MarqueeSection";
@@ -16,7 +17,9 @@ const firstMarquee: MarqueeItemProps[] = [
 export default function Home() {
   return (
     <div>
-      <MarqueeSection items={firstMarquee} variant="default" />
+      <Link href={"/select-registration"}>
+        <MarqueeSection items={firstMarquee} variant="default" />
+      </Link>
       <MarqueeSection items={firstMarquee} variant="azul" />
     </div>
   );

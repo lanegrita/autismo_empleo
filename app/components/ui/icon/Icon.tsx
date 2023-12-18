@@ -3,6 +3,7 @@ import { ReactSVG } from "react-svg";
 import styles from "./Icon.module.css";
 import Tooltip from "../tooltip/Tooltip";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export interface IconProps {
   url: string;
@@ -19,7 +20,7 @@ const Icon = ({
   selected,
   tooltipPosition,
   variant,
-  size
+  size,
 }: IconProps) => {
   return (
     <div
@@ -47,3 +48,17 @@ const Icon = ({
 };
 
 export default Icon;
+
+interface LargeIconProps {
+  icon: string;
+}
+
+export const LargeIcon = ({ icon }: LargeIconProps) => {
+  return (
+    <div className="rounded-full border border-azulAe w-fit h-fit ">
+      <div className="relative w-[99px] h-[99px]  md:w-[109px] md:h-[109px] xl:w-[188px] xl:h-[188px] ">
+        <Image src={"/images/icons/briefcase.svg"} alt="large icons" fill />
+      </div>
+    </div>
+  );
+};

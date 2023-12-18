@@ -95,7 +95,12 @@ interface LoginButtonProps {
   onClick?: () => void;
 }
 
-const LoginButton = ({ icon, onClick, title, direction }: LoginButtonProps) => {
+export const LoginButton = ({
+  icon,
+  onClick,
+  title,
+  direction,
+}: LoginButtonProps) => {
   return (
     <div
       onClick={onClick}

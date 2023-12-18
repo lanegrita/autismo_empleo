@@ -93,12 +93,14 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
             <div className="flex gap-10 items-center">
               {/* Register Button Wrapper */}
               <div className="hidden sm:block">
-                <Button
-                  title="Regístrate"
-                  icon="/images/icons/pencil.svg"
-                  variant="primary"
-                  direction="left"
-                />
+                <Link href={"/select-registration"}>
+                  <Button
+                    title="Regístrate"
+                    icon="/images/icons/pencil.svg"
+                    variant="primary"
+                    direction="left"
+                  />
+                </Link>
               </div>
               <Button
                 onClick={() => setOpenNavbar(true)}
@@ -212,9 +214,11 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
               <Text tag="p" variant="para">
                 Lorem ipsum dolor sit amet.?
               </Text>
-              <Text tag="p" variant="para" underline>
-                Register
-              </Text>
+              <Link href={"/select-registration"}>
+                <Text tag="p" variant="para" underline>
+                  Register
+                </Text>
+              </Link>
             </div>
           </div>
         </div>

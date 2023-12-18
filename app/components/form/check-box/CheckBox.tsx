@@ -7,11 +7,12 @@ import Text from "../../ui/typography/Typography";
 interface CheckBoxProps {
   label: string;
   varient?: "default" | "azul";
+  className?: string;
 }
 
-const CheckBox = ({ label, varient = "default" }: CheckBoxProps) => {
+const CheckBox = ({ label, varient = "default", className }: CheckBoxProps) => {
   return (
-    <div className="items-top flex space-x-2 max-w-sm">
+    <div className="items-top flex space-x-2">
       <Checkbox variant={varient} id={label} />
       <div className="grid gap-1.5 leading-none">
         <label
@@ -21,7 +22,7 @@ const CheckBox = ({ label, varient = "default" }: CheckBoxProps) => {
             varient === "azul" && "text-white"
           )}
         >
-          <Text tag="p" variant="para" className="whitespace-nowrap">
+          <Text className={className} tag="p" variant="para">
             {" "}
             {label}
           </Text>
