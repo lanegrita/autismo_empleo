@@ -78,3 +78,13 @@ const MarqueeItem: React.FC<MarqueeItemProps> = ({ title, imageUrl }) => {
 };
 
 export default MarqueeSection;
+
+export const SimpleMarquee = ({ children }: { children: string }) => {
+  return (
+    <Marquee>
+      <Text tag="h1" variant="super-title-xl">
+        {children}
+      </Text>
+    </Marquee>
+  );
+};

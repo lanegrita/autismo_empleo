@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Button from "../button/Button";
 import Icon from "../icon/Icon";
+import Link from "next/link";
 
 const topBarItem = [
   {
@@ -63,18 +64,20 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
         </div>
       </div>
       {/* Header  */}
-      <div className="w-full flex border-b border-b-[#CCCCCC]  bg-blanco">
+      <div className="w-full grid grid-cols-12 border-b border-gris2  bg-blanco">
         {/* Left Container */}
-        <div className="basis-1/3 flex-1 bg-white py-12 pl-10">
+        <div className="col-span-6 lg:col-span-3 border-r lg:border-r-0 border-gris2   bg-blanco py-12 pl-10">
           {/* Image Container */}
-          <div className="relative  w-[141px] h-[48px]  md:w-[181px] md:h-[56px] lg:w-[208px] lg:h-[62px]">
-            <Image src={"/images/autismo-logo.svg"} alt="autismo logo" fill />
-          </div>
+          <Link href={"/"}>
+            <div className="relative  w-[141px] h-[48px]  md:w-[181px] md:h-[56px] lg:w-[208px] lg:h-[62px]">
+              <Image src={"/images/autismo-logo.svg"} alt="autismo logo" fill />
+            </div>
+          </Link>
         </div>
         {/* Middle Container */}
-        <div className=" hidden lg:flex basis-2/4 bg-blanco border border-[##CCCCCC] "></div>
+        <div className=" hidden lg:block sm:col-span-6 bg-blanco border-x   border-gris2  "></div>
         {/* Right Container */}
-        <div className="basis-1/3 border-l border-[#CCCCCC] lg:border-l-0 flex-1 bg-blanco  px-10 py-15 sm:px-20">
+        <div className="col-span-6 lg:col-span-3    bg-blanco  px-10 py-15 sm:px-20">
           {/* Button */}
           {loggedIn ? (
             <div className="flex gap-10 items-center">
@@ -88,12 +91,15 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
             </div>
           ) : (
             <div className="flex gap-10 items-center">
-              <Button
-                title="Regístrate"
-                icon="/images/icons/pencil.svg"
-                variant="primary"
-                direction="left"
-              />
+              {/* Register Button Wrapper */}
+              <div className="hidden sm:block">
+                <Button
+                  title="Regístrate"
+                  icon="/images/icons/pencil.svg"
+                  variant="primary"
+                  direction="left"
+                />
+              </div>
               <Button
                 onClick={() => setOpenNavbar(true)}
                 title="Login"
@@ -116,13 +122,15 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
           {/* Left Container */}
           <div className=" flex col-span-6 lg:col-span-2 flex-1 bg-azulAe py-12 pl-10 pr-10 min-w-0 ">
             {/* Image Container */}
-            <div className="relative  w-[141px] h-[48px]  md:w-[181px] md:h-[56px] lg:w-[208px] lg:h-[62px] ">
-              <Image
-                src={"/images/autismo-logo-white.svg"}
-                alt="autismo logo"
-                fill
-              />
-            </div>
+            <Link href={"/"}>
+              <div className="relative  w-[141px] h-[48px]  md:w-[181px] md:h-[56px] lg:w-[208px] lg:h-[62px] ">
+                <Image
+                  src={"/images/autismo-logo-white.svg"}
+                  alt="autismo logo"
+                  fill
+                />
+              </div>
+            </Link>
           </div>
           {/* Middle Container */}
           <div className=" hidden lg:flex col-span-6 bg-azulAe border border-b-0 border-azulDark2 "></div>
@@ -162,23 +170,52 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
         {/* Bottom Container */}
         <div className="w-full grid grid-cols-12  bg-azulAe">
           {/* Left Container */}
-          <div className=" col-span-6 lg:col-span-2 bg-azulAe py-12 pl-10"></div>
+          <div className=" col-span-0 sm:col-span-6 lg:col-span-2 bg-azulAe py-12 pl-10"></div>
           {/* Middle Container */}
           <div className="  lg:col-span-6 hidden lg:flex  border border-t-0 border-azulDark2 "></div>
           {/* Right Container */}
-          <div className=" w-full col-span-6 lg:col-span-4 bg-azulAe  lg:border-l-0 flex-1 py-15 px-20 lg:pb-[181px] lg:px-[112px]  lg:pt-45 ">
+          <div className=" w-full col-span-12 flex flex-col sm:col-span-6 lg:col-span-4 bg-azulAe  lg:border-l-0 flex-1 py-15 px-10  sm:px-20 lg:pb-[181px] lg:px-[112px]  lg:pt-45 ">
             <Text tag="p" variant="para" color="default">
               Acceso
             </Text>
-            <Text tag="p" variant="title" color="white">
-              Candidatos
-            </Text>
-            <Text tag="p" variant="title" color="default">
-              Empresas
-            </Text>
-            <Text tag="p" variant="title" color="white">
-              Voluntariado
-            </Text>
+            <Link href="/login?userType=candidatos">
+              <Text
+                className="cursor-pointer"
+                tag="p"
+                variant="title"
+                color="white"
+              >
+                Candidatos
+              </Text>
+            </Link>
+            <Link href="/login?userType=empresas">
+              <Text
+                className="cursor-pointer"
+                tag="p"
+                variant="title"
+                color="default"
+              >
+                Empresas
+              </Text>
+            </Link>
+            <Link href="/login?userType=voluntariado">
+              <Text
+                className="cursor-pointer"
+                tag="p"
+                variant="title"
+                color="white"
+              >
+                Voluntariado
+              </Text>
+            </Link>
+            <div className="mt-4  gap-1 flex sm:hidden ">
+              <Text tag="p" variant="para">
+                Lorem ipsum dolor sit amet.?
+              </Text>
+              <Text tag="p" variant="para" underline>
+                Register
+              </Text>
+            </div>
           </div>
         </div>
       </div>

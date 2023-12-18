@@ -32,7 +32,7 @@ const Text = ({
   color,
   fontWeight = "regular",
   variant,
-  className
+  className,
 }: TypograpyProps) => {
   return (
     <Tag

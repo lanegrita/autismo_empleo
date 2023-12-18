@@ -27,7 +27,8 @@ const RadioButtonXL = ({
       className={cn(
         styles.container,
         checked && styles.checked,
-        variant === "azul-xl" && styles.azul_xl
+        variant === "azul-xl" && styles.azul_xl,
+        "cursor-pointer"
       )}
     >
       <div className={styles.left_container}>
