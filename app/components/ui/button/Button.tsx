@@ -24,6 +24,7 @@ interface ButtonProps {
   size?: "m" | "xl";
   disabled?: boolean;
   image?: string;
+  className?: string;
 }
 
 const Button = ({
@@ -37,6 +38,7 @@ const Button = ({
   type,
   size,
   disabled,
+  className
 }: ButtonProps) => {
   return (
     <button
@@ -60,6 +62,7 @@ const Button = ({
         icon && !title && styles.only_icon,
         size === "xl" && styles.large,
         disabled && styles.disabled,
+        className
       ].join(" ")}
     >
       {title && (

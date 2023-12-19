@@ -36,6 +36,7 @@ module.exports = {
         gris3: "var(--color-gris-3)",
         gris4: "var(--color-gris-4)",
         gris5: "var(--color-gris-5)",
+        gris6: "var(--color-gris-6)",
         blanco: "var(--color-blanco)",
         primaryHover: "var(--color-hover-primary-btn)",
         secondaryHover: "var(--color-hover-secondary-btn)",
