@@ -8,6 +8,7 @@ import DropDown from "../components/form/dropdown/Dropdown";
 import CheckBox from "../components/form/check-box/CheckBox";
 import Textarea from "../components/form/text-area/Textarea";
 import { SimpleMarquee } from "../components/ui/marquee-section/MarqueeSection";
+import { cn } from "@/lib/utils";
 
 const tagList = [
   "Disponibilidad a jornada completa de lunes a viernes",
@@ -15,13 +16,17 @@ const tagList = [
   "Perfil acostumbrado/a a trabajar por objetivos",
   "Formación, colaboración y el aprendizaje constante",
   "Disponibilidad inmediata",
-  "Ubicado en Murcia o alrededores"
+  "Ubicado en Murcia o alrededores",
 ];
 
 const CreateOfferView = () => {
   return (
     <div>
-      <TitleHeader />
+      <TitleHeader
+        title="Nueva oferta de trabajo"
+        image="/images/test.webp"
+        button="Salir"
+      />
       <div className="grid grid-cols-12 border-t border-gris2">
         {/* Left */}
         <div className="col-span-2"></div>
@@ -41,12 +46,12 @@ const CreateOfferView = () => {
                   options={[
                     {
                       label: "Tipo",
-                      value: "1"
+                      value: "1",
                     },
                     {
                       label: "Tipo",
-                      value: "2"
-                    }
+                      value: "2",
+                    },
                   ]}
                   placeHolder="Categoría del puesto"
                 />
@@ -57,12 +62,12 @@ const CreateOfferView = () => {
                   options={[
                     {
                       label: "Tipo",
-                      value: "1"
+                      value: "1",
                     },
                     {
                       label: "Tipo",
-                      value: "2"
-                    }
+                      value: "2",
+                    },
                   ]}
                   placeHolder="Nivel del puesto"
                 />
@@ -70,12 +75,12 @@ const CreateOfferView = () => {
                   options={[
                     {
                       label: "Tipo",
-                      value: "1"
+                      value: "1",
                     },
                     {
                       label: "Tipo",
-                      value: "2"
-                    }
+                      value: "2",
+                    },
                   ]}
                   placeHolder="Tipo de contacto"
                 />
@@ -87,12 +92,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1"
+                        value: "1",
                       },
                       {
                         label: "Tipo",
-                        value: "2"
-                      }
+                        value: "2",
+                      },
                     ]}
                     placeHolder="Jornada"
                   />
@@ -102,12 +107,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1"
+                        value: "1",
                       },
                       {
                         label: "Tipo",
-                        value: "2"
-                      }
+                        value: "2",
+                      },
                     ]}
                     placeHolder="Contrato"
                   />
@@ -117,12 +122,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1"
+                        value: "1",
                       },
                       {
                         label: "Tipo",
-                        value: "2"
-                      }
+                        value: "2",
+                      },
                     ]}
                     placeHolder="Nº Vacantes"
                   />
@@ -143,12 +148,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1"
+                        value: "1",
                       },
                       {
                         label: "Tipo",
-                        value: "2"
-                      }
+                        value: "2",
+                      },
                     ]}
                     placeHolder="Tipo"
                   />
@@ -158,12 +163,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1"
+                        value: "1",
                       },
                       {
                         label: "Tipo",
-                        value: "2"
-                      }
+                        value: "2",
+                      },
                     ]}
                     placeHolder="Mínimo"
                   />
@@ -173,12 +178,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1"
+                        value: "1",
                       },
                       {
                         label: "Tipo",
-                        value: "2"
-                      }
+                        value: "2",
+                      },
                     ]}
                     placeHolder="Máximo"
                   />
@@ -188,12 +193,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1"
+                        value: "1",
                       },
                       {
                         label: "Tipo",
-                        value: "2"
-                      }
+                        value: "2",
+                      },
                     ]}
                     placeHolder="Pagas"
                   />
@@ -282,25 +287,44 @@ const CreateOfferView = () => {
   );
 };
 
-const TitleHeader = () => {
+export const TitleHeader = ({
+  image,
+  title,
+  titleVariant = "title-xl",
+  button,
+  className,
+}: {
+  image: string;
+  title: string;
+  titleVariant?: "title-xl" | "title-xxl";
+  button?: string;
+  className?: string;
+}) => {
   return (
-    <div className="flex flex-col gap-10 xs:flex-row xs:items-center justify-between px-10 py-24 md:py-26 lg:py-27 lg:px-20">
+    <div
+      className={cn(
+        "flex flex-col gap-10 xs:flex-row xs:items-center justify-between px-10 py-24 md:py-26 lg:py-27 lg:px-20",
+        className
+      )}
+    >
       {/* Left */}
       <div className="flex gap-10 items-center">
         {/* Image */}
         <div className="relative w-[108px] h-[60px] md:w-[144px] md:h-[80px] lg:w-[180px] lg:h-[100px] rounded-full overflow-hidden">
-          <Image src="/images/test.webp" alt="image" fill />
+          <Image src={image} alt="image" fill />
         </div>
 
-        <Text tag="h1" variant="title-l">
-          Inscríbete
+        <Text tag="h1" variant={titleVariant}>
+          {title}
         </Text>
       </div>
 
       {/* Right */}
-      <div>
-        <Button variant="primary" title="Salir" />
-      </div>
+      {button && (
+        <div>
+          <Button variant="primary" title={button} />
+        </div>
+      )}
     </div>
   );
 };

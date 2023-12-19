@@ -13,7 +13,7 @@ interface FilterProps {
 const FilterOfferSection = ({ ...props }: FilterProps) => {
   return (
     <>
-      <div className=" hidden py-17 px-20 md:px-41 md:py-25 w-full max-w-[500px] bg-gris5 sm:flex flex-col gap-30 border border-gris2">
+      <div className="   h-full hidden py-17 px-20 xl:px-41 xl:py-25 w-full  bg-gris5 lg:flex flex-col gap-30 ">
         {/* Section 1 Starts */}
         <div className="flex flex-col gap-12 w-full m-w-[314px]">
           <Text tag="h6" variant="para-l" color="blue" fontWeight="medium">
@@ -50,8 +50,8 @@ const FilterOfferSection = ({ ...props }: FilterProps) => {
 
       <div
         className={cn(
-          " fixed top-0 bottom-0 right-0 z-20 py-17 px-20 md:px-41 md:py-25 w-3/4 bg-gris5 sm:hidden flex flex-col gap-30 border border-gris2 translate-x-full transition-transform ease-in-out duration-300  ",
-          props.openFilter && "translate-x-0"
+          " fixed top-[350px] overflow-scroll  sm:top-0 bottom-0 right-0   z-20 py-17 px-20 md:px-41 md:py-25 w-full sm:w-3/4 bg-gris5 lg:hidden flex flex-col gap-30 border border-gris2 translate-y-full sm:translate-y-0  sm:translate-x-full transition-transform ease-in-out duration-300  ",
+          props.openFilter && " translate-y-0  sm:translate-x-0"
         )}
       >
         <div
