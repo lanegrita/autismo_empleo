@@ -177,6 +177,7 @@ export interface OfferListItem1Props {
   subTitle: string;
   description: string;
   items: string[];
+  className?: string;
   backgroundColor?: "white" | "blue";
 }
 
@@ -187,12 +188,14 @@ const OfferListItem1: React.FC<OfferListItem1Props> = ({
   description,
   items,
   backgroundColor,
+  className,
 }) => {
   return (
     <div
       className={cn(
-        "flex  flex-col sm:flex-row gap-20 border border-gris2 px-10 py-20 sm:p-20 bg-blanco",
-        backgroundColor === "blue" && "bg-azulLight3"
+        "flex  flex-col sm:flex-row gap-20 px-10 py-20 sm:p-20 bg-blanco",
+        backgroundColor === "blue" && "bg-azulLight3",
+        className
       )}
     >
       <div className="relative w-[76px] h-[76px] min-w-[76px] min-h-[76px] sm:w-[120px] sm:h-[120px] sm:min-w-[120px] sm:min-h-[120px] rounded-full overflow-hidden">
