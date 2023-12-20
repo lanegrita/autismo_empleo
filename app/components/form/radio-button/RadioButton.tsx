@@ -19,7 +19,7 @@ const RadioButtonXL = ({
   checked,
   title,
   icon,
-  variant = "default-xl",
+  variant = "default-xl"
 }: RadioButtonProps) => {
   return (
     <label
@@ -54,12 +54,12 @@ const RadioButtonXL = ({
 const SimpleRadioButton = ({
   id,
   title,
-  variant = "default",
+  variant = "default"
 }: RadioButtonProps) => {
   return (
     <div className="flex items-center space-x-2">
       <RadioGroupItem variant={variant} value={id} id={id} />
-      <Label variant={variant} htmlFor={id}>
+      <Label className="text-[14px]" variant={variant} htmlFor={id}>
         {title}
       </Label>
     </div>
