@@ -11,7 +11,9 @@ interface RadioButtonProps {
   title: string;
   checked?: boolean;
   icon?: string;
+  className?: string;
   variant?: "default" | "azul" | "default-xl" | "azul-xl";
+  onClick?: () => void;
 }
 
 const RadioButtonXL = ({
@@ -19,22 +21,27 @@ const RadioButtonXL = ({
   checked,
   title,
   icon,
+  onClick,
+  className,
   variant = "default-xl",
 }: RadioButtonProps) => {
   return (
     <label
+      onClick={onClick}
       htmlFor={id}
       className={cn(
         styles.container,
         checked && styles.checked,
         variant === "azul-xl" && styles.azul_xl,
-        "cursor-pointer"
+        "cursor-pointer",
+        className
       )}
     >
       <div className={styles.left_container}>
         <RadioGroupItem
           variant={variant}
           defaultChecked={checked}
+          checked={checked}
           value={id}
           id={id}
         />

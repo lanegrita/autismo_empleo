@@ -22,6 +22,7 @@ const BulletIcon = ({ variant = "main" }: BulletIconProps) => {
     ></div>
   );
 };
+// ======================================================================
 
 const SimpleList = ({ heading, items }: SimpleListProps) => {
   return (
@@ -45,6 +46,7 @@ const SimpleList = ({ heading, items }: SimpleListProps) => {
     </ul>
   );
 };
+// ===========================================================================
 
 export interface ImageListItemProps {
   url: string;
@@ -80,6 +82,7 @@ const ImageListItem = ({ url, title, description }: ImageListItemProps) => {
   );
 };
 
+// ====================================================================
 export interface NumberListProps {
   number: number;
   title: string;
@@ -111,6 +114,7 @@ const NumberList = ({ number, title, description }: NumberListProps) => {
     </div>
   );
 };
+// =======================================================================
 
 interface ListItemProps {
   variant: "simple" | "with-description" | "with-items";
@@ -170,6 +174,7 @@ const ListItem: React.FC<ListItemProps> = ({
     </div>
   );
 };
+// ==========================================================
 
 export interface OfferListItem1Props {
   image: string;
@@ -235,6 +240,8 @@ const OfferListItem1: React.FC<OfferListItem1Props> = ({
     </div>
   );
 };
+
+// =========================================================================
 
 // Offer List Item 2
 
@@ -337,6 +344,80 @@ const OfferListItem2: React.FC<OfferListItem2Props> = ({
   );
 };
 
+// ========================================================
+
+// Offer List Item 3
+export interface OfferListItem3Props {
+  image: string;
+  title: string;
+  subTitle: string;
+  className?: string;
+  backgroundColor?: "white" | "blue";
+}
+
+const OfferListItem3: React.FC<OfferListItem3Props> = ({
+  image,
+  title,
+  subTitle,
+  backgroundColor,
+  className,
+}) => {
+  return (
+    <div
+      className={cn(
+        "px-10 py-20 sm:p-20 bg-blanco border-t border-gris2 ",
+        backgroundColor === "blue" && "bg-azulLight3",
+        className
+      )}
+    >
+      <div className={cn("flex  flex-col sm:flex-row gap-20 ")}>
+        <div className="relative w-[76px] h-[76px] min-w-[76px] min-h-[76px] sm:w-[120px] sm:h-[120px] sm:min-w-[120px] sm:min-h-[120px] rounded-full overflow-hidden">
+          <Image src={image} alt="image" fill />
+        </div>
+        {/* Content Content */}
+        <div className="flex flex-col gap-16 md:gap-25 max-w-[897px]">
+          {/* Top Container */}
+          <div className="">
+            <Text tag="h3" variant="title-s" fontWeight="medium">
+              {title}
+            </Text>
+            <Text
+              tag="p"
+              variant="para"
+              color="blue"
+              underline
+              className="mt-5 mb-12"
+            >
+              {subTitle}
+            </Text>
+          </div>
+        </div>
+      </div>
+      {/* Bottom Section */}
+      <div className="flex items-center gap-25 ">
+        {/* Date Section */}
+        <div className="flex flex-col gap-5 mt-13 w-[110px]">
+          <Text tag="p" variant="para" fontWeight="medium">
+            Inscrito
+          </Text>
+          <Text tag="p" variant="para" fontWeight="medium" color="blue">
+            16/09/23
+          </Text>
+        </div>
+        {/* Right Text Container */}
+        <div className="flex flex-col gap-5 mt-13">
+          <Text tag="p" variant="para" fontWeight="medium">
+            Servicios Centrales, Madrid
+          </Text>
+          <Text tag="p" variant="para" fontWeight="medium">
+            Presencial
+          </Text>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export {
   SimpleList,
   ImageListItem,
@@ -344,4 +425,5 @@ export {
   ListItem,
   OfferListItem1,
   OfferListItem2,
+  OfferListItem3,
 };

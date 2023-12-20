@@ -75,9 +75,9 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
           </Link>
         </div>
         {/* Middle Container */}
-        <div className=" hidden lg:block sm:col-span-6 bg-blanco border-x   border-gris2  "></div>
+        <div className=" hidden lg:block sm:col-span-6 lg:col-span-5 2xl:col-span-6 bg-blanco border-x   border-gris2  "></div>
         {/* Right Container */}
-        <div className="col-span-6 lg:col-span-3    bg-blanco  px-10 py-15 sm:px-20">
+        <div className="col-span-6 lg:col-span-4 2xl:col-span-3    bg-blanco  px-10 py-15 sm:px-20">
           {/* Button */}
           {loggedIn ? (
             <div className="flex gap-10 items-center">
@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
           ) : (
             <div className="flex gap-10 items-center">
               {/* Register Button Wrapper */}
-              <div className="hidden sm:block">
+              <div className="hidden md:block">
                 <Link href={"/select-registration"}>
                   <Button
                     title="Regístrate"
