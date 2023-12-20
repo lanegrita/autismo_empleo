@@ -66,7 +66,7 @@ const SimpleRadioButton = ({
   return (
     <div className="flex items-center space-x-2">
       <RadioGroupItem variant={variant} value={id} id={id} />
-      <Label variant={variant} htmlFor={id}>
+      <Label className="text-[14px]" variant={variant} htmlFor={id}>
         {title}
       </Label>
     </div>
