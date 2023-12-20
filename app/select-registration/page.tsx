@@ -44,17 +44,18 @@ const RegisterOption = ({
   link = "",
 }: RegisterOption) => {
   return (
-    <div className="flex gap-14 md:gap-18 xl:gap-26 py-[88px] md:py-[337px] ">
-      <LargeIcon icon={icon} />
-      {/* Text Section */}
-      <div className="">
-        <Text tag="p" variant="para" color="blue">
-          {title1}
-        </Text>
-        <Text tag="h6" variant="title" className="max-w-[363px]">
-          {title2}
-        </Text>
-        <Link href={link}>
+    <Link href={link}>
+      <div className="flex gap-14 md:gap-18 xl:gap-26 py-[88px] md:py-[337px] ">
+        <LargeIcon icon={icon} />
+        {/* Text Section */}
+        <div className="">
+          <Text tag="p" variant="para" color="blue">
+            {title1}
+          </Text>
+          <Text tag="h6" variant="title" className="max-w-[363px]">
+            {title2}
+          </Text>
+
           <Button
             onClick={onClick}
             variant="simple"
@@ -62,9 +63,9 @@ const RegisterOption = ({
             icon="/images/icons/arrow-right.svg"
             direction="right"
           />
-        </Link>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

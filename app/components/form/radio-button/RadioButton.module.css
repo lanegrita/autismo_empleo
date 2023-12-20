@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--spacer-6);
+  width: 100%;
+  min-width: fit-content;
 }
 /* Azul Xl */
 .azul_xl.container {

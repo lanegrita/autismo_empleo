@@ -5,6 +5,7 @@ import styles from "./Accordion.module.css";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export interface SimpleAccordionItemProps {
   heading: string;
@@ -30,7 +31,7 @@ interface ListAccordionProps {
 const ListAccordionItem = ({
   iconUrl,
   title,
-  items
+  items,
 }: ListAccordionItemProps) => {
   const [open, setOpen] = useState(false);
 
@@ -64,7 +65,7 @@ const ListAccordionItem = ({
             exit="collapsed"
             variants={{
               open: { opacity: 1, height: "auto" },
-              collapsed: { opacity: 0, height: 0 }
+              collapsed: { opacity: 0, height: 0 },
             }}
             transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
@@ -88,7 +89,7 @@ const ListAccordionItem = ({
 
 const SimpleAccordionItem = ({
   heading,
-  description
+  description,
 }: SimpleAccordionItemProps) => {
   const [open, setOpen] = useState(false);
 
@@ -119,7 +120,7 @@ const SimpleAccordionItem = ({
             exit="collapsed"
             variants={{
               open: { opacity: 1, height: "auto" },
-              collapsed: { opacity: 0, height: 0 }
+              collapsed: { opacity: 0, height: 0 },
             }}
             transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
@@ -172,9 +173,11 @@ const ListAccordion = ({ items }: ListAccordionProps) => {
 export interface NavigationAccordionItemProps {
   iconUrl: string;
   title: string;
+  className?: string;
   items: {
     id: string;
     title: string;
+    link?: string;
   }[];
 }
 
@@ -185,7 +188,7 @@ interface NavigationAccordionProps {
 const NavigationAccordionItem = ({
   iconUrl,
   title,
-  items
+  items,
 }: ListAccordionItemProps) => {
   const [open, setOpen] = useState(false);
 
@@ -197,10 +200,12 @@ const NavigationAccordionItem = ({
         onClick={() => setOpen((prev) => !prev)}
       >
         <div className={styles.navigation_accordion_header_left}>
-          <ReactSVG
-            className={cn(styles.navigation_accordion_icon)}
-            src={iconUrl}
-          />
+          <div className="bg-blanco rounded-full">
+            <ReactSVG
+              className={cn(styles.navigation_accordion_icon)}
+              src={iconUrl}
+            />
+          </div>
           <Text tag="h4" variant="title-s" color={open ? "gray" : "default"}>
             {title}
           </Text>
@@ -210,7 +215,7 @@ const NavigationAccordionItem = ({
             styles.navigation_accordion_icon_arrow,
             open && styles.navigation_accordion_icon_arrow_rotate
           )}
-          src="/images/icons/cross.svg"
+          src="/images/icons/dropdown_open.svg"
         />
       </motion.header>
       <AnimatePresence initial={false}>
@@ -222,7 +227,7 @@ const NavigationAccordionItem = ({
             exit="collapsed"
             variants={{
               open: { opacity: 1, height: "auto" },
-              collapsed: { opacity: 0, height: 0 }
+              collapsed: { opacity: 0, height: 0 },
             }}
             transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
@@ -258,4 +263,108 @@ const NavigationAccordion = ({ items }: NavigationAccordionProps) => {
   );
 };
 
-export { SimpleAccordion, ListAccordion, NavigationAccordion };
+const SimpleNavigationItem = ({
+  iconUrl,
+  title,
+  link = "#",
+  className,
+}: {
+  iconUrl: string;
+  title: string;
+  link: string;
+  className?: string;
+}) => {
+  return (
+    <>
+      <Link
+        href={link}
+        className={cn(styles.navigation_accordion_header, className)}
+      >
+        <div className={styles.navigation_accordion_header_left}>
+          <div className="bg-blanco rounded-full">
+            <ReactSVG
+              className={cn(styles.navigation_accordion_icon)}
+              src={iconUrl}
+            />
+          </div>
+          <Text tag="h4" variant="title-s" color={"default"}>
+            {title}
+          </Text>
+        </div>
+        <ReactSVG
+          className={cn(styles.navigation_accordion_icon_arrow)}
+          src="/images/icons/dropdown_open.svg"
+        />
+      </Link>
+    </>
+  );
+};
+
+const DropdownNavigationItem = ({
+  iconUrl,
+  title,
+  items,
+  className,
+}: NavigationAccordionItemProps) => {
+  return (
+    <>
+      <div className={cn(styles.navigation_accordion_header, className)}>
+        <div className={styles.navigation_accordion_header_left}>
+          <div className="bg-blanco rounded-full">
+            <ReactSVG
+              className={cn(styles.navigation_accordion_icon)}
+              src={iconUrl}
+            />
+          </div>
+          <Text tag="h4" variant="title-s" color={"gray"}>
+            {title}
+          </Text>
+        </div>
+        <ReactSVG
+          className={cn(
+            styles.navigation_accordion_icon_arrow,
+            styles.navigation_accordion_icon_arrow_rotate
+          )}
+          src="/images/icons/dropdown_open.svg"
+        />
+      </div>
+      <AnimatePresence initial={false}>
+        (
+        <motion.section
+          key="content"
+          initial="collapsed"
+          animate="open"
+          exit="collapsed"
+          variants={{
+            open: { opacity: 1, height: "auto" },
+            collapsed: { opacity: 0, height: 0 },
+          }}
+          transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+        >
+          {items.map((item, index) => (
+            <Link
+              href={item.link || "#"}
+              key={index}
+              className={styles.navigation_accordion_sub_item}
+            >
+              <Text tag="p" variant="para" color="blue">
+                0{index + 1}
+              </Text>
+              <Text tag="p" variant="para" color="default">
+                {item.title}
+              </Text>
+            </Link>
+          ))}
+        </motion.section>
+      </AnimatePresence>
+    </>
+  );
+};
+
+export {
+  SimpleAccordion,
+  ListAccordion,
+  NavigationAccordion,
+  SimpleNavigationItem,
+  DropdownNavigationItem,
+};

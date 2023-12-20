@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 interface ImageProps {
   src: string;
   alt: string;
@@ -47,9 +48,16 @@ const ImageComponent: React.FC<ImageProps> = ({
     <div style={style}>
       <div
         className="relative w-full"
-        style={{ paddingTop: `${aspectRatio}%` }}
+        style={{
+          paddingTop: `${aspectRatio}%`,
+        }}
       >
-        <div className="absolute top-0 left-0 w-full h-full">
+        <div
+          className={cn(
+            `absolute top-0 left-0 w-full h-full  overflow-hidden  `,
+            borderRadiusClass
+          )}
+        >
           <Image src={src} alt={alt} layout="fill" objectFit="cover" />
         </div>
       </div>

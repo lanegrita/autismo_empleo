@@ -2,6 +2,7 @@ import {
   OfferListItem1,
   OfferListItem1Props,
   OfferListItem2,
+  OfferListItem3,
 } from "@/app/components/ui/list/List";
 import React from "react";
 
@@ -64,6 +65,13 @@ const OfferListItemPage = () => {
         subTitle="Confederación de Autismo España"
         backgroundColor="blue"
         registerdOnOffer={133}
+      />
+      <OfferListItem3
+        title={
+          "Técnico de Marketing para el área de Comunicación y Relaciones Institucionales."
+        }
+        image="/images/test.webp"
+        subTitle="Confederación de Autismo España"
       />
     </div>
   );
