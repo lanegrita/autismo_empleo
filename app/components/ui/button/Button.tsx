@@ -38,7 +38,7 @@ const Button = ({
   type,
   size,
   disabled,
-  className
+  className,
 }: ButtonProps) => {
   return (
     <button
@@ -62,7 +62,7 @@ const Button = ({
         icon && !title && styles.only_icon,
         size === "xl" && styles.large,
         disabled && styles.disabled,
-        className
+        className,
       ].join(" ")}
     >
       {title && (
