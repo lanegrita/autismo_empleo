@@ -75,3 +75,10 @@ html {
     font-size: 1.613vw; /* 16px */
   }
 }
+
+/* Content Styles Starts */
+.content p {
+  font-size: var(--text-para-l);
+  margin-bottom: var(--spacer-10);
+}
+/* Content Styles Ends */
