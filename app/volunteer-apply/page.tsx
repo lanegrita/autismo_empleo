@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { TitleHeader } from "../create-offer/page";
 import Text from "../components/ui/typography/Typography";
 import Image from "next/image";
@@ -9,8 +10,10 @@ import { SimpleRadioButton } from "../components/form/radio-button/RadioButton";
 import { SimpleMarquee } from "../components/ui/marquee-section/MarqueeSection";
 import Textarea from "../components/form/text-area/Textarea";
 import CheckBox from "../components/form/check-box/CheckBox";
+import ModalComponent from "../components/ui/modal-component/ModalComponent";
 
 const VolunteerApplyView = () => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div>
       {/* Section 1 Starts */}
@@ -134,7 +137,19 @@ const VolunteerApplyView = () => {
 
             {/* Row 4 */}
             <div className="mt-[160px]">
-              <Button title="Enviar" variant="primary" />
+              <Button
+                onClick={() => setOpenModal(true)}
+                title="Enviar"
+                variant="primary"
+              />
+              <ModalComponent
+                setOpenModal={setOpenModal}
+                openModal={openModal}
+                title="Tu solicitud se ha enviado correctamente. En breve recibirás noticias nuestras. Muchas gracias."
+                button1Title="Continuar"
+                textStyles="!max-w-[452px]"
+                button1Link="/volunteer-list"
+              />
             </div>
           </section>
           {/* Section 2 Ends */}

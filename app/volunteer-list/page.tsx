@@ -10,6 +10,18 @@ import {
 } from "../components/ui/list/List";
 import Pagination from "../components/ui/pagination/Pagination";
 import VolunteerCard from "../components/ui/volunteer-card/VolunteerCard";
+import Link from "next/link";
+
+const dummyData = [
+  { id: 1 },
+  { id: 1 },
+  { id: 1 },
+  { id: 1 },
+  { id: 1 },
+  { id: 1 },
+  { id: 1 },
+  { id: 1 },
+];
 
 const data: OfferListItem1Props[] = [
   {
@@ -119,46 +131,15 @@ const VolunteerList = () => {
           </div>
           {/* Content Container */}
           <div className="grid grid-cols-1 xl:grid-cols-2 bg-gris2 gap-[1px] border-t border-gris2">
-            <VolunteerCard
-              image="/images/test.webp"
-              title="Desarrollo Personal"
-              description="Confederación de Autismo España"
-            />
-            <VolunteerCard
-              image="/images/test.webp"
-              title="Desarrollo Personal"
-              description="Confederación de Autismo España"
-            />
-            <VolunteerCard
-              image="/images/test.webp"
-              title="Desarrollo Personal"
-              description="Confederación de Autismo España"
-            />
-            <VolunteerCard
-              image="/images/test.webp"
-              title="Desarrollo Personal"
-              description="Confederación de Autismo España"
-            />
-            <VolunteerCard
-              image="/images/test.webp"
-              title="Desarrollo Personal"
-              description="Confederación de Autismo España"
-            />
-            <VolunteerCard
-              image="/images/test.webp"
-              title="Desarrollo Personal"
-              description="Confederación de Autismo España"
-            />
-            <VolunteerCard
-              image="/images/test.webp"
-              title="Desarrollo Personal"
-              description="Confederación de Autismo España"
-            />
-            <VolunteerCard
-              image="/images/test.webp"
-              title="Desarrollo Personal"
-              description="Confederación de Autismo España"
-            />
+            {dummyData.map((item, index) => (
+              <Link key={index} href={"/volunteer-detail"}>
+                <VolunteerCard
+                  image="/images/test.webp"
+                  title="Desarrollo Personal"
+                  description="Confederación de Autismo España"
+                />
+              </Link>
+            ))}
           </div>
           {/* Pagination Section */}
           <div className=" flex justify-center items-center px-10 py-[45px] md:py-[60px] lg:py-[120px] xl:py-[140px] border-t border-gris2">

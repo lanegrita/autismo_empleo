@@ -4,17 +4,24 @@ import Marquee from "react-fast-marquee";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-interface MarqueeSectionProps {
-  variant: "default" | "azul";
-  items: MarqueeItemProps[];
-}
-
 export interface MarqueeItemProps {
   imageUrl: string;
   title: string;
 }
 
-const MarqueeSection: React.FC<MarqueeSectionProps> = ({ items, variant }) => {
+interface MarqueeSectionProps {
+  variant: "default" | "azul";
+  items: MarqueeItemProps[];
+  leftText: string;
+  rightText: string;
+}
+
+const MarqueeSection: React.FC<MarqueeSectionProps> = ({
+  items,
+  variant,
+  leftText,
+  rightText,
+}) => {
   return (
     <div
       className={cn(
@@ -30,7 +37,7 @@ const MarqueeSection: React.FC<MarqueeSectionProps> = ({ items, variant }) => {
           fontWeight="medium"
           className="max-w-[298px]"
         >
-          Si estás buscando empleo o eres empresa que busca empleados…
+          {leftText}
         </Text>
         <Text
           variant="para"
@@ -40,7 +47,7 @@ const MarqueeSection: React.FC<MarqueeSectionProps> = ({ items, variant }) => {
           color="blue"
           underline={variant === "azul"}
         >
-          Ir al portal de empleo
+          {rightText}
         </Text>
       </div>
 
