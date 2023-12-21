@@ -180,7 +180,10 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
             <Text tag="p" variant="para" color="default">
               Acceso
             </Text>
-            <Link href="/login?userType=candidatos">
+            <Link
+              onClick={() => setOpenNavbar(false)}
+              href="/login?userType=candidatos"
+            >
               <Text
                 className="cursor-pointer"
                 tag="p"
@@ -190,7 +193,10 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
                 Candidatos
               </Text>
             </Link>
-            <Link href="/login?userType=empresas">
+            <Link
+              onClick={() => setOpenNavbar(false)}
+              href="/login?userType=empresas"
+            >
               <Text
                 className="cursor-pointer"
                 tag="p"
@@ -200,7 +206,10 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
                 Empresas
               </Text>
             </Link>
-            <Link href="/login?userType=voluntariado">
+            <Link
+              onClick={() => setOpenNavbar(false)}
+              href="/login?userType=voluntariado"
+            >
               <Text
                 className="cursor-pointer"
                 tag="p"

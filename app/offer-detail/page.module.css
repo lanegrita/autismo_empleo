@@ -11,3 +11,14 @@
   text-decoration: underline;
   color: var(--color-azul-ae);
 }
+@media screen and (max-width: 1024px) {
+  .content {
+    padding: var(--spacer-30) var(--spacer-20);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .content {
+    padding: var(--spacer-20) var(--spacer-10);
+  }
+}

@@ -12,6 +12,7 @@ export interface IconProps {
   tooltipPosition?: "top" | "right" | "bottom" | "left";
   variant?: "default" | "without-mask" | "with-mask";
   size?: "default" | "lg";
+  className?: string;
 }
 
 const Icon = ({
@@ -21,6 +22,7 @@ const Icon = ({
   tooltipPosition,
   variant,
   size,
+  className,
 }: IconProps) => {
   return (
     <div
@@ -28,7 +30,8 @@ const Icon = ({
         styles.container,
         selected && styles.selected,
         variant === "without-mask" && styles.without_mask,
-        size === "lg" && styles.large
+        size === "lg" && styles.large,
+        className
       )}
     >
       {tooltip ? (

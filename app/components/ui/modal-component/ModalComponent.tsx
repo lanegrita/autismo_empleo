@@ -44,6 +44,10 @@ interface ModalProps {
     | "outline-azul"
     | "simple-azul";
   button2Icon?: string;
+  openModal: boolean;
+  setOpenModal: (param1: boolean) => void;
+  button1OnClick?: () => void;
+  button2OnClick?: () => void;
 }
 
 const ModalComponent = ({
@@ -62,8 +66,11 @@ const ModalComponent = ({
   error,
   errorMessage,
   form,
+  openModal,
+  setOpenModal,
+  button1OnClick,
+  button2OnClick,
 }: ModalProps) => {
-  const [openModal, setOpenModal] = useState(false);
   const crossIconColor = variant === "default" ? "#888d8e" : "white";
   const topIconColor = error
     ? "#ed3e34"
@@ -72,13 +79,7 @@ const ModalComponent = ({
     : "white";
   return (
     <AlertDialog onOpenChange={() => setOpenModal(true)} open={openModal}>
-      <AlertDialogTrigger asChild>
-        <Button
-          onClick={() => setOpenModal(true)}
-          variant="primary"
-          title="Open Modal"
-        />
-      </AlertDialogTrigger>
+      <AlertDialogTrigger asChild></AlertDialogTrigger>
       <AlertDialogContent>
         {/* Content Container */}
         <div
@@ -219,6 +220,7 @@ const ModalComponent = ({
                     title={button1Title}
                     icon={button1Icon}
                     direction="right"
+                    onClick={button1OnClick}
                   />
                 )}
                 {/* Button 2 */}
@@ -232,6 +234,7 @@ const ModalComponent = ({
                     icon={button2Icon}
                     direction="right"
                     title={button2Title}
+                    onClick={button2OnClick}
                   />
                 )}
               </div>
