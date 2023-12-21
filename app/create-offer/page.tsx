@@ -9,6 +9,7 @@ import CheckBox from "../components/form/check-box/CheckBox";
 import Textarea from "../components/form/text-area/Textarea";
 import { SimpleMarquee } from "../components/ui/marquee-section/MarqueeSection";
 import { cn } from "@/lib/utils";
+import Marquee from "react-fast-marquee";
 
 const tagList = [
   "Disponibilidad a jornada completa de lunes a viernes",
@@ -29,9 +30,9 @@ const CreateOfferView = () => {
       />
       <div className="grid grid-cols-12 border-t border-gris2">
         {/* Left */}
-        <div className="col-span-2"></div>
+        <div className=" hidden lg:block col-span-2"></div>
         {/* Center */}
-        <div className="col-span-8 border-x border-gris2 pt-50 pb-[160px] px-[160px]">
+        <div className=" col-span-12 lg:col-span-8 border-x border-gris2 pt-50 pb-[160px]  px-10 md:px-20 2xl:px-[160px]">
           <form>
             {/* Section 1 */}
             <section className="flex flex-col gap-16">
@@ -86,7 +87,7 @@ const CreateOfferView = () => {
                 />
               </div>
               {/* Third Form Row */}
-              <div className="grid lg:grid-cols-4 gap-10 items-end">
+              <div className="grid  grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-10 items-end">
                 <div className="col-span-1">
                   <DropDown
                     options={[
@@ -117,7 +118,7 @@ const CreateOfferView = () => {
                     placeHolder="Contrato"
                   />
                 </div>
-                <div className="col-span-2">
+                <div className=" col-span-1 xs:col-span-2">
                   <DropDown
                     options={[
                       {
@@ -229,7 +230,7 @@ const CreateOfferView = () => {
               </Text>
 
               {/* First Row */}
-              <div className="flex items-center gap-32">
+              <div className="flex items-center gap-8 md:gap-16 lg:gap-32">
                 <Textarea
                   variant="single-line"
                   placeholder="Requerimiento mínimo"
@@ -263,9 +264,9 @@ const CreateOfferView = () => {
             </section>
 
             {/* Button Container */}
-            <div className="flex justify-between mt-[160px] items-center">
+            <div className="flex flex-col md:flex-row gap-2 px-10 justify-between mt-[160px] items-center">
               {/* Left */}
-              <div className="flex gap-4">
+              <div className="flex flex-col xs:flex-row gap-4">
                 <Button title="Publicar oferta" variant="primary" />
                 <Button title="Guardar borrador" variant="secondary" />
               </div>
@@ -277,7 +278,7 @@ const CreateOfferView = () => {
           </form>
         </div>
         {/* Right */}
-        <div className="col-span-2">
+        <div className=" hidden lg:block col-span-2">
           <div className="mt-[230px]">
             <SimpleMarquee>Nueva oferta de trabajo</SimpleMarquee>
           </div>
@@ -301,30 +302,62 @@ export const TitleHeader = ({
   className?: string;
 }) => {
   return (
-    <div
-      className={cn(
-        "flex flex-col gap-10 xs:flex-row xs:items-center justify-between px-10 py-24 md:py-26 lg:py-27 lg:px-20",
-        className
-      )}
-    >
-      {/* Left */}
-      <div className="flex gap-10 items-center">
-        {/* Image */}
-        <div className="relative w-[108px] h-[60px] md:w-[144px] md:h-[80px] lg:w-[180px] lg:h-[100px] rounded-full overflow-hidden">
-          <Image src={image} alt="image" fill />
-        </div>
+    <div>
+      {/* Mobile */}
+      <div className="flex justify-between items-center md:hidden">
+        <Marquee>
+          <div
+            className={cn(
+              "flex flex-col gap-10 xs:flex-row xs:items-center justify-between px-10 py-24 md:py-26 lg:py-27 lg:px-20",
+              className
+            )}
+          >
+            {/* Left */}
+            <div className="flex gap-10 items-center">
+              {/* Image */}
+              <div className="relative w-[108px] h-[60px] md:w-[144px] md:h-[80px] lg:w-[180px] lg:h-[100px] rounded-full overflow-hidden">
+                <Image src={image} alt="image" fill />
+              </div>
 
-        <Text tag="h1" variant={titleVariant}>
-          {title}
-        </Text>
+              <Text tag="h1" variant={titleVariant}>
+                {title}
+              </Text>
+            </div>
+          </div>
+        </Marquee>
+        {/* Right */}
+        {button && (
+          <div className="pr-10 bg-transparent ">
+            <Button variant="primary" title={button} />
+          </div>
+        )}
       </div>
+      {/* Desktop */}
+      <div
+        className={cn(
+          "hidden md:flex flex-col gap-10 xs:flex-row xs:items-center justify-between px-10 py-24 md:py-26 lg:py-27 lg:px-20",
+          className
+        )}
+      >
+        {/* Left */}
+        <div className="flex gap-10 items-center">
+          {/* Image */}
+          <div className="relative w-[108px] h-[60px] md:w-[144px] md:h-[80px] lg:w-[180px] lg:h-[100px] rounded-full overflow-hidden">
+            <Image src={image} alt="image" fill />
+          </div>
 
-      {/* Right */}
-      {button && (
-        <div>
-          <Button variant="primary" title={button} />
+          <Text tag="h1" variant={titleVariant}>
+            {title}
+          </Text>
         </div>
-      )}
+
+        {/* Right */}
+        {button && (
+          <div>
+            <Button variant="primary" title={button} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
@@ -336,10 +369,8 @@ interface TagSelectorProps {
 const TagSelector: React.FC<TagSelectorProps> = ({ title }) => {
   return (
     <div className="flex items-center bg-azulLight3 rounded-full pl-4 pr-2 py-2 cursor-pointer">
-      <Text tag="p" variant="para" color="blue">
-        {title}
-      </Text>
-      <div className="relative w-7 h-7">
+      <p className=" text-[1.75rem] sm:text-[1.25rem] text-azulAe">{title}</p>
+      <div className="relative min-w-[28px] min-h-[28px] w-[28px] h-[28px]">
         <Image src="/images/icons/close.svg" alt="cross icon" fill />
       </div>
     </div>

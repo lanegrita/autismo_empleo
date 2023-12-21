@@ -105,3 +105,16 @@
 /* List with Items Starts */
 
 /* List with Items Ends */
+@media screen and (max-width: 1024px) {
+  .list_item {
+    display: flex;
+    gap: var(--spacer-10);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .list_item {
+    display: flex;
+    gap: var(--spacer-6);
+  }
+}

@@ -18,6 +18,7 @@ import { OfferListItem3 } from "../components/ui/list/List";
 import Text from "../components/ui/typography/Typography";
 import { TitleHeader } from "../create-offer/page";
 import VolunteerCard from "../components/ui/volunteer-card/VolunteerCard";
+import ModalComponent from "../components/ui/modal-component/ModalComponent";
 const types = ["tea", "no-tea", "volunteer", "company", "entity"];
 
 const navigationAccordion: NavigationAccordionItemProps[] = [
@@ -65,6 +66,7 @@ const PrivateArea = () => {
   const [userType, setUserType] = useState(0);
   const [openAccordian, setOpenAccordian] = useState(false);
   const { openLightbox, renderLightbox } = useLightbox();
+  const [openModal, setOpenModal] = useState(false);
   const user = {
     type: types[userType],
   };
@@ -115,18 +117,7 @@ const PrivateArea = () => {
         </div>
         {/* Section 1 */}
         <section className="">
-          {/* Marquee Section */}
-          <div className="sm:hidden ">
-            <Marquee>
-              <TitleHeader
-                className="overflow-hidden"
-                image="/images/test.webp"
-                title="Mi área privada"
-                titleVariant="title-xxl"
-              />
-            </Marquee>
-          </div>
-          <div className="hidden sm:block border-y border-gris2">
+          <div className=" border-y border-gris2">
             <TitleHeader
               className="overflow-hidden"
               image="/images/test.webp"
@@ -142,9 +133,28 @@ const PrivateArea = () => {
           </div>
           {/* Radio Button */}
           <RadioGroup className="flex flex-col w-full  sm:flex-row  items-center gap-10 md:w-full  2xl:w-2/3  ">
+            <ModalComponent
+              button1Title="Candidato TEA"
+              button1OnClick={() => {
+                setUserType(0);
+                setOpenModal(false);
+              }}
+              button2OnClick={() => {
+                setUserType(1);
+                setOpenModal(false);
+              }}
+              button2Title="Candidato Profesional"
+              button2Varient="primary"
+              title="¿Con qué tipo de usuario te habrías logueado/registrado?"
+              description="* Esta vista no pertenece al flujo de navegación nominal, sin embargo, nos es necesaria para evitar la repetición y restar complejidad al wireframe final. Disculpa las molestias."
+              topIcon="/images/icons/love.svg"
+              topIconText="Aviso"
+              openModal={openModal}
+              setOpenModal={setOpenModal}
+            />
             <RadioButtonXL
-              checked={userType == 0}
-              onClick={() => setUserType(0)}
+              checked={userType == 0 || userType == 1}
+              onClick={() => setOpenModal(true)}
               title="En búsqueda de empleo"
               id="1"
             />

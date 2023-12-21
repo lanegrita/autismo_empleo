@@ -3,23 +3,28 @@ import Button from "../components/ui/button/Button";
 import { ListItem, OfferListItem2 } from "../components/ui/list/List";
 import styles from "./page.module.css";
 import { cn } from "@/lib/utils";
+import Text from "../components/ui/typography/Typography";
 
 const OfferDetail = () => {
   return (
     <div className="">
       {/* Header Section  */}
-      <section className="grid grid-cols-12">
+      <section className="grid grid-cols-1 md:grid-cols-12 ">
         {/* Left */}
-        <div className="col-span-2 bg-azulAe flex justify-center ">
-          <div className="mt-21">
+        <div className="w-full col-span-2 bg-azulAe p-11  ">
+          <div className="flex justify-between w-full items-center md:justify-center md:mt-21">
             <div className="rotate-180">
               <Button
                 variant="secondary-azul"
                 icon="/images/icons/arrow-right.svg"
               />
             </div>
+            <Text tag="p" variant="para" color="white" className="md:hidden">
+              Volver al listado
+            </Text>
           </div>
         </div>
+        {/* Right */}
         <div className="col-span-10">
           <OfferListItem2
             image="/images/test.webp"
@@ -34,11 +39,11 @@ const OfferDetail = () => {
       {/* Main Section */}
       <section className="grid grid-cols-12">
         {/* Left */}
-        <div className="col-span-2"></div>
+        <div className="hidden lg:block col-span-2"></div>
         {/* Center */}
-        <div className="col-span-8 border-x border-gris1">
+        <div className=" col-span-12 lg:col-span-8 border-x border-gris1">
           {/* First section */}
-          <div className="px-20 py-22 ">
+          <div className="px-10 sm:px-20 py-20 sm:py-22 ">
             <ListItem
               iconUrl="/images/icons/news.svg"
               title="Requisitos"
@@ -47,7 +52,7 @@ const OfferDetail = () => {
           </div>
 
           {/* Second Section */}
-          <div className="px-20 py-22 border-y border-gris2  grid grid-cols-1 xl:grid-cols-2 gap-8">
+          <div className=" px-10 py-20 sm:px-20 sm:py-22 border-y border-gris2  grid grid-cols-1 xl:grid-cols-2 gap-8">
             <ListItem
               iconUrl="/images/icons/news.svg"
               title="Descripción"
@@ -62,7 +67,7 @@ const OfferDetail = () => {
                 "Disponibilidad a jornada completa de lunes a viernes.",
                 "Perfil acostumbrado/a a trabajar en área de ventas.",
                 "Perfil acostumbrado/a a trabajar por objetivos.",
-                "Formación, colaboración y el aprendizaje constante."
+                "Formación, colaboración y el aprendizaje constante.",
               ]}
             />
             <ListItem
@@ -74,7 +79,7 @@ const OfferDetail = () => {
           </div>
 
           {/* Third Section */}
-          <div className="px-20 py-22 ">
+          <div className="px-10 sm:px-20 py-20 sm:py-22 ">
             <ListItem
               iconUrl="/images/icons/news.svg"
               title="Descripción"
@@ -123,7 +128,7 @@ const OfferDetail = () => {
             </p>
           </section>
           {/* Section 5 */}
-          <section className="grid grid-cols-2 px-20 pb-40 gap-x-48 gap-y-30">
+          <section className="grid grid-cols-1 md:grid-cols-2 px-10 sm:px-20 pt-6 md:pt-0 pb-30 gap-x-48 gap-y-30">
             <ListItem
               iconUrl="/images/icons/news.svg"
               title="Categoría"
@@ -151,7 +156,7 @@ const OfferDetail = () => {
           </section>
 
           {/* Button Section */}
-          <section className="flex justify-between px-20 py-40 border-t border-gris2">
+          <section className="flex justify-between px-10 md:px-20 py-20 md:py-40 border-t border-gris2">
             {/* Left */}
             <div className="flex gap-4 items-center">
               <Button title="Editar" variant="primary" />
@@ -161,7 +166,7 @@ const OfferDetail = () => {
           </section>
         </div>
         {/* Right */}
-        <div className="col-span-2"></div>
+        <div className=" hidden lg:block col-span-2"></div>
       </section>
     </div>
   );

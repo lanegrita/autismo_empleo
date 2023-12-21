@@ -122,6 +122,7 @@ interface ListItemProps {
   title: string;
   descrition?: string;
   items?: string[];
+  iconClassName?: string;
 }
 
 const ListItem: React.FC<ListItemProps> = ({
@@ -130,20 +131,26 @@ const ListItem: React.FC<ListItemProps> = ({
   descrition,
   variant,
   items,
+  iconClassName,
 }) => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4 xl:gap-8">
       <div
         className={cn(
           styles.list_item,
           variant === "with-description" && styles.list_with_description,
-          variant === "with-items" && styles.list_with_items
+          variant === "with-items" && styles.list_with_items,
+          variant === "simple" && "!gap-0"
         )}
       >
         <Icon
           url={iconUrl}
           variant={(variant === "simple" && "without-mask") || "default"}
           size={variant === "simple" ? "default" : "lg"}
+          className={cn(
+            variant === "simple" &&
+              "!w-[44px] !h-[44px] md:!w-[60px] md:!h-[60px] xl:!w-[68px] xl:!h-[68px]"
+          )}
         />
         <Text
           tag="h5"
@@ -154,13 +161,17 @@ const ListItem: React.FC<ListItemProps> = ({
         </Text>
       </div>
       {variant === "with-description" && (
-        <Text tag="p" variant="para" className="ml-[104px] ">
+        <Text
+          tag="p"
+          variant="para"
+          className=" ml-[60px] sm:ml-[72px] md:ml-[104px] "
+        >
           {descrition}
         </Text>
       )}
 
       {variant === "with-items" && (
-        <ul className="flex flex-col gap-4 ml-[104px] ">
+        <ul className="flex flex-col gap-4 ml-[60px] xs:ml-[104px] ">
           {items?.map((item, index) => (
             <li key={index} className="flex items-center gap-4">
               <BulletIcon />
