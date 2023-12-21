@@ -72,7 +72,7 @@ const VolunteerView = () => {
   );
 };
 
-const IndicatorTag = ({ title }: { title: string }) => {
+export const IndicatorTag = ({ title }: { title: string }) => {
   return (
     <div className="flex gap-4 items-center">
       <div className="w-[8px] h-[8px] bg-azulAe rounded-full" />
@@ -83,7 +83,7 @@ const IndicatorTag = ({ title }: { title: string }) => {
   );
 };
 
-const VolunteerSection = ({
+export const VolunteerSection = ({
   direction = "default",
   imageShape = "oval"
 }: {
