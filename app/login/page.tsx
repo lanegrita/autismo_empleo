@@ -1,24 +1,52 @@
+"use client";
 import React, { useState } from "react";
 import Text from "../components/ui/typography/Typography";
 import { RadioButtonXL } from "../components/form/radio-button/RadioButton";
 import { RadioGroup } from "@/components/ui/radio-group";
-import Input from "../components/form/input/Input";
+import Input, { InputProps } from "../components/form/input/Input";
 import Button from "../components/ui/button/Button";
 import MarqueeSection, {
-  SimpleMarquee,
+  SimpleMarquee
 } from "../components/ui/marquee-section/MarqueeSection";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { loginFormSchema } from "../validationSchemas";
+
+type Inputs = z.infer<typeof loginFormSchema>;
+
 const Login = ({ searchParams }: { searchParams?: { userType: string } }) => {
-  console.log("Params: ", searchParams?.userType);
   const userType = searchParams?.userType;
+  const [data, setData] = useState<Inputs>();
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors }
+  } = useForm<Inputs>({
+    resolver: zodResolver(loginFormSchema)
+  });
+
+  const processForm: SubmitHandler<Inputs> = (data) => {
+    reset();
+    console.log("Form Data: ", data);
+    setData(data);
+  };
+
   return (
     <div className="grid grid-cols-12 ">
       {/* Left Container */}
       <div className=" hidden md:block md:col-span-2 lg:col-span-3"></div>
       {/* Middle Container  */}
-      <div className=" col-span-12 md:col-span-8 lg:col-span-6 flex flex-col items-center   border-x border-gris2 pt-20 px-10 md:pt-42 pb-50">
+      <form
+        onSubmit={handleSubmit(processForm)}
+        className=" col-span-12 md:col-span-8 lg:col-span-6 flex flex-col items-center   border-x border-gris2 pt-20 px-10 md:pt-42 pb-50"
+      >
         {/* Content Container */}
         <div className=" w-full max-w-[482px] ">
           <Text
@@ -62,12 +90,27 @@ const Login = ({ searchParams }: { searchParams?: { userType: string } }) => {
           </div>
           {/* Inputs Container */}
           <div className="flex flex-col gap-22 mt-26 ">
-            <Input placeholder="Email" type="email" variant="simple" />
-            <Input placeholder="Contraseña" type="password" variant="simple" />
+            <Input
+              placeholder="Email"
+              variant="simple"
+              type="email"
+              name="name"
+              error={errors.email?.message}
+              register={register}
+            />
+            <Input
+              name="password"
+              type="password"
+              placeholder="Contraseña"
+              variant="simple"
+              color="default"
+              error={errors.password?.message}
+              register={register}
+            />
           </div>
           {/* Button and register Container */}
           <div className="flex flex-col sm:flex-row gap-13 sm:items-center mt-30">
-            <Button variant="primary" title="Iniciar sesión" />
+            <Button type="submit" variant="primary" title="Iniciar sesión" />
             {/* Text Wrapper */}
             <div className="flex flex-col extraSmall:flex-row  extraSmall:items-center gap-1">
               <Text variant="para" tag="p">
@@ -79,7 +122,7 @@ const Login = ({ searchParams }: { searchParams?: { userType: string } }) => {
             </div>
           </div>
         </div>
-      </div>
+      </form>
       {/* Right Container */}
       <div className=" hidden md:col-span-2 lg:col-span-3 md:flex flex-col justify-end">
         <SimpleMarquee>Accede a tu cuenta</SimpleMarquee>
@@ -99,7 +142,7 @@ export const LoginButton = ({
   icon,
   onClick,
   title,
-  direction,
+  direction
 }: LoginButtonProps) => {
   return (
     <div

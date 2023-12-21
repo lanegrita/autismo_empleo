@@ -4,21 +4,30 @@ import styles from "./Input.module.css";
 import { ReactSVG } from "react-svg";
 import { cn } from "@/lib/utils";
 import Text from "../../ui/typography/Typography";
-import { error } from "console";
 
-interface InputProps {
+export interface InputProps {
   placeholder: string;
-  type: "text" | "email" | "password" | "tel";
+  name: string;
+  type?: "text" | "email" | "password" | "tel";
   variant: "simple" | "newsletter";
   color?: "default" | "azul";
-  error?: boolean;
+  error?: string;
+  register: any;
 }
 
-const Input = (props: InputProps) => {
+const Input = ({
+  variant,
+  type,
+  register = () => {},
+  color,
+  error = "",
+  name,
+  placeholder
+}: InputProps) => {
   const [showPlaceHolder, setShowPlaceHolder] = useState(false);
   const [selectedValue, setSelectedValue] = useState("");
 
-  if (props.variant === "simple") {
+  if (variant === "simple") {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const inputValue = event.target.value;
       setSelectedValue(inputValue); // Update showPlaceHolder based on input value
@@ -38,33 +47,33 @@ const Input = (props: InputProps) => {
         <Text
           className={cn(
             styles.topPlaceHolder,
-            props.color === "azul" && styles.azul,
+            color === "azul" && styles.azul,
             showPlaceHolder && styles.active,
-            props.error && styles.error
+            error && styles.error
           )}
           variant="subtitle-s"
           tag="h6"
         >
-          {props.placeholder}
+          {placeholder}
         </Text>
         <input
-          {...props}
+          type={type}
           className={cn(
             styles.simple_input,
-            props.color === "azul" && styles.azul,
+            color === "azul" && styles.azul,
             showPlaceHolder && styles.disable,
-            props.error && styles.error
+            error && styles.error
           )}
-          type={props.type}
-          placeholder={props.placeholder}
+          placeholder={placeholder}
           onFocus={() => setShowPlaceHolder(true)}
           onBlur={handleBlur} // Use the custom onBlur event handler
           onChange={handleInputChange}
+          {...register(name)}
         />
         {/* Error Message */}
-        {props.error && (
+        {error && (
           <Text variant="subtitle-s" tag="p" className={styles.errorMessage}>
-            Rellene este campo obligatorio.
+            {error}
           </Text>
         )}
       </div>
@@ -74,14 +83,13 @@ const Input = (props: InputProps) => {
   return (
     <div className={styles.container}>
       <input
-        {...props}
         className={styles.input}
         type="text"
         name="email"
         id="email"
         placeholder="Email"
       />
-      {props.variant === "newsletter" && (
+      {variant === "newsletter" && (
         <div className={styles.iconWrapper}>
           <ReactSVG
             className={styles.icon}
