@@ -1,5 +1,3 @@
-"use server";
-
 import axios from "axios";
 
 type OfferList = {
@@ -41,7 +39,7 @@ interface OfferListResponse {
 export const getOfferList = async () => {
   const { data } = await axios.get(`${process.env.AUTISM_API_URL}/jobs`, {
     headers: {
-      Authorization: `Bearer ${process.env.AUTISM_TOKEN}`, // Replace 'yourToken' with your actual token
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTISM_TOKEN}`, // Replace 'yourToken' with your actual token
       "Content-Type": "application/json"
     }
   });

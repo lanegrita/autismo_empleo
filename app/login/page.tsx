@@ -1,21 +1,17 @@
 "use client";
-import React, { useState } from "react";
-import Text from "../components/ui/typography/Typography";
-import { RadioButtonXL } from "../components/form/radio-button/RadioButton";
 import { RadioGroup } from "@/components/ui/radio-group";
-import Input, { InputProps } from "../components/form/input/Input";
-import Button from "../components/ui/button/Button";
-import MarqueeSection, {
-  SimpleMarquee
-} from "../components/ui/marquee-section/MarqueeSection";
-import Marquee from "react-fast-marquee";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { loginFormSchema } from "../validationSchemas";
 import { login } from "@/services/authService";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
+import Input from "../components/form/input/Input";
+import { RadioButtonXL } from "../components/form/radio-button/RadioButton";
+import Button from "../components/ui/button/Button";
+import { SimpleMarquee } from "../components/ui/marquee-section/MarqueeSection";
+import Text from "../components/ui/typography/Typography";
+import { loginFormSchema } from "../validationSchemas";
 
 export type LoginFormData = z.infer<typeof loginFormSchema>;
 

@@ -12,8 +12,9 @@ import DropDown from "../components/form/dropdown/Dropdown";
 import { RadioGroup } from "@/components/ui/radio-group";
 import { SimpleRadioButton } from "../components/form/radio-button/RadioButton";
 import Link from "next/link";
+
 const Register = ({
-  searchParams,
+  searchParams
 }: {
   searchParams?: { registerType: string };
 }) => {
@@ -168,12 +169,12 @@ const Register = ({
                   options={[
                     {
                       label: "Nacionalidad",
-                      value: "1",
+                      value: "1"
                     },
                     {
                       label: "Tipo",
-                      value: "2",
-                    },
+                      value: "2"
+                    }
                   ]}
                   placeHolder="Nacionalidad"
                 />
@@ -184,12 +185,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="DNI"
                     />
@@ -207,12 +208,12 @@ const Register = ({
                   options={[
                     {
                       label: "DNI",
-                      value: "1",
+                      value: "1"
                     },
                     {
                       label: "Tipo",
-                      value: "2",
-                    },
+                      value: "2"
+                    }
                   ]}
                   placeHolder="Género"
                 />
@@ -283,12 +284,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="¿Tienes certificado de discapacidad?"
                     />
@@ -306,12 +307,12 @@ const Register = ({
                   options={[
                     {
                       label: "DNI",
-                      value: "1",
+                      value: "1"
                     },
                     {
                       label: "Tipo",
-                      value: "2",
-                    },
+                      value: "2"
+                    }
                   ]}
                   placeHolder="Género"
                 />
@@ -378,12 +379,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="Población"
                     />
@@ -393,12 +394,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="Provincia"
                     />
@@ -418,12 +419,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="País"
                     />
@@ -558,12 +559,12 @@ const Register = ({
                   options={[
                     {
                       label: "Nacionalidad",
-                      value: "1",
+                      value: "1"
                     },
                     {
                       label: "Tipo",
-                      value: "2",
-                    },
+                      value: "2"
+                    }
                   ]}
                   placeHolder="Sector"
                 />
@@ -630,12 +631,12 @@ const Register = ({
                     options={[
                       {
                         label: "Nacionalidad",
-                        value: "1",
+                        value: "1"
                       },
                       {
                         label: "Tipo",
-                        value: "2",
-                      },
+                        value: "2"
+                      }
                     ]}
                     placeHolder="Nacionalidad"
                   />
@@ -703,12 +704,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="Población"
                     />
@@ -718,12 +719,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="Provincia"
                     />
@@ -743,12 +744,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="País"
                     />
@@ -834,12 +835,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="Población"
                     />
@@ -849,12 +850,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="Provincia"
                     />
@@ -874,12 +875,12 @@ const Register = ({
                       options={[
                         {
                           label: "DNI",
-                          value: "1",
+                          value: "1"
                         },
                         {
                           label: "Tipo",
-                          value: "2",
-                        },
+                          value: "2"
+                        }
                       ]}
                       placeHolder="País"
                     />

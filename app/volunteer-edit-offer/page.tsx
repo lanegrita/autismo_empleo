@@ -25,7 +25,7 @@ const VolunteerEditOffer = () => {
         <div className="hidden xl:block  xl:col-span-2 border-l border-gris2"></div>
 
         {/* Main */}
-        <div className="col-span-12 xl:col-span-8 border-x border-gris2 px-10 py-30 md:px-20 md:py-40 xl:px-[160px] xl:py-40">
+        <form className="col-span-12 xl:col-span-8 border-x border-gris2 px-10 py-30 md:px-20 md:py-40 xl:px-[160px] xl:py-40">
           <Text tag="h3" variant="title-s" color="blue" className="mb-21">
             Datos generales
           </Text>
@@ -37,11 +37,13 @@ const VolunteerEditOffer = () => {
                 type="text"
                 placeholder="Título del voluntariado"
                 variant="simple"
+                name="text1"
               />
               <Input
                 type="text"
                 placeholder="Área del voluntariado"
                 variant="simple"
+                name="text2"
               />
             </div>
           </div>
@@ -143,6 +145,7 @@ const VolunteerEditOffer = () => {
                       type="text"
                       placeholder="Especifica"
                       variant="simple"
+                      name="text3"
                     />
                   </div>
                 </div>
@@ -183,7 +186,7 @@ const VolunteerEditOffer = () => {
             <Button title="Publicar oferta" variant="primary" />
           </div>
           {/* Buttons Section Ends */}
-        </div>
+        </form>
 
         {/* Right */}
         <div className="hidden xl:block  xl:col-span-2 border-r border-gris2">

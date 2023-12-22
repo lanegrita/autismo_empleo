@@ -2,13 +2,13 @@ import React from "react";
 import { RadioGroup } from "@/components/ui/radio-group";
 import Input from "@/app/components/form/input/Input";
 import Dropdown, {
-  DropdownOptions,
+  DropdownOptions
 } from "@/app/components/form/dropdown/Dropdown";
 import Textarea from "@/app/components/form/text-area/Textarea";
 import CheckBox from "@/app/components/form/check-box/CheckBox";
 import {
   RadioButtonXL,
-  SimpleRadioButton,
+  SimpleRadioButton
 } from "@/app/components/form/radio-button/RadioButton";
 import Text from "@/app/components/ui/typography/Typography";
 const loveIcon = "/images/icons/love.svg";
@@ -17,7 +17,7 @@ const options: DropdownOptions[] = [
   { value: "Value 1", label: "Value 1" },
   { value: "Value 2", label: "Value 2" },
   { value: "Value 3", label: "Value 3" },
-  { value: "Value 4", label: "Value 4" },
+  { value: "Value 4", label: "Value 4" }
 ];
 
 const Playground = () => {
@@ -166,7 +166,7 @@ const Playground = () => {
             />
           </div>
           {/* Error */}
-          <div className="p-5 py-9 bg-white">
+          {/* <div className="p-5 py-9 bg-white">
             <Input
               type="text"
               placeholder="Nombre de la empresa"
@@ -182,7 +182,7 @@ const Playground = () => {
               variant="simple"
               error
             />
-          </div>
+          </div> */}
         </div>
 
         <Input type="email" placeholder="Email" variant="simple" />
@@ -192,7 +192,7 @@ const Playground = () => {
           variant="simple"
         />
         {/* Text Area */}
-        <Textarea />
+        {/* <Textarea /> */}
       </div>
       {/* Text Inputs Ends */}
       {/* Text Inputs StartsEnds */}
