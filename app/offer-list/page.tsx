@@ -1,14 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TitleHeader } from "../create-offer/page";
 import Text from "../components/ui/typography/Typography";
 import Button from "../components/ui/button/Button";
 import { FilterOfferSection } from "../components/ui/filter/Filter";
 import {
   OfferListItem1,
-  OfferListItem1Props,
+  OfferListItem1Props
 } from "../components/ui/list/List";
 import Pagination from "../components/ui/pagination/Pagination";
+import axios from "axios";
+import { getOfferList } from "@/services/offerService";
 
 const data: OfferListItem1Props[] = [
   {
@@ -18,7 +20,7 @@ const data: OfferListItem1Props[] = [
     subTitle: "Confederación de Autismo España",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat turpis sit amet tortor elementum accumsan. Phasellus lacinia erat risus, nec faucibus turpis suscipit consequat. Vivamus vehicula sagittis arcu nec pellentesque.",
-    items: ["Servicios Centrales, Madrid", "Presencial"],
+    items: ["Servicios Centrales, Madrid", "Presencial"]
   },
   {
     image: "/images/test.webp",
@@ -27,7 +29,7 @@ const data: OfferListItem1Props[] = [
     subTitle: "Confederación de Autismo España",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat turpis sit amet tortor elementum accumsan. Phasellus lacinia erat risus, nec faucibus turpis suscipit consequat. Vivamus vehicula sagittis arcu nec pellentesque.",
-    items: ["Servicios Centrales, Madrid", "Presencial"],
+    items: ["Servicios Centrales, Madrid", "Presencial"]
   },
   {
     image: "/images/test.webp",
@@ -36,12 +38,24 @@ const data: OfferListItem1Props[] = [
     subTitle: "Confederación de Autismo España",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat turpis sit amet tortor elementum accumsan. Phasellus lacinia erat risus, nec faucibus turpis suscipit consequat. Vivamus vehicula sagittis arcu nec pellentesque.",
-    items: ["Servicios Centrales, Madrid", "Presencial"],
-  },
+    items: ["Servicios Centrales, Madrid", "Presencial"]
+  }
 ];
 
 const OfferList = () => {
   const [openFilter, setOpenFilter] = useState(false);
+  // const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const response = await getOfferList();
+    // setData(response);
+    console.log("Response: ", response);
+  };
+
   return (
     <div className="border border-gris2">
       {/* Top Container */}

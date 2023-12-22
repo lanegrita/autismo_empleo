@@ -7,12 +7,12 @@ import Text from "../../ui/typography/Typography";
 
 export interface InputProps {
   placeholder: string;
-  name: string;
+  name?: string;
   type?: "text" | "email" | "password" | "tel";
   variant: "simple" | "newsletter";
   color?: "default" | "azul";
   error?: string;
-  register: any;
+  register?: any;
 }
 
 const Input = ({

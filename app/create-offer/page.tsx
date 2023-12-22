@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Text from "../components/ui/typography/Typography";
 import Button from "../components/ui/button/Button";
 import Input from "../components/form/input/Input";
@@ -17,10 +17,12 @@ const tagList = [
   "Perfil acostumbrado/a a trabajar por objetivos",
   "Formación, colaboración y el aprendizaje constante",
   "Disponibilidad inmediata",
-  "Ubicado en Murcia o alrededores",
+  "Ubicado en Murcia o alrededores"
 ];
 
 const CreateOfferView = () => {
+  const [tagList, setTagList] = useState<string[]>([]);
+  const [requirementText, setRequirementText] = useState("");
   return (
     <div>
       <TitleHeader
@@ -47,12 +49,12 @@ const CreateOfferView = () => {
                   options={[
                     {
                       label: "Tipo",
-                      value: "1",
+                      value: "1"
                     },
                     {
                       label: "Tipo",
-                      value: "2",
-                    },
+                      value: "2"
+                    }
                   ]}
                   placeHolder="Categoría del puesto"
                 />
@@ -63,12 +65,12 @@ const CreateOfferView = () => {
                   options={[
                     {
                       label: "Tipo",
-                      value: "1",
+                      value: "1"
                     },
                     {
                       label: "Tipo",
-                      value: "2",
-                    },
+                      value: "2"
+                    }
                   ]}
                   placeHolder="Nivel del puesto"
                 />
@@ -76,12 +78,12 @@ const CreateOfferView = () => {
                   options={[
                     {
                       label: "Tipo",
-                      value: "1",
+                      value: "1"
                     },
                     {
                       label: "Tipo",
-                      value: "2",
-                    },
+                      value: "2"
+                    }
                   ]}
                   placeHolder="Tipo de contacto"
                 />
@@ -93,12 +95,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1",
+                        value: "1"
                       },
                       {
                         label: "Tipo",
-                        value: "2",
-                      },
+                        value: "2"
+                      }
                     ]}
                     placeHolder="Jornada"
                   />
@@ -108,12 +110,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1",
+                        value: "1"
                       },
                       {
                         label: "Tipo",
-                        value: "2",
-                      },
+                        value: "2"
+                      }
                     ]}
                     placeHolder="Contrato"
                   />
@@ -123,12 +125,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1",
+                        value: "1"
                       },
                       {
                         label: "Tipo",
-                        value: "2",
-                      },
+                        value: "2"
+                      }
                     ]}
                     placeHolder="Nº Vacantes"
                   />
@@ -149,12 +151,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1",
+                        value: "1"
                       },
                       {
                         label: "Tipo",
-                        value: "2",
-                      },
+                        value: "2"
+                      }
                     ]}
                     placeHolder="Tipo"
                   />
@@ -164,12 +166,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1",
+                        value: "1"
                       },
                       {
                         label: "Tipo",
-                        value: "2",
-                      },
+                        value: "2"
+                      }
                     ]}
                     placeHolder="Mínimo"
                   />
@@ -179,12 +181,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1",
+                        value: "1"
                       },
                       {
                         label: "Tipo",
-                        value: "2",
-                      },
+                        value: "2"
+                      }
                     ]}
                     placeHolder="Máximo"
                   />
@@ -194,12 +196,12 @@ const CreateOfferView = () => {
                     options={[
                       {
                         label: "Tipo",
-                        value: "1",
+                        value: "1"
                       },
                       {
                         label: "Tipo",
-                        value: "2",
-                      },
+                        value: "2"
+                      }
                     ]}
                     placeHolder="Pagas"
                   />
@@ -234,8 +236,20 @@ const CreateOfferView = () => {
                 <Textarea
                   variant="single-line"
                   placeholder="Requerimiento mínimo"
+                  value={requirementText}
+                  setValue={setRequirementText}
                 />
-                <Button title="Añadir" variant="secondary" />
+                <Button
+                  onClick={() => {
+                    if (requirementText) {
+                      setTagList([...tagList, requirementText]);
+                      setRequirementText("");
+                    }
+                  }}
+                  type="button"
+                  title="Añadir"
+                  variant="secondary"
+                />
               </div>
               {/* Second Row */}
               <div className="flex flex-col gap-10 mt-26">
@@ -244,7 +258,14 @@ const CreateOfferView = () => {
                 </Text>
                 <div className="flex flex-wrap gap-4">
                   {tagList.map((tag, index) => (
-                    <TagSelector key={index} title={tag} />
+                    <TagSelector
+                      onRemove={() => {
+                        const updateList = tagList.filter((t) => t !== tag);
+                        setTagList(updateList);
+                      }}
+                      key={index}
+                      title={tag}
+                    />
                   ))}
                 </div>
               </div>
@@ -293,7 +314,7 @@ export const TitleHeader = ({
   title,
   titleVariant = "title-xl",
   button,
-  className,
+  className
 }: {
   image: string;
   title: string;
@@ -364,11 +385,15 @@ export const TitleHeader = ({
 
 interface TagSelectorProps {
   title: string;
+  onRemove: () => void;
 }
 
-const TagSelector: React.FC<TagSelectorProps> = ({ title }) => {
+const TagSelector: React.FC<TagSelectorProps> = ({ title, onRemove }) => {
   return (
-    <div className="flex items-center bg-azulLight3 rounded-full pl-4 pr-2 py-2 cursor-pointer">
+    <div
+      onClick={onRemove}
+      className="flex items-center bg-azulLight3 rounded-full pl-4 pr-2 py-2 cursor-pointer"
+    >
       <p className=" text-[1.75rem] sm:text-[1.25rem] text-azulAe">{title}</p>
       <div className="relative min-w-[28px] min-h-[28px] w-[28px] h-[28px]">
         <Image src="/images/icons/close.svg" alt="cross icon" fill />

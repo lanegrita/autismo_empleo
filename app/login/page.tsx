@@ -15,12 +15,13 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { loginFormSchema } from "../validationSchemas";
+import { login } from "@/services/authService";
 
-type Inputs = z.infer<typeof loginFormSchema>;
+export type LoginFormData = z.infer<typeof loginFormSchema>;
 
 const Login = ({ searchParams }: { searchParams?: { userType: string } }) => {
   const userType = searchParams?.userType;
-  const [data, setData] = useState<Inputs>();
+  // const [data, setData] = useState<LoginFormData>();
 
   const {
     register,
@@ -28,14 +29,19 @@ const Login = ({ searchParams }: { searchParams?: { userType: string } }) => {
     watch,
     reset,
     formState: { errors }
-  } = useForm<Inputs>({
+  } = useForm<LoginFormData>({
     resolver: zodResolver(loginFormSchema)
   });
 
-  const processForm: SubmitHandler<Inputs> = (data) => {
-    reset();
-    console.log("Form Data: ", data);
-    setData(data);
+  const processForm: SubmitHandler<LoginFormData> = async (data) => {
+    try {
+      const response = await login(data);
+      console.log("Login Response: ", response?.data);
+      // setData(data);
+      // reset();
+    } catch (error) {
+      console.log("Login Error: ", error);
+    }
   };
 
   return (
@@ -94,7 +100,7 @@ const Login = ({ searchParams }: { searchParams?: { userType: string } }) => {
               placeholder="Email"
               variant="simple"
               type="email"
-              name="name"
+              name="email"
               error={errors.email?.message}
               register={register}
             />
