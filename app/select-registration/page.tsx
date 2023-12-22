@@ -13,7 +13,7 @@ const SelectRegistration = () => {
           icon="/images/icons/briefcase.svg"
           title1="Busco trabajo o hacer un voluntariado"
           title2="Si estás buscando el trabajo de tu vida, este es tu sitio."
-          link="/register"
+          link="/register?registerType=job"
         />
       </div>
       {/* Right Container */}
@@ -22,6 +22,7 @@ const SelectRegistration = () => {
           icon="/images/icons/briefcase.svg"
           title1="Busco trabajadores o voluntarios"
           title2="Si eres una empresa o una entidad y estás buscando al trabajador perfecto, este es tu sitio."
+          link="/register?registerType=entity"
         />
       </div>
     </div>

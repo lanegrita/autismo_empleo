@@ -125,7 +125,10 @@ const Header: React.FC<HeaderProps> = ({ loggedIn }) => {
           <div className=" flex col-span-6 lg:col-span-2 flex-1 bg-azulAe py-12 pl-10 pr-10 min-w-0 ">
             {/* Image Container */}
             <Link href={"/"}>
-              <div className="relative  w-[141px] h-[48px]  md:w-[181px] md:h-[56px] lg:w-[208px] lg:h-[62px] ">
+              <div
+                onClick={() => setOpenNavbar(false)}
+                className="relative  w-[141px] h-[48px]  md:w-[181px] md:h-[56px] lg:w-[208px] lg:h-[62px] "
+              >
                 <Image
                   src={"/images/autismo-logo-white.svg"}
                   alt="autismo logo"

@@ -4,6 +4,7 @@ import Button from "../components/ui/button/Button";
 import { SimpleMarquee } from "../components/ui/marquee-section/MarqueeSection";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const VolunteerView = () => {
   return (
@@ -19,13 +20,15 @@ const VolunteerView = () => {
             <br /> Descubre aquí las principales razones.
           </Text>
           <div className="mt-20 md:mt-[185px] lg:mt-[212px] xl:mt-[309px]">
-            <Button
-              className="w-full xs:w-fit"
-              title="Hazte voluntario"
-              icon="/images/icons/pencil.svg"
-              variant="primary"
-              direction="left"
-            />
+            <Link href={"/volunteer-list"}>
+              <Button
+                className="w-full xs:w-fit"
+                title="Hazte voluntario"
+                icon="/images/icons/pencil.svg"
+                variant="primary"
+                direction="left"
+              />
+            </Link>
           </div>
         </div>
         {/* Right */}
@@ -85,7 +88,7 @@ export const IndicatorTag = ({ title }: { title: string }) => {
 
 export const VolunteerSection = ({
   direction = "default",
-  imageShape = "oval"
+  imageShape = "oval",
 }: {
   direction?: "default" | "reverse";
   imageShape?: "oval" | "circle";

@@ -11,6 +11,7 @@ import { useState } from "react";
 import { ReactSVG } from "react-svg";
 import Input from "../../form/input/Input";
 import Button from "../button/Button";
+import Link from "next/link";
 
 interface ModalProps {
   title?: string;
@@ -48,6 +49,9 @@ interface ModalProps {
   setOpenModal: (param1: boolean) => void;
   button1OnClick?: () => void;
   button2OnClick?: () => void;
+  button1Link?: string;
+  button2Link?: string;
+  textStyles?: string;
 }
 
 const ModalComponent = ({
@@ -70,6 +74,9 @@ const ModalComponent = ({
   setOpenModal,
   button1OnClick,
   button2OnClick,
+  button1Link = "/",
+  button2Link = "/",
+  textStyles,
 }: ModalProps) => {
   const crossIconColor = variant === "default" ? "#888d8e" : "white";
   const topIconColor = error
@@ -175,6 +182,7 @@ const ModalComponent = ({
 
                 {/* Main Title */}
                 <Text
+                  className={textStyles}
                   tag="h4"
                   variant="title"
                   color={variant === "default" ? "blue" : "white"}
@@ -211,31 +219,35 @@ const ModalComponent = ({
               <div className="flex gap-8 mt-20">
                 {/* Button 1 */}
                 {button1Title && (
-                  <Button
-                    variant={
-                      variant === "azul"
-                        ? (button1Varient = "primary-azul")
-                        : button1Varient
-                    }
-                    title={button1Title}
-                    icon={button1Icon}
-                    direction="right"
-                    onClick={button1OnClick}
-                  />
+                  <Link href={button1Link}>
+                    <Button
+                      variant={
+                        variant === "azul"
+                          ? (button1Varient = "primary-azul")
+                          : button1Varient
+                      }
+                      title={button1Title}
+                      icon={button1Icon}
+                      direction="right"
+                      onClick={button1OnClick}
+                    />
+                  </Link>
                 )}
                 {/* Button 2 */}
                 {button2Title && (
-                  <Button
-                    variant={
-                      variant === "azul"
-                        ? (button2Varient = "simple-azul")
-                        : button2Varient
-                    }
-                    icon={button2Icon}
-                    direction="right"
-                    title={button2Title}
-                    onClick={button2OnClick}
-                  />
+                  <Link href={button2Link}>
+                    <Button
+                      variant={
+                        variant === "azul"
+                          ? (button2Varient = "simple-azul")
+                          : button2Varient
+                      }
+                      icon={button2Icon}
+                      direction="right"
+                      title={button2Title}
+                      onClick={button2OnClick}
+                    />
+                  </Link>
                 )}
               </div>
             </div>

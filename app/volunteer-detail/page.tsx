@@ -5,6 +5,7 @@ import Text from "../components/ui/typography/Typography";
 import Button from "../components/ui/button/Button";
 import { SimpleMarquee } from "../components/ui/marquee-section/MarqueeSection";
 import Image from "next/image";
+import Link from "next/link";
 
 const VolunteerDetailView = () => {
   return (
@@ -21,7 +22,7 @@ const VolunteerDetailView = () => {
           <div className="px-10 py-17 md:px-10 md:py-20 lg:pt-30 xl:pt-49">
             {/* Text Container */}
             <div className="">
-              <p className="text-[38px] lg:text-[48px] font-medium">
+              <div className="text-[38px] lg:text-[48px] font-medium">
                 Investigación y
                 <div className="flex items-center gap-4 md:gap-6">
                   <div className="relative w-[84px] h-[47px] lg:w-[109px] lg:h-[61px] rounded-full overflow-hidden">
@@ -30,17 +31,19 @@ const VolunteerDetailView = () => {
                   transferencia
                 </div>
                 de conocimiento
-              </p>
+              </div>
             </div>
 
             <div className="mt-40 lg:mt-[101px] flex justify-end ">
-              <Button
-                className="w-full xs:w-fit"
-                title="Hazte voluntario"
-                icon="/images/icons/pencil.svg"
-                variant="primary"
-                direction="left"
-              />
+              <Link href="/volunteer-apply">
+                <Button
+                  className="w-full xs:w-fit"
+                  title="Hazte voluntario"
+                  icon="/images/icons/pencil.svg"
+                  variant="primary"
+                  direction="left"
+                />
+              </Link>
             </div>
           </div>
         </div>
